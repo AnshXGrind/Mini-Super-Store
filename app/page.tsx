@@ -1,4 +1,4 @@
-import BulkOrderSlider from "@/components/wholesale/BulkOrderSlider";
+import BulkOrderWhatsAppCTA from "@/components/wholesale/BulkOrderWhatsAppCTA";
 
 export default function HomePage() {
   return (
@@ -18,7 +18,7 @@ export default function HomePage() {
       </section>
 
       <section className="wholesale-section" aria-labelledby="bulk-order-title">
-        <BulkOrderSlider />
+        <BulkOrderWhatsAppCTA />
       </section>
     </main>
   );
