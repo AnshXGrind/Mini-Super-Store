@@ -1,0 +1,155 @@
+:root {
+  color: #17211b;
+  background: #f7f5ef;
+  font-family: Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.store-header {
+  padding: 3rem 1rem;
+  color: white;
+  background: #173d2b;
+  text-align: center;
+}
+
+.store-header h1,
+.store-header p,
+.catalogue h2,
+.catalogue p,
+.wholesale-copy h2,
+.wholesale-copy p {
+  margin: 0;
+}
+
+.store-header h1 {
+  font-size: clamp(1.7rem, 7vw, 2.75rem);
+  letter-spacing: 0.04em;
+}
+
+.store-kicker,
+.eyebrow {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.store-header > p:last-child {
+  margin-top: 0.5rem;
+}
+
+.catalogue,
+.wholesale-section {
+  width: min(100% - 2rem, 46rem);
+  margin: 0 auto;
+}
+
+.catalogue {
+  padding: 3rem 0 2rem;
+}
+
+.catalogue h2 {
+  margin-top: 0.5rem;
+  font-size: clamp(1.5rem, 5vw, 2.2rem);
+}
+
+.catalogue p:last-child,
+.wholesale-copy > p:last-child {
+  margin-top: 0.5rem;
+  color: #68756c;
+}
+
+.wholesale-section {
+  padding-bottom: 3rem;
+}
+
+.wholesale-card {
+  padding: 1.25rem;
+  border: 1px solid #dfe9df;
+  border-radius: 1rem;
+  background: white;
+  box-shadow: 0 8px 24px rgb(23 61 43 / 8%);
+}
+
+.wholesale-copy h2 {
+  margin-top: 0.35rem;
+  font-size: 1.35rem;
+}
+
+.slider-track {
+  position: relative;
+  height: 3.5rem;
+  margin-top: 1.25rem;
+  overflow: hidden;
+  border: 1px solid #b9ddc6;
+  border-radius: 999px;
+  background: #edf8ef;
+  user-select: none;
+}
+
+.slider-fill {
+  position: absolute;
+  inset: 0 auto 0 0;
+  border-radius: inherit;
+  background: #d8f0df;
+}
+
+.slider-label {
+  position: absolute;
+  inset: 0 0.75rem 0 3.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #165c31;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.slider-thumb {
+  position: absolute;
+  top: 0.25rem;
+  z-index: 1;
+  display: grid;
+  width: 3rem;
+  height: 3rem;
+  padding: 0;
+  place-items: center;
+  border: 0;
+  border-radius: 50%;
+  color: white;
+  background: #248a48;
+  box-shadow: 0 3px 8px rgb(15 73 35 / 25%);
+  font-size: 1.5rem;
+  line-height: 1;
+  touch-action: none;
+  cursor: grab;
+}
+
+.slider-thumb:active {
+  cursor: grabbing;
+}
+
+.slider-thumb:disabled {
+  color: white;
+  background: #9da6a0;
+  cursor: not-allowed;
+}
+
+.slider-thumb:focus-visible {
+  outline: 4px solid #b8e3c3;
+  outline-offset: 2px;
+}
+
+.slider-help {
+  margin: 0.55rem 0 0;
+  color: #68756c;
+  font-size: 0.8rem;
+}
