@@ -1,7 +1,10 @@
 ﻿"use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
+import Image from "next/image";
 import BulkOrderWhatsAppCTA from "@/components/wholesale/BulkOrderWhatsAppCTA";
+import ShoppingCart from "@/components/store/ShoppingCart";
+import type { PublicCategory, PublicProduct } from "@/app/page";
 
 type Language = "en" | "hi";
 type Group = "daily" | "home" | "style";
@@ -95,11 +98,51 @@ const filters = [
   { id: "style", en: "Style & festive", hi: "होज़री और त्योहार" },
 ] as const;
 
-export default function Storefront() {
+export default function Storefront({
+  categories,
+  products,
+}: {
+  categories: PublicCategory[];
+  products: PublicProduct[];
+}) {
   const [language, setLanguage] = useState<Language>("en");
   const [activeFilter, setActiveFilter] = useState<(typeof filters)[number]["id"]>("all");
   const [search, setSearch] = useState("");
+  const [cart, setCart] = useState<Record<string, number>>({});
+  const [offline, setOffline] = useState(false);
   const isHindi = language === "hi";
+
+  useEffect(() => {
+    function updateNetworkStatus() {
+      setOffline(!navigator.onLine);
+    }
+    updateNetworkStatus();
+    window.addEventListener("online", updateNetworkStatus);
+    window.addEventListener("offline", updateNetworkStatus);
+    return () => {
+      window.removeEventListener("online", updateNetworkStatus);
+      window.removeEventListener("offline", updateNetworkStatus);
+    };
+  }, []);
+
+  useEffect(() => {
+    try {
+      const saved = window.localStorage.getItem("mini-super-store-cart");
+      if (saved) setCart(JSON.parse(saved));
+    } catch {
+      window.localStorage.removeItem("mini-super-store-cart");
+    }
+  }, []);
+
+  useEffect(() => {
+    window.localStorage.setItem("mini-super-store-cart", JSON.stringify(cart));
+  }, [cart]);
+
+  function addToCart(productId: string) {
+    setCart((current) => ({ ...current, [productId]: (current[productId] ?? 0) + 1 }));
+  }
+
+  const cartCount = Object.values(cart).reduce((total, quantity) => total + quantity, 0);
 
   const visibleDepartments = useMemo(() => {
     const term = search.trim().toLocaleLowerCase();
@@ -116,8 +159,39 @@ export default function Storefront() {
     });
   }, [activeFilter, search]);
 
+  const visibleProducts = useMemo(() => {
+    const term = search.trim().toLocaleLowerCase();
+    const allowedCategorySlugs =
+      activeFilter === "all"
+        ? null
+        : activeFilter === "daily"
+          ? new Set(["groceries"])
+          : activeFilter === "home"
+            ? new Set(["household", "crockery"])
+            : new Set(["hosiery", "festive"]);
+    const categoryIds = allowedCategorySlugs
+      ? new Set(categories.filter((category) => allowedCategorySlugs.has(category.slug)).map((category) => category.id))
+      : null;
+
+    return products.filter((product) => {
+      if (categoryIds && !categoryIds.has(product.category_id ?? "")) return false;
+      if (!term) return true;
+      return [
+        product.name,
+        product.name_hi,
+        product.description,
+        product.description_hi,
+      ].join(" ").toLocaleLowerCase().includes(term);
+    });
+  }, [activeFilter, categories, products, search]);
+
   return (
     <main className="storefront">
+      {offline && (
+        <div className="network-banner" role="status">
+          {isHindi ? "आप ऑफ़लाइन हैं। पुरानी जानकारी दिखाई दे सकती है।" : "You are offline. Saved cart items may remain available."}
+        </div>
+      )}
       <div className="topline">
         <div className="topline-inner">
           <span>{isHindi ? "लाडवा · रेड रोड" : "Ladwa · Red Road"}</span>
@@ -144,9 +218,17 @@ export default function Storefront() {
           <a href="#bulk-enquiry">{isHindi ? "थोक पूछताछ" : "Bulk enquiry"}</a>
           <a href="#visit">{isHindi ? "दुकान पर आएँ" : "Visit us"}</a>
         </nav>
-        <a className="header-visit" href="#visit">
-          {isHindi ? "दुकान की जानकारी" : "Store details"}<span aria-hidden="true">↗</span>
-        </a>
+        <div className="header-actions">
+          <ShoppingCart
+            language={language}
+            products={products}
+            cart={cart}
+            setCart={setCart}
+          />
+          <a className="header-visit" href="#visit">
+            {isHindi ? "दुकान की जानकारी" : "Store details"}<span aria-hidden="true">↗</span>
+          </a>
+        </div>
       </header>
 
       <section className="hero" id="home">
@@ -253,7 +335,66 @@ export default function Storefront() {
             <button type="button" onClick={() => { setSearch(""); setActiveFilter("all"); }}>{isHindi ? "फ़िल्टर हटाएँ" : "Clear filters"}</button>
           </div>
         )}
-        <p className="catalogue-disclaimer">{isHindi ? "उत्पादों की सूची, कीमतें और उपलब्धता अगली कैटलॉग अपडेट में जोड़ी जाएँगी।" : "Product listings, prices and live availability will be added when the store catalogue is connected."}</p>
+        <div className="live-catalogue">
+          <div className="live-catalogue-heading">
+            <div>
+              <p className="section-eyebrow">{isHindi ? "अभी उपलब्ध" : "Available now"}</p>
+              <h3>{isHindi ? "लाइव कैटलॉग" : "Live product catalogue"}</h3>
+            </div>
+            <span>{visibleProducts.length} {isHindi ? "उत्पाद" : "products"}</span>
+          </div>
+          {visibleProducts.length > 0 ? (
+            <div className="product-grid">
+              {visibleProducts.map((product) => {
+                const inCart = cart[product.id] ?? 0;
+                const unavailable = product.stock_status === "out_of_stock";
+                return (
+                  <article className="product-card" key={product.id}>
+                    {product.image_url ? (
+                      <Image
+                        src={product.image_url}
+                        alt={isHindi && product.name_hi ? product.name_hi : product.name}
+                        width={600}
+                        height={360}
+                        sizes="(max-width: 680px) 50vw, (max-width: 900px) 33vw, 300px"
+                      />
+                    ) : (
+                      <div className="product-image-placeholder" aria-hidden="true">MINI STORE</div>
+                    )}
+                    <div className="product-card-copy">
+                      <span className={`stock-label stock-${product.stock_status}`}>
+                        {unavailable
+                          ? isHindi ? "उपलब्ध नहीं" : "Out of stock"
+                          : product.stock_status === "limited"
+                            ? isHindi ? "सीमित उपलब्ध" : "Limited"
+                            : isHindi ? "उपलब्ध" : "Available"}
+                      </span>
+                      <h4>{isHindi && product.name_hi ? product.name_hi : product.name}</h4>
+                      {product.description && <p>{isHindi && product.description_hi ? product.description_hi : product.description}</p>}
+                      <div className="product-card-footer">
+                        <strong>{product.price === null ? (isHindi ? "कीमत पूछें" : "Ask for price") : `₹${product.price.toFixed(2)}`}</strong>
+                        <button
+                          type="button"
+                          disabled={unavailable}
+                          onClick={() => addToCart(product.id)}
+                        >
+                          {inCart > 0
+                            ? `${isHindi ? "जोड़ें" : "Add"} (${inCart})`
+                            : isHindi ? "कार्ट में जोड़ें" : "Add to cart"}
+                        </button>
+                      </div>
+                    </div>
+                  </article>
+                );
+              })}
+            </div>
+          ) : (
+            <div className="empty-catalogue">
+              <strong>{isHindi ? "अभी कोई उत्पाद उपलब्ध नहीं है।" : "No products available yet."}</strong>
+              <p>{isHindi ? "हम उत्पाद और कीमतें जल्द अपडेट करेंगे।" : "Products and prices will appear when the store publishes them."}</p>
+            </div>
+          )}
+        </div>
       </section>
 
       <section className="why-section" id="why-us">

@@ -15,4 +15,6 @@ where user_id = 'YOUR-AUTH-USER-UUID';
 
 Replace the placeholder with the actual UUID. Do not let public registration select the admin or staff role.
 
+7. Apply `migrations/202611200002_store_offers.sql` after the initial migration to enable store offers.
+
 The order RPC (`place_customer_order`) reads product prices and stock on the database side. Never accept a price or total supplied by the browser as authoritative.

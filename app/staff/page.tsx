@@ -1,4 +1,5 @@
-import RoleDashboard from "@/components/auth/RoleDashboard";
+import StaffDashboard from "@/components/dashboard/StaffDashboard";
+
 export default function StaffPage() {
-  return <RoleDashboard role="staff" title="Staff workspace" description="Your secure staff workspace is ready for assigned orders, status updates and customer follow-ups." />;
+  return <StaffDashboard />;
 }
