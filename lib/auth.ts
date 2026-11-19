@@ -12,8 +12,12 @@ export type CurrentStoreUser = {
 export async function getCurrentStoreUser(): Promise<CurrentStoreUser | null> {
   const supabase = await createClient();
   const { data, error } = await supabase.auth.getClaims();
-  if (error || !data?.claims) return null;
-  const userId = data.claims.sub;
+  if (error) return null;
+
+  const claims = data?.claims;
+  if (!claims || typeof claims.sub !== "string") return null;
+
+  const userId = claims.sub;
   if (typeof userId !== "string") return null;
 
   const { data: roleRow, error: roleError } = await supabase
@@ -28,7 +32,7 @@ export async function getCurrentStoreUser(): Promise<CurrentStoreUser | null> {
 
   return {
     id: userId,
-    email: typeof data.claims.email === "string" ? data.claims.email : null,
+    email: typeof claims.email === "string" ? claims.email : null,
     role,
   };
 }
