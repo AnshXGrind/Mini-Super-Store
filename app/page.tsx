@@ -1,4 +1,4 @@
-import WholesaleWhatsAppSlider from "@/components/wholesale/WholesaleWhatsAppSlider";
+import BulkOrderSlider from "@/components/wholesale/BulkOrderSlider";
 
 export default function HomePage() {
   return (
@@ -17,8 +17,8 @@ export default function HomePage() {
         </p>
       </section>
 
-      <section className="wholesale-section" aria-labelledby="wholesale-title">
-        <WholesaleWhatsAppSlider />
+      <section className="wholesale-section" aria-labelledby="bulk-order-title">
+        <BulkOrderSlider />
       </section>
     </main>
   );

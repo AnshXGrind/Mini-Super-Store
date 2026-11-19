@@ -3,7 +3,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Mini Super Store",
-  description: "Everyday essentials and wholesale supplies.",
+  description: "Everyday essentials and bulk order supplies.",
 };
 
 export default function RootLayout({

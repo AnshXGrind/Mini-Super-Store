@@ -1,23 +1,24 @@
 {
-  "name": "mini-super-store",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "lint": "next lint",
-    "typecheck": "tsc --noEmit"
-  },
-  "dependencies": {
-    "next": "14.2.35",
-    "react": "18.3.1",
-    "react-dom": "18.3.1"
-  },
-  "devDependencies": {
-    "@types/node": "^22.10.2",
-    "@types/react": "^18.3.12",
-    "@types/react-dom": "^18.3.1",
-    "eslint": "^8.57.1",
-    "eslint-config-next": "14.2.35",
-    "typescript": "^5.7.2"
-  }
+    "name":  "mini-super-store",
+    "private":  true,
+    "scripts":  {
+                    "typecheck":  "tsc --noEmit",
+                    "lint":  "eslint .",
+                    "build":  "next build",
+                    "dev":  "next dev",
+                    "start":  "next start"
+                },
+    "dependencies":  {
+                         "next":  "16.4.6",
+                         "react":  "19.3.1",
+                         "react-dom":  "19.3.1"
+                     },
+    "devDependencies":  {
+                            "@types/node":  "^22.10.2",
+                            "@types/react":  "19.3.0",
+                            "@types/react-dom":  "19.3.0",
+                            "eslint":  "10.15.0",
+                            "eslint-config-next":  "16.4.6",
+                            "typescript":  "^5.7.2"
+                        }
 }

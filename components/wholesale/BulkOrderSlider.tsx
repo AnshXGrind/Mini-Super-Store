@@ -11,7 +11,7 @@ const THUMB_SIZE = 48;
 const TRACK_PADDING = 4;
 const COMPLETE_AT = 90;
 
-export default function WholesaleWhatsAppSlider() {
+export default function BulkOrderSlider() {
   const trackRef = useRef<HTMLDivElement | null>(null);
   const progressRef = useRef(0);
   const [progress, setProgress] = useState(0);
@@ -47,7 +47,7 @@ export default function WholesaleWhatsAppSlider() {
     if (!configured) return;
 
     const message =
-      "Hello Mini Super Store! I am interested in wholesale purchases. Please share your wholesale product catalogue, available products, bulk pricing and order details. Thank you.";
+      "Hello Mini Super Store! I am interested in bulk order purchases. Please share your product catalogue, available products, bulk pricing and order details. Thank you.";
     window.location.assign(
       `https://wa.me/${phone}?text=${encodeURIComponent(message)}`,
     );
@@ -114,15 +114,15 @@ export default function WholesaleWhatsAppSlider() {
   return (
     <div className="wholesale-card">
       <div className="wholesale-copy">
-        <p className="eyebrow">Wholesale enquiries</p>
-        <h2 id="wholesale-title">Buying in bulk?</h2>
-        <p>Get special wholesale prices. Connect with us directly.</p>
+        <p className="eyebrow">Bulk order enquiries</p>
+        <h2 id="bulk-order-title">Buying in bulk?</h2>
+        <p>Get special bulk order prices. Connect with us directly.</p>
       </div>
 
       <div
         ref={trackRef}
         className="slider-track"
-        aria-label="Wholesale WhatsApp enquiry"
+        aria-label="Bulk order WhatsApp enquiry"
       >
         <div
           className="slider-fill"
@@ -130,14 +130,14 @@ export default function WholesaleWhatsAppSlider() {
         />
         <span className="slider-label">
           {configured
-            ? "WHOLESALE — SLIDE TO CONNECT"
-            : "WHOLESALE CONTACT UNAVAILABLE"}
+            ? "BULK ORDER — SLIDE TO CONNECT"
+            : "BULK ORDER CONTACT UNAVAILABLE"}
         </span>
         <button
           type="button"
           role="slider"
           disabled={!configured}
-          aria-label="Slide to WhatsApp for wholesale enquiry"
+          aria-label="Slide to WhatsApp for bulk order enquiry"
           aria-valuemin={0}
           aria-valuemax={100}
           aria-valuenow={Math.round(progress)}
@@ -156,8 +156,8 @@ export default function WholesaleWhatsAppSlider() {
 
       <p className="slider-help">
         {configured
-          ? "Slide right to start your wholesale enquiry."
-          : "Please configure the wholesale WhatsApp number."}
+          ? "Slide right to start your bulk order enquiry."
+          : "Please configure the bulk order WhatsApp number."}
       </p>
     </div>
   );
