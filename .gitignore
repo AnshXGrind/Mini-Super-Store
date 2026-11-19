@@ -1,2 +1,27 @@
-node_modules# Dependencies node_modules/  # Next.js build output .next/ out/ build/  # Local environment files (keep .env.example tracked) .env* !.env.example  # Vercel local project settings .vercel/  # Logs and test output *.log npm-debug.log* coverage/ playwright-report/ test-results/ reports/local-*.md  # TypeScript and operating-system files *.tsbuildinfo .DS_Store Thumbs.db
-node_modules
+# Dependencies
+/node_modules/
+
+# Next.js generated output
+/.next/
+/out/
+/build/
+
+# Local secrets and environment files
+.env*
+!.env.example
+
+# Hosting and tooling
+/.vercel/
+
+# Logs, test output and reports
+*.log
+npm-debug.log*
+coverage/
+playwright-report/
+test-results/
+reports/local-*.md
+
+# TypeScript and operating-system files
+*.tsbuildinfo
+.DS_Store
+Thumbs.db
