@@ -16,5 +16,8 @@ where user_id = 'YOUR-AUTH-USER-UUID';
 Replace the placeholder with the actual UUID. Do not let public registration select the admin or staff role.
 
 7. Apply `migrations/202611200002_store_offers.sql` after the initial migration to enable store offers.
+8. Apply `migrations/202611200003_notifications.sql` to enable device push subscriptions.
+9. Generate VAPID keys and set `NEXT_PUBLIC_VAPID_PUBLIC_KEY`. A server-side private key and a trusted notification worker are still required to send push messages.
+10. WhatsApp, SMS, email, monitoring and backups require provider credentials and an operational deployment policy; the application does not send fabricated success responses for these services.
 
 The order RPC (`place_customer_order`) reads product prices and stock on the database side. Never accept a price or total supplied by the browser as authoritative.

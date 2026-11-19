@@ -90,7 +90,7 @@ export default function AdminDashboard() {
   }, []);
 
   useEffect(() => {
-    void loadData();
+    queueMicrotask(() => void loadData());
   }, [loadData]);
 
   function editProduct(product: Product) {

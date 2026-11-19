@@ -2,6 +2,7 @@ import Link from "next/link";
 import LogoutButton from "@/components/auth/LogoutButton";
 import { requireStoreRole } from "@/lib/auth";
 import { createClient } from "@/lib/supabase/server";
+import NotificationSettings from "@/components/account/NotificationSettings";
 
 export default async function AccountPage() {
   const user = await requireStoreRole(["customer"]);
@@ -48,6 +49,7 @@ export default async function AccountPage() {
             <div><dt>Phone</dt><dd>{profile?.phone || "Not added"}</dd></div>
             <div><dt>Language</dt><dd>{profile?.preferred_language === "hi" ? "Hindi" : "English"}</dd></div>
           </dl>
+          <NotificationSettings />
         </aside>
 
         <section className="account-orders" aria-labelledby="orders-title">

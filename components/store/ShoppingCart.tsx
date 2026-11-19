@@ -51,7 +51,7 @@ export default function ShoppingCart({
         setAuthenticated(!claimsError && Boolean(data?.claims));
       });
     } catch {
-      setAuthenticated(false);
+      queueMicrotask(() => setAuthenticated(false));
     }
   }, [open]);
 

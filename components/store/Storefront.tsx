@@ -109,6 +109,7 @@ export default function Storefront({
   const [activeFilter, setActiveFilter] = useState<(typeof filters)[number]["id"]>("all");
   const [search, setSearch] = useState("");
   const [cart, setCart] = useState<Record<string, number>>({});
+  const [cartHydrated, setCartHydrated] = useState(false);
   const [offline, setOffline] = useState(false);
   const isHindi = language === "hi";
 
@@ -128,15 +129,48 @@ export default function Storefront({
   useEffect(() => {
     try {
       const saved = window.localStorage.getItem("mini-super-store-cart");
-      if (saved) setCart(JSON.parse(saved));
+      if (saved) queueMicrotask(() => setCart(JSON.parse(saved)));
     } catch {
       window.localStorage.removeItem("mini-super-store-cart");
+    } finally {
+      setCartHydrated(true);
     }
   }, []);
 
   useEffect(() => {
+    if (!cartHydrated) return;
     window.localStorage.setItem("mini-super-store-cart", JSON.stringify(cart));
-  }, [cart]);
+    const channel = "BroadcastChannel" in window
+      ? new BroadcastChannel("mini-super-store-cart")
+      : null;
+    channel?.postMessage(cart);
+    channel?.close();
+  }, [cart, cartHydrated]);
+
+  useEffect(() => {
+    function syncFromStorage(event: StorageEvent) {
+      if (event.key !== "mini-super-store-cart" || !event.newValue) return;
+      try {
+        setCart(JSON.parse(event.newValue));
+      } catch {
+        window.localStorage.removeItem("mini-super-store-cart");
+      }
+    }
+
+    const channel = "BroadcastChannel" in window
+      ? new BroadcastChannel("mini-super-store-cart")
+      : null;
+    if (channel) {
+      channel.onmessage = (event: MessageEvent<Record<string, number>>) => {
+        setCart(event.data);
+      };
+    }
+    window.addEventListener("storage", syncFromStorage);
+    return () => {
+      channel?.close();
+      window.removeEventListener("storage", syncFromStorage);
+    };
+  }, []);
 
   function addToCart(productId: string) {
     setCart((current) => ({ ...current, [productId]: (current[productId] ?? 0) + 1 }));

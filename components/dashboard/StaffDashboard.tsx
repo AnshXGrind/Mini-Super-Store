@@ -78,7 +78,7 @@ export default function StaffDashboard() {
   }, []);
 
   useEffect(() => {
-    void loadOrders();
+    queueMicrotask(() => void loadOrders());
   }, [loadOrders]);
 
   function allowedNextStatuses(order: StaffOrder): OrderStatus[] {

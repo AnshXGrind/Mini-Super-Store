@@ -48,19 +48,16 @@ function StoreStructuredData() {
 export default async function HomePage() {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const key = process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY;
+  let categories: PublicCategory[] = [];
+  let products: PublicProduct[] = [];
 
   if (!url || !key) {
-    return (
-      <>
-        <Storefront categories={[]} products={[]} />
-        <StoreStructuredData />
-      </>
-    );
+    return <Storefront categories={categories} products={products} />;
   }
 
   try {
     const supabase = await createClient();
-    const [{ data: categories }, { data: products }] = await Promise.all([
+    const [categoryResult, productResult] = await Promise.all([
       supabase
         .from("categories")
         .select("id, slug, name, name_hi, description, description_hi")
@@ -72,25 +69,20 @@ export default async function HomePage() {
         .eq("is_published", true)
         .order("sort_order", { ascending: true }),
     ]);
-
-    return (
-      <>
-        <Storefront
-          categories={(categories ?? []) as PublicCategory[]}
-          products={(products ?? []).map((product) => ({
-            ...product,
-            price: product.price === null ? null : Number(product.price),
-          })) as PublicProduct[]}
-        />
-        <StoreStructuredData />
-      </>
-    );
+    categories = (categoryResult.data ?? []) as PublicCategory[];
+    products = (productResult.data ?? []).map((product) => ({
+      ...product,
+      price: product.price === null ? null : Number(product.price),
+    })) as PublicProduct[];
   } catch {
-    return (
-      <>
-        <Storefront categories={[]} products={[]} />
-        <StoreStructuredData />
-      </>
-    );
+    categories = [];
+    products = [];
   }
+
+  return (
+    <>
+      <Storefront categories={categories} products={products} />
+      <StoreStructuredData />
+    </>
+  );
 }

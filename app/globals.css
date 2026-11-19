@@ -257,6 +257,12 @@ button { cursor: pointer; }
 .account-profile dl div { display: grid; gap: .2rem; padding-bottom: .65rem; border-bottom: 1px solid #edf0ea; }
 .account-profile dt { color: #8b978e; font-size: .62rem; }
 .account-profile dd { margin: 0; overflow-wrap: anywhere; color: #34483a; font-size: .78rem; }
+.notification-settings { display: grid; gap: .55rem; margin-top: 1.2rem; padding-top: 1rem; border-top: 1px solid #edf0ea; }
+.notification-settings strong { color: #34483a; font-size: .73rem; }
+.notification-settings p { margin: .2rem 0 0; color: #7b887f; font-size: .64rem; line-height: 1.5; }
+.notification-settings button { min-height: 38px; border: 0; border-radius: 6px; color: #fff; background: #1f5139; font-size: .66rem; font-weight: 800; }
+.notification-settings button:disabled { opacity: .6; }
+.notification-settings small { color: #55725c; font-size: .62rem; line-height: 1.45; }
 .account-orders { min-width: 0; padding: 1.4rem; }
 .account-orders-heading { display: flex; align-items: end; justify-content: space-between; gap: 1rem; }
 .account-orders-heading .auth-eyebrow { margin: 0 0 .35rem; }
