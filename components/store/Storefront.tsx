@@ -487,6 +487,11 @@ export default function Storefront({
       <footer className="site-footer">
         <div className="footer-inner">
           <a className="footer-brand" href="#home">MINI <em>SUPER</em> STORE</a>
+          <nav className="footer-portals" aria-label="Portal login links">
+            <a href="/login">Customer login</a>
+            <a href="/login">Staff login</a>
+            <a href="/login">Admin login</a>
+          </nav>
           <p>© {new Date().getFullYear()} Mini Super Store. {isHindi ? "सर्वाधिकार सुरक्षित।" : "Everyday, made easier."}</p>
           <a href="#home">{isHindi ? "ऊपर जाएँ ↑" : "Back to top ↑"}</a>
         </div>
