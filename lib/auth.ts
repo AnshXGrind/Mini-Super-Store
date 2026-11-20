@@ -10,7 +10,12 @@ export type CurrentStoreUser = {
 };
 
 export async function getCurrentStoreUser(): Promise<CurrentStoreUser | null> {
-  const supabase = await createClient();
+  let supabase;
+  try {
+    supabase = await createClient();
+  } catch {
+    return null;
+  }
   const { data, error } = await supabase.auth.getClaims();
   if (error) return null;
 
