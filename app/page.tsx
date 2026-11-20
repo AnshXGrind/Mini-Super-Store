@@ -24,6 +24,14 @@ export type PublicProduct = {
   image_url: string | null;
 };
 
+export type PublicOffer = {
+  id: string;
+  title: string;
+  title_hi: string | null;
+  description: string | null;
+  description_hi: string | null;
+};
+
 function StoreStructuredData() {
   const data = {
     "@context": "https://schema.org",
@@ -50,38 +58,50 @@ export default async function HomePage() {
   const key = process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY;
   let categories: PublicCategory[] = [];
   let products: PublicProduct[] = [];
+  let offers: PublicOffer[] = [];
 
-  if (!url || !key) {
-    return <Storefront categories={categories} products={products} />;
-  }
+  if (url && key) {
+    try {
+      const supabase = await createClient();
+      const [categoryResult, productResult, offerResult] = await Promise.all([
+        supabase
+          .from("categories")
+          .select("id, slug, name, name_hi, description, description_hi")
+          .eq("is_active", true)
+          .order("sort_order", { ascending: true }),
+        supabase
+          .from("products")
+          .select("id, category_id, name, name_hi, description, description_hi, price, stock_status, image_url")
+          .eq("is_published", true)
+          .order("sort_order", { ascending: true }),
+        supabase
+          .from("offers")
+          .select("id, title, title_hi, description, description_hi")
+          .eq("is_active", true)
+          .order("sort_order", { ascending: true }),
+      ]);
+      categories = (categoryResult.data ?? []) as PublicCategory[];
+      products = (productResult.data ?? []).map((product) => ({
+        ...product,
+        price: product.price === null ? null : Number(product.price),
+      })) as PublicProduct[];
 
-  try {
-    const supabase = await createClient();
-    const [categoryResult, productResult] = await Promise.all([
-      supabase
-        .from("categories")
-        .select("id, slug, name, name_hi, description, description_hi")
-        .eq("is_active", true)
-        .order("sort_order", { ascending: true }),
-      supabase
-        .from("products")
-        .select("id, category_id, name, name_hi, description, description_hi, price, stock_status, image_url")
-        .eq("is_published", true)
-        .order("sort_order", { ascending: true }),
-    ]);
-    categories = (categoryResult.data ?? []) as PublicCategory[];
-    products = (productResult.data ?? []).map((product) => ({
-      ...product,
-      price: product.price === null ? null : Number(product.price),
-    })) as PublicProduct[];
-  } catch {
-    categories = [];
-    products = [];
+      // Offers are optional until the offers migration is applied; their failure
+      // must never hide a working public product catalogue. The public-read RLS
+      // policy applies starts_at / ends_at using PostgreSQL now(), avoiding impure
+      // render-time clock reads and client/server clock differences.
+      offers = (offerResult.data ?? []) as PublicOffer[];
+    } catch {
+      // Keep the storefront available with empty data if Supabase is not reachable.
+      categories = [];
+      products = [];
+      offers = [];
+    }
   }
 
   return (
     <>
-      <Storefront categories={categories} products={products} />
+      <Storefront categories={categories} products={products} offers={offers} />
       <StoreStructuredData />
     </>
   );

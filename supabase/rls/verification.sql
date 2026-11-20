@@ -26,3 +26,15 @@
 --   An admin can upload/delete product-images.
 --   Public users can read product-images.
 --   Non-admin users cannot upload/delete product-images.
+-- 7. NULL-role RPC hardening:
+--   Use a test authenticated account with no user_roles row and call
+--   update_store_order_status. It must raise STAFF_OR_ADMIN_REQUIRED.
+--   A customer must receive the same error; a staff member may update only
+--   an order assigned to auth.uid() and only through valid staff transitions.
+-- 8. Route authorization:
+--   A customer visiting /admin or /staff must be redirected to /account.
+--   A staff user visiting /admin must be redirected to /staff.
+--   An admin visiting /admin is allowed; /staff remains staff-only.
+-- 9. Admin assignment workflow:
+--   An admin can confirm a pending order and assign it to a staff user.
+--   The assigned staff user can then see and process that order.

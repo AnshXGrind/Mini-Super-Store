@@ -47,7 +47,7 @@ export default function NotificationSettings() {
         user_agent: navigator.userAgent,
       }, { onConflict: "endpoint" });
       if (error) throw error;
-      setMessage("Notifications are enabled on this device.");
+      setMessage("This device is subscribed. Actual alert delivery still requires the store notification sender to be configured.");
     } catch (caught) {
       setMessage(caught instanceof Error ? caught.message : "Notifications could not be enabled.");
     } finally {

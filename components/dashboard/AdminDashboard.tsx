@@ -34,6 +34,24 @@ type Offer = {
   is_active: boolean;
 };
 
+type AdminOrder = {
+  id: string;
+  status: string;
+  customer_name: string;
+  customer_phone: string;
+  fulfilment_type: "pickup" | "delivery";
+  delivery_address: string | null;
+  total_amount: number;
+  created_at: string;
+  assigned_staff_id: string | null;
+  order_items: Array<{ product_name_snapshot: string; quantity: number }>;
+};
+
+type StaffMember = {
+  id: string;
+  full_name: string | null;
+};
+
 const blankProduct = {
   category_id: "",
   sku: "",
@@ -50,6 +68,9 @@ export default function AdminDashboard() {
   const [categories, setCategories] = useState<Category[]>([]);
   const [products, setProducts] = useState<Product[]>([]);
   const [offers, setOffers] = useState<Offer[]>([]);
+  const [orders, setOrders] = useState<AdminOrder[]>([]);
+  const [staff, setStaff] = useState<StaffMember[]>([]);
+  const [staffSelections, setStaffSelections] = useState<Record<string, string>>({});
   const [editingId, setEditingId] = useState("");
   const [form, setForm] = useState(blankProduct);
   const [offerForm, setOfferForm] = useState({ title: "", title_hi: "", description: "", is_active: true });
@@ -67,13 +88,17 @@ export default function AdminDashboard() {
       const { data: claimsData, error: claimsError } = await supabase.auth.getClaims();
       if (claimsError || !claimsData?.claims) throw new Error("Your session has expired.");
 
-      const [categoriesResult, productsResult, offersResult] = await Promise.all([
+      const [categoriesResult, productsResult, offersResult, ordersResult, staffRolesResult] = await Promise.all([
         supabase.from("categories").select("id, name, name_hi").order("sort_order"),
         supabase.from("products").select("id, category_id, sku, name, name_hi, description, description_hi, price, stock_status, image_url, is_published").order("sort_order"),
         supabase.from("offers").select("id, title, title_hi, description, is_active").order("created_at", { ascending: false }),
+        supabase.from("orders").select("id, status, customer_name, customer_phone, fulfilment_type, delivery_address, total_amount, created_at, assigned_staff_id, order_items(product_name_snapshot, quantity)").order("created_at", { ascending: false }),
+        supabase.from("user_roles").select("user_id").eq("role", "staff"),
       ]);
       if (categoriesResult.error) throw categoriesResult.error;
       if (productsResult.error) throw productsResult.error;
+      if (ordersResult.error) throw ordersResult.error;
+      if (staffRolesResult.error) throw staffRolesResult.error;
 
       setCategories(categoriesResult.data ?? []);
       setProducts((productsResult.data ?? []).map((product) => ({
@@ -82,6 +107,26 @@ export default function AdminDashboard() {
       })) as Product[]);
       if (offersResult.error && offersResult.error.code !== "42P01") throw offersResult.error;
       setOffers((offersResult.data ?? []) as Offer[]);
+      setOrders((ordersResult.data ?? []).map((order) => ({
+        ...order,
+        total_amount: Number(order.total_amount),
+        order_items: order.order_items ?? [],
+      })) as AdminOrder[]);
+
+      const staffIds = (staffRolesResult.data ?? []).map((row) => row.user_id);
+      if (staffIds.length > 0) {
+        const { data: staffProfiles, error: staffProfilesError } = await supabase
+          .from("profiles")
+          .select("id, full_name")
+          .in("id", staffIds);
+        if (staffProfilesError) throw staffProfilesError;
+        setStaff((staffProfiles ?? []).map((profile) => ({
+          id: profile.id,
+          full_name: profile.full_name,
+        })) as StaffMember[]);
+      } else {
+        setStaff([]);
+      }
     } catch (caught) {
       setError(caught instanceof Error ? caught.message : "Owner data could not be loaded.");
     } finally {
@@ -233,11 +278,65 @@ export default function AdminDashboard() {
     }
   }
 
+  async function confirmAndAssignOrder(order: AdminOrder) {
+    const staffId = staffSelections[order.id];
+    if (!staffId) {
+      setError("Choose a staff member before confirming this order.");
+      return;
+    }
+    setBusy(true);
+    setError("");
+    setSuccess("");
+    try {
+      const supabase = createClient();
+      const { data, error: updateError } = await supabase
+        .from("orders")
+        .update({ status: "confirmed", assigned_staff_id: staffId })
+        .eq("id", order.id)
+        .eq("status", "pending")
+        .select("id")
+        .maybeSingle();
+      if (updateError) throw updateError;
+      if (!data) throw new Error("This order is no longer pending. Refresh the order list.");
+      setSuccess("Order confirmed and assigned to staff.");
+      await loadData();
+    } catch (caught) {
+      setError(caught instanceof Error ? caught.message : "Order could not be confirmed.");
+    } finally {
+      setBusy(false);
+    }
+  }
+
+  async function cancelPendingOrder(order: AdminOrder) {
+    if (!window.confirm(`Cancel order ${order.id.slice(0, 8).toUpperCase()}?`)) return;
+    setBusy(true);
+    setError("");
+    setSuccess("");
+    try {
+      const supabase = createClient();
+      const { data, error: updateError } = await supabase
+        .from("orders")
+        .update({ status: "cancelled" })
+        .eq("id", order.id)
+        .eq("status", "pending")
+        .select("id")
+        .maybeSingle();
+      if (updateError) throw updateError;
+      if (!data) throw new Error("This order is no longer pending. Refresh the order list.");
+      setSuccess("Order cancelled.");
+      await loadData();
+    } catch (caught) {
+      setError(caught instanceof Error ? caught.message : "Order could not be cancelled.");
+    } finally {
+      setBusy(false);
+    }
+  }
+
   return (
     <main className="dashboard-page">
       <header className="dashboard-header">
         <Link className="auth-brand" href="/">MINI <span>SUPER</span> STORE</Link>
-        <div><Link href="/staff">Staff workspace</Link><LogoutButton /></div>
+        <div><Link href="/">View store</Link><LogoutButton /></div>
       </header>
       <section className="dashboard-content">
         <div className="dashboard-heading">
@@ -296,6 +395,73 @@ export default function AdminDashboard() {
                   ))}
                 </div>
               )}
+
+              <section className="admin-orders" aria-labelledby="admin-orders-title">
+                <div className="admin-orders-heading">
+                  <h2 id="admin-orders-title">Customer orders <span>{orders.filter((order) => order.status === "pending").length} pending</span></h2>
+                  <p>Confirm pending requests and assign them to a staff member.</p>
+                </div>
+                {orders.length === 0 ? (
+                  <p className="dashboard-empty-copy">No customer orders have been received yet.</p>
+                ) : (
+                  <div className="admin-order-list">
+                    {orders.map((order) => {
+                      const assignedStaff = staff.find((member) => member.id === order.assigned_staff_id);
+                      return (
+                        <article className="admin-order-card" key={order.id}>
+                          <header>
+                            <div>
+                              <strong>Order {order.id.slice(0, 8).toUpperCase()}</strong>
+                              <small>{new Intl.DateTimeFormat("en-IN", { dateStyle: "medium", timeStyle: "short" }).format(new Date(order.created_at))}</small>
+                            </div>
+                            <span className={`order-status status-${order.status}`}>{order.status.replaceAll("_", " ")}</span>
+                          </header>
+                          <div className="admin-order-summary">
+                            <div>
+                              <strong>{order.customer_name}</strong>
+                              <a href={`tel:${order.customer_phone}`}>{order.customer_phone}</a>
+                              <small>{order.fulfilment_type === "delivery" ? "Delivery" : "Store pickup"}{order.delivery_address ? ` Â· ${order.delivery_address}` : ""}</small>
+                            </div>
+                            <div className="admin-order-items">
+                              {order.order_items.map((item, index) => (
+                                <span key={`${order.id}-${index}`}>{item.quantity} Ã— {item.product_name_snapshot}</span>
+                              ))}
+                            </div>
+                            <strong>â‚¹{order.total_amount.toFixed(2)}</strong>
+                          </div>
+                          {order.status === "pending" && (
+                            <div className="admin-order-actions">
+                              <label>
+                                Assign staff
+                                <select
+                                  value={staffSelections[order.id] ?? ""}
+                                  onChange={(event) => setStaffSelections((current) => ({ ...current, [order.id]: event.target.value }))}
+                                  disabled={busy || staff.length === 0}
+                                >
+                                  <option value="">Choose staff member</option>
+                                  {staff.map((member) => (
+                                    <option value={member.id} key={member.id}>{member.full_name || `Staff ${member.id.slice(0, 8)}`}</option>
+                                  ))}
+                                </select>
+                              </label>
+                              <button type="button" onClick={() => void confirmAndAssignOrder(order)} disabled={busy || staff.length === 0}>
+                                Confirm and assign
+                              </button>
+                              <button type="button" className="admin-cancel-order" onClick={() => void cancelPendingOrder(order)} disabled={busy}>
+                                Cancel order
+                              </button>
+                              {staff.length === 0 && <small className="admin-no-staff">Create a staff account and assign its staff role before confirming orders.</small>}
+                            </div>
+                          )}
+                          {order.assigned_staff_id && (
+                            <p className="admin-assignee">Assigned to: {assignedStaff?.full_name || "Staff member"}</p>
+                          )}
+                        </article>
+                      );
+                    })}
+                  </div>
+                )}
+              </section>
 
               <form className="admin-offer-form" onSubmit={saveOffer}>
                 <h2>Store offers</h2>

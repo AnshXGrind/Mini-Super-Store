@@ -1,5 +1,5 @@
-const CACHE_NAME = "mini-super-store-v1";
-const APP_SHELL = ["/", "/icon.svg"];
+const CACHE_NAME = "mini-super-store-v2";
+const APP_SHELL = ["/", "/offline.html", "/icon.svg"];
 
 self.addEventListener("install", (event) => {
   event.waitUntil(
@@ -11,24 +11,49 @@ self.addEventListener("install", (event) => {
 self.addEventListener("activate", (event) => {
   event.waitUntil(
     caches.keys().then((keys) =>
-      Promise.all(keys.filter((key) => key !== CACHE_NAME).map((key) => caches.delete(key))),
+      Promise.all(
+        keys
+          .filter((key) => key.startsWith("mini-super-store-") && key !== CACHE_NAME)
+          .map((key) => caches.delete(key)),
+      ),
     ),
   );
   self.clients.claim();
 });
 
 self.addEventListener("fetch", (event) => {
-  if (event.request.method !== "GET" || !event.request.url.startsWith(self.location.origin)) return;
+  const request = event.request;
+  if (request.method !== "GET") return;
+
+  const requestUrl = new URL(request.url);
+  if (requestUrl.origin !== self.location.origin) return;
+
+  if (request.mode === "navigate") {
+    event.respondWith(
+      fetch(request).catch(async () => {
+        // Only the public home page is served from the app shell. Never return
+        // a cached home page as if it were a private account/admin/staff route.
+        if (requestUrl.pathname === "/") {
+          return (await caches.match("/")) || (await caches.match("/offline.html"));
+        }
+        return (await caches.match("/offline.html")) || Response.error();
+      }),
+    );
+    return;
+  }
+
   event.respondWith(
-    fetch(event.request).catch(() => caches.match(event.request).then((cached) => cached || caches.match("/"))),
+    fetch(request).catch(async () => (await caches.match(request)) || Response.error()),
   );
 });
 
 self.addEventListener("push", (event) => {
-  const data = event.data?.json() ?? {
-    title: "Mini Super Store",
-    body: "You have a new store update.",
-  };
+  let data = {};
+  try {
+    data = event.data ? event.data.json() : {};
+  } catch {
+    data = { title: "Mini Super Store", body: "You have a new store update." };
+  }
   event.waitUntil(
     self.registration.showNotification(data.title || "Mini Super Store", {
       body: data.body || "",
@@ -41,5 +66,8 @@ self.addEventListener("push", (event) => {
 
 self.addEventListener("notificationclick", (event) => {
   event.notification.close();
-  event.waitUntil(self.clients.openWindow(event.notification.data?.url || "/"));
+  const requestedUrl = event.notification.data?.url || "/";
+  const target = new URL(requestedUrl, self.location.origin);
+  const safeUrl = target.origin === self.location.origin ? target.href : self.location.origin + "/";
+  event.waitUntil(self.clients.openWindow(safeUrl));
 });

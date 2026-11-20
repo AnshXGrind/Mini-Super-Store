@@ -1,10 +1,11 @@
-﻿"use client";
+"use client";
 
 import { useEffect, useMemo, useState } from "react";
 import Image from "next/image";
 import BulkOrderWhatsAppCTA from "@/components/wholesale/BulkOrderWhatsAppCTA";
 import ShoppingCart from "@/components/store/ShoppingCart";
-import type { PublicCategory, PublicProduct } from "@/app/page";
+import type { PublicCategory, PublicOffer, PublicProduct } from "@/app/page";
+import { parseStoreCart } from "@/lib/cart";
 
 type Language = "en" | "hi";
 type Group = "daily" | "home" | "style";
@@ -101,9 +102,11 @@ const filters = [
 export default function Storefront({
   categories,
   products,
+  offers,
 }: {
   categories: PublicCategory[];
   products: PublicProduct[];
+  offers: PublicOffer[];
 }) {
   const [language, setLanguage] = useState<Language>("en");
   const [activeFilter, setActiveFilter] = useState<(typeof filters)[number]["id"]>("all");
@@ -127,49 +130,39 @@ export default function Storefront({
   }, []);
 
   useEffect(() => {
+    let restored: Record<string, number> = {};
     try {
-      const saved = window.localStorage.getItem("mini-super-store-cart");
-      if (saved) queueMicrotask(() => setCart(JSON.parse(saved)));
+      restored = parseStoreCart(window.localStorage.getItem("mini-super-store-cart"));
     } catch {
-      window.localStorage.removeItem("mini-super-store-cart");
-    } finally {
-      setCartHydrated(true);
+      // Browser storage may be unavailable; begin with an empty in-memory cart.
     }
+    queueMicrotask(() => {
+      setCart(restored);
+      setCartHydrated(true);
+    });
   }, []);
 
   useEffect(() => {
     if (!cartHydrated) return;
-    window.localStorage.setItem("mini-super-store-cart", JSON.stringify(cart));
-    const channel = "BroadcastChannel" in window
-      ? new BroadcastChannel("mini-super-store-cart")
-      : null;
-    channel?.postMessage(cart);
-    channel?.close();
+    const key = "mini-super-store-cart";
+    const serialized = JSON.stringify(cart);
+    try {
+      // A storage event already wrote this value in another tab; avoid echoing it back.
+      if (window.localStorage.getItem(key) !== serialized) {
+        window.localStorage.setItem(key, serialized);
+      }
+    } catch {
+      // The cart remains usable in memory when browser storage is unavailable.
+    }
   }, [cart, cartHydrated]);
 
   useEffect(() => {
     function syncFromStorage(event: StorageEvent) {
-      if (event.key !== "mini-super-store-cart" || !event.newValue) return;
-      try {
-        setCart(JSON.parse(event.newValue));
-      } catch {
-        window.localStorage.removeItem("mini-super-store-cart");
-      }
-    }
-
-    const channel = "BroadcastChannel" in window
-      ? new BroadcastChannel("mini-super-store-cart")
-      : null;
-    if (channel) {
-      channel.onmessage = (event: MessageEvent<Record<string, number>>) => {
-        setCart(event.data);
-      };
+      if (event.key !== "mini-super-store-cart") return;
+      setCart(parseStoreCart(event.newValue));
     }
     window.addEventListener("storage", syncFromStorage);
-    return () => {
-      channel?.close();
-      window.removeEventListener("storage", syncFromStorage);
-    };
+    return () => window.removeEventListener("storage", syncFromStorage);
   }, []);
 
   function addToCart(productId: string) {
@@ -308,6 +301,31 @@ export default function Storefront({
         <div><span className="quick-icon">☏</span><span><strong>{isHindi ? "सीधे संपर्क करें" : "Talk to our team"}</strong><small>{isHindi ? "थोक पूछताछ उपलब्ध" : "Bulk enquiries welcome"}</small></span></div>
       </section>
 
+      {offers.length > 0 && (
+        <section className="offers-section section-wrap" aria-labelledby="offers-title">
+          <div className="offers-heading">
+            <div>
+              <p className="section-eyebrow">{isHindi ? "à¤¦à¥à¤•à¤¾à¤¨ à¤•à¥‡ à¤–à¤¾à¤¸ à¤‘à¤«à¤¼à¤°" : "From our store"}</p>
+              <h2 id="offers-title">{isHindi ? "à¤®à¥Œà¤œà¥‚à¤¦à¤¾ à¤‘à¤«à¤¼à¤°" : "Current offers"}</h2>
+            </div>
+            <span>{isHindi ? "à¤¸à¥€à¤®à¤¿à¤¤ à¤¸à¤®à¤¯ à¤•à¥‡ à¤²à¤¿à¤" : "Selected store offers"}</span>
+          </div>
+          <div className="offers-grid">
+            {offers.map((offer) => (
+              <article className="offer-card" key={offer.id}>
+                <span aria-hidden="true">âœ³</span>
+                <div>
+                  <h3>{isHindi && offer.title_hi ? offer.title_hi : offer.title}</h3>
+                  {(offer.description || offer.description_hi) && (
+                    <p>{isHindi && offer.description_hi ? offer.description_hi : offer.description}</p>
+                  )}
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+      )}
+
       <section className="departments-section section-wrap" id="departments">
         <div className="section-heading">
           <div>
@@ -409,7 +427,7 @@ export default function Storefront({
                         <strong>{product.price === null ? (isHindi ? "कीमत पूछें" : "Ask for price") : `₹${product.price.toFixed(2)}`}</strong>
                         <button
                           type="button"
-                          disabled={unavailable}
+                          disabled={unavailable || product.price === null}
                           onClick={() => addToCart(product.id)}
                         >
                           {inCart > 0

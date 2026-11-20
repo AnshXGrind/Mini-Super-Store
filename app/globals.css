@@ -364,6 +364,53 @@ button { cursor: pointer; }
 .admin-offer-list p { margin: .2rem 0 0; color: #7b887f; font-size: .62rem; }
 .admin-offer-list button { border: 0; color: #23633d; background: transparent; font-size: .62rem; font-weight: 800; }
 
+/* Public active offers */
+.offers-section { padding-top: 2.5rem; }
+.offers-heading { display: flex; align-items: end; justify-content: space-between; gap: 1rem; }
+.offers-heading h2 { margin: 0; color: #1b2b22; font-size: clamp(1.35rem, 3vw, 1.8rem); letter-spacing: -.04em; }
+.offers-heading > span { color: #7b887f; font-size: .68rem; }
+.offers-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: .7rem; margin-top: 1rem; }
+.offer-card { display: flex; align-items: flex-start; gap: .75rem; padding: 1rem; border: 1px solid #e6e9e1; border-radius: 8px; background: #fff; }
+.offer-card > span { color: #c7784c; font-size: 1.25rem; }
+.offer-card h3 { margin: 0; color: #294936; font-size: .85rem; }
+.offer-card p { margin: .35rem 0 0; color: #718077; font-size: .7rem; line-height: 1.5; }
+
+/* Admin order queue */
+.admin-orders { margin-top: 1.25rem; padding-top: 1.1rem; border-top: 1px solid #edf0ea; }
+.admin-orders-heading h2 { margin: 0; font-size: 1.1rem; }
+.admin-orders-heading h2 span { display: inline-grid; min-width: 24px; height: 24px; place-items: center; margin-left: .25rem; padding: 0 .35rem; border-radius: 999px; color: #fff; background: #d97848; font-size: .62rem; }
+.admin-orders-heading p { margin: .35rem 0 .8rem; color: #7b887f; font-size: .66rem; }
+.admin-order-list { display: grid; gap: .6rem; }
+.admin-order-card { overflow: hidden; border: 1px solid #e7ebe4; border-radius: 8px; background: #fff; }
+.admin-order-card > header { display: flex; align-items: center; justify-content: space-between; gap: .7rem; padding: .65rem .75rem; background: #f8f9f5; }
+.admin-order-card > header > div { display: grid; gap: .2rem; }
+.admin-order-card > header strong { font-size: .7rem; }
+.admin-order-card > header small { color: #87938a; font-size: .59rem; }
+.admin-order-summary { display: grid; grid-template-columns: 1fr 1fr auto; align-items: start; gap: .75rem; padding: .75rem; }
+.admin-order-summary > div:first-child { display: grid; gap: .2rem; }
+.admin-order-summary > div:first-child strong { font-size: .72rem; }
+.admin-order-summary a { color: #23633d; font-size: .65rem; font-weight: 700; }
+.admin-order-summary small { color: #7b887f; font-size: .6rem; line-height: 1.4; }
+.admin-order-items { display: grid; gap: .25rem; color: #627267; font-size: .62rem; }
+.admin-order-summary > strong { color: #294936; font-size: .8rem; white-space: nowrap; }
+.admin-order-actions { display: grid; grid-template-columns: minmax(160px, 1fr) auto auto; align-items: end; gap: .45rem; padding: .7rem .75rem; border-top: 1px solid #edf0ea; }
+.admin-order-actions label { display: grid; gap: .25rem; color: #65766a; font-size: .62rem; font-weight: 800; }
+.admin-order-actions select { min-height: 38px; min-width: 0; padding: .45rem; border: 1px solid #dfe6dd; border-radius: 6px; background: #fff; font-size: .66rem; }
+.admin-order-actions button { min-height: 38px; padding: .45rem .6rem; border: 0; border-radius: 6px; color: #fff; background: #1f5139; font-size: .62rem; font-weight: 800; }
+.admin-order-actions .admin-cancel-order { color: #8f3932; background: #fff0ed; }
+.admin-order-actions button:disabled, .admin-order-actions select:disabled { opacity: .55; }
+.admin-no-staff { grid-column: 1 / -1; color: #986c42; font-size: .62rem; }
+.admin-assignee { margin: 0; padding: 0 .75rem .7rem; color: #627267; font-size: .62rem; }
+
+@media (max-width: 680px) {
+  .offers-section { padding-top: 1.7rem; }
+  .offers-heading { align-items: flex-start; flex-direction: column; gap: .35rem; }
+  .admin-order-summary { grid-template-columns: 1fr auto; }
+  .admin-order-items { grid-column: 1 / -1; grid-row: 2; }
+  .admin-order-actions { grid-template-columns: 1fr 1fr; }
+  .admin-order-actions label, .admin-no-staff { grid-column: 1 / -1; }
+}
+
 @media (max-width: 900px) {
   .desktop-nav { gap: 1rem; }
   .desktop-nav a { font-size: .7rem; }

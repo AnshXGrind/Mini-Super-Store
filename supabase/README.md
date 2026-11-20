@@ -15,8 +15,13 @@ where user_id = 'YOUR-AUTH-USER-UUID';
 
 Replace the placeholder with the actual UUID. Do not let public registration select the admin or staff role.
 
+To create a staff account, register the person through the customer registration page, copy their Auth user UUID, then use the trusted Supabase SQL Editor to run `update public.user_roles set role = 'staff' where user_id = 'STAFF-AUTH-USER-UUID';`. Never expose role changes through public registration.
+
 7. Apply `migrations/202611200002_store_offers.sql` after the initial migration to enable store offers.
 8. Apply `migrations/202611200003_notifications.sql` to enable device push subscriptions.
+9. Apply `migrations/202611200004_security_workflow_hardening.sql` after the earlier migrations. It explicitly rejects missing/NULL roles in the order-status RPC.
+10. Generate VAPID keys and set `NEXT_PUBLIC_VAPID_PUBLIC_KEY`. A server-side private key and trusted notification sender are still required to deliver push messages.
+11. WhatsApp, SMS, email, monitoring and backups require provider credentials and an operational deployment policy.
 9. Generate VAPID keys and set `NEXT_PUBLIC_VAPID_PUBLIC_KEY`. A server-side private key and a trusted notification worker are still required to send push messages.
 10. WhatsApp, SMS, email, monitoring and backups require provider credentials and an operational deployment policy; the application does not send fabricated success responses for these services.
 
