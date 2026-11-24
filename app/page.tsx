@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Storefront from "@/components/store/Storefront";
 import { createPublicClient } from "@/lib/supabase/public";
+import { DEFAULT_CATEGORIES, DEFAULT_PRODUCTS } from "@/lib/catalogue-data";
 
 export const revalidate = 60;
 
@@ -20,13 +21,20 @@ export type PublicCategory = {
 export type PublicProduct = {
   id: string;
   category_id: string | null;
+  sku?: string | null;
   name: string;
   name_hi: string | null;
+  brand?: string | null;
+  subcategory?: string | null;
+  pack_size?: string | null;
   description: string | null;
   description_hi: string | null;
   price: number | null;
+  mrp?: number | null;
   stock_status: "available" | "limited" | "out_of_stock";
   image_url: string | null;
+  category_slug?: string | null;
+  category_name?: string | null;
 };
 
 export type PublicOffer = {
@@ -76,7 +84,7 @@ export default async function HomePage() {
           .order("sort_order", { ascending: true }),
         supabase
           .from("products")
-          .select("id, category_id, name, name_hi, description, description_hi, price, stock_status, image_url")
+          .select("id, category_id, sku, name, name_hi, brand, subcategory, unit, mrp, description, description_hi, price, stock_status, image_url")
           .eq("is_published", true)
           .order("sort_order", { ascending: true }),
         supabase
@@ -87,31 +95,53 @@ export default async function HomePage() {
       ]);
       if (categoryResult.error) throw categoryResult.error;
       if (productResult.error) throw productResult.error;
+
       categories = (categoryResult.data ?? []) as PublicCategory[];
-      products = (productResult.data ?? []).map((product) => ({
-        ...product,
-        price: product.price === null ? null : Number(product.price),
-      })) as PublicProduct[];
+
+      const catMap = new Map(categories.map((c) => [c.id, c]));
+      products = (productResult.data ?? []).map((product) => {
+        const cat = product.category_id ? catMap.get(product.category_id) : undefined;
+        return {
+          id: product.id,
+          category_id: product.category_id,
+          sku: product.sku ?? null,
+          name: product.name,
+          name_hi: product.name_hi ?? null,
+          brand: product.brand ?? null,
+          subcategory: product.subcategory ?? null,
+          pack_size: product.unit ?? null,
+          description: product.description ?? null,
+          description_hi: product.description_hi ?? null,
+          price: product.price === null ? null : Number(product.price),
+          mrp: product.mrp === null ? null : Number(product.mrp),
+          stock_status: product.stock_status,
+          image_url: product.image_url ?? null,
+          category_slug: cat?.slug ?? null,
+          category_name: cat?.name ?? null,
+        };
+      }) as PublicProduct[];
 
       // Offers are optional until the offers migration is applied; their failure
-      // must never hide a working public product catalogue. The public-read RLS
-      // policy applies starts_at / ends_at using PostgreSQL now(), avoiding impure
-      // render-time clock reads and client/server clock differences.
+      // must never hide a working public product catalogue.
       offers = (offerResult.data ?? []) as PublicOffer[];
     } catch (err) {
       // Distinguish "not configured" from a real Supabase error.
       const msg = err instanceof Error ? err.message : "Unknown error";
       if (msg.includes("Supabase is not configured")) {
-        supabaseError = null; // let the page render empty; login/orders will also warn
+        supabaseError = null;
       } else {
         supabaseError = msg;
       }
-      categories = [];
-      products = [];
-      offers = [];
     }
-  } else {
-    supabaseError = "Supabase is not configured. Copy .env.example to .env.local and add your Supabase Project URL and Publishable key.";
+  }
+
+  // Graceful fallback to full store catalogue template when database is empty
+  // or before seed migration is executed.
+  if (categories.length === 0) {
+    categories = DEFAULT_CATEGORIES as PublicCategory[];
+  }
+  if (products.length === 0) {
+    products = DEFAULT_PRODUCTS as unknown as PublicProduct[];
   }
 
   return (

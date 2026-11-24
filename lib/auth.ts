@@ -20,26 +20,54 @@ export async function getCurrentStoreUserResult(): Promise<CurrentStoreUserResul
   let supabase;
   try {
     supabase = await createClient();
-  } catch {
+  } catch (error: unknown) {
+    if (
+      error &&
+      typeof error === "object" &&
+      ("digest" in error && error.digest === "DYNAMIC_SERVER_USAGE" ||
+       "message" in error && typeof error.message === "string" && error.message.includes("Dynamic server usage"))
+    ) {
+      throw error;
+    }
+    console.error("[auth] Failed to initialize Supabase server client:", error);
     return { status: "unavailable" };
   }
 
-  let claims;
+  let claims: Record<string, unknown> | null = null;
   try {
     const result = await supabase.auth.getClaims();
     if (result.error) {
+      console.error("[auth] supabase.auth.getClaims returned error:", result.error);
       return isTemporaryAuthFailure(result.error)
         ? { status: "unavailable" }
         : { status: "unauthenticated" };
     }
-    claims = result.data?.claims;
+    claims = (result.data?.claims as Record<string, unknown>) ?? null;
   } catch (error) {
+    console.error("[auth] supabase.auth.getClaims threw error:", error);
     return isTemporaryAuthFailure(error)
       ? { status: "unavailable" }
       : { status: "unauthenticated" };
   }
 
-  if (!claims || typeof claims.sub !== "string") {
+  let userId: string | null = typeof claims?.sub === "string" ? claims.sub : null;
+  let userEmail: string | null = typeof claims?.email === "string" ? claims.email : null;
+
+  if (!userId) {
+    try {
+      const userRes = await supabase.auth.getUser();
+      if (userRes.data?.user) {
+        userId = userRes.data.user.id;
+        userEmail = userRes.data.user.email ?? null;
+      } else if (userRes.error) {
+        console.warn("[auth] supabase.auth.getUser fallback returned error:", userRes.error.message);
+      }
+    } catch (error) {
+      console.warn("[auth] supabase.auth.getUser fallback threw error:", error);
+    }
+  }
+
+  if (!userId) {
     return { status: "unauthenticated" };
   }
 
@@ -48,23 +76,28 @@ export async function getCurrentStoreUserResult(): Promise<CurrentStoreUserResul
     const result = await supabase
       .from("user_roles")
       .select("role")
-      .eq("user_id", claims.sub)
+      .eq("user_id", userId)
       .maybeSingle();
-    if (result.error) return { status: "unavailable" };
+    if (result.error) {
+      console.error(`[auth] Query to public.user_roles failed for user ${userId}:`, result.error);
+      return { status: "unavailable" };
+    }
     roleRow = result.data;
-  } catch {
+  } catch (error) {
+    console.error(`[auth] Query to public.user_roles threw error for user ${userId}:`, error);
     return { status: "unavailable" };
   }
 
   if (!roleRow || !["customer", "staff", "admin"].includes(roleRow.role)) {
+    console.warn(`[auth] User ${userId} has missing or invalid role in public.user_roles:`, roleRow);
     return { status: "invalid-role" };
   }
 
   return {
     status: "authenticated",
     user: {
-      id: claims.sub,
-      email: typeof claims.email === "string" ? claims.email : null,
+      id: userId,
+      email: userEmail,
       role: roleRow.role as StoreRole,
     },
   };

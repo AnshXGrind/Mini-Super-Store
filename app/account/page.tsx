@@ -6,6 +6,8 @@ import { requireStoreRole } from "@/lib/auth";
 import { createClient } from "@/lib/supabase/server";
 import NotificationSettings from "@/components/account/NotificationSettings";
 
+export const dynamic = "force-dynamic";
+
 export const metadata: Metadata = {
   title: "My account | Mini Super Store",
   robots: { index: false, follow: false },

@@ -635,3 +635,126 @@ button { cursor: pointer; }
 @media (min-width: 681px) {
   .install-prompt { bottom: 18px; }
 }
+
+/* Enhanced product card metadata and subcategory filter pills */
+.subcategory-filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+.subcategory-chip {
+  min-height: 28px;
+  padding: 0.25rem 0.65rem;
+  border: 1px solid #dce4d9;
+  border-radius: 999px;
+  color: #556a5c;
+  background: #f7faf5;
+  font-size: 0.62rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.subcategory-chip:hover {
+  background: #ebf3e7;
+  color: #1f5139;
+  border-color: #bcd4b7;
+}
+.subcategory-chip.active {
+  background: #1f5139;
+  color: #ffffff;
+  border-color: #1f5139;
+}
+.product-badge-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.4rem;
+  margin-bottom: 0.35rem;
+}
+.product-sku-tag {
+  font-size: 0.55rem;
+  font-weight: 700;
+  color: #7b8b7f;
+  background: #f0f3ed;
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+  letter-spacing: 0.04em;
+}
+.product-pack-tag {
+  display: inline-block;
+  font-size: 0.58rem;
+  font-weight: 700;
+  color: #2b6140;
+  background: #eef6ec;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  margin-top: 0.3rem;
+  width: fit-content;
+}
+.product-subcat-label {
+  font-size: 0.62rem;
+  color: #8c9b90;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0 0 0.2rem;
+}
+.product-mrp-strike {
+  text-decoration: line-through;
+  color: #9aa79d;
+  font-size: 0.72rem;
+  margin-left: 0.35rem;
+  font-weight: normal;
+}
+.whatsapp-order-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+  min-height: 36px;
+  padding: 0.5rem 0.65rem;
+  border: 1px solid #25D366;
+  border-radius: 5px;
+  color: #075e24;
+  background: #eefdf2;
+  font-size: 0.65rem;
+  font-weight: 800;
+  text-decoration: none;
+  transition: all 0.15s ease;
+}
+.whatsapp-order-btn:hover {
+  background: #25D366;
+  color: #fff;
+}
+.load-more-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px dashed #dbe2d7;
+  text-align: center;
+}
+.load-more-btn {
+  min-height: 40px;
+  padding: 0.6rem 1.4rem;
+  border: 1px solid #1f5139;
+  border-radius: 6px;
+  color: #1f5139;
+  background: #fff;
+  font-size: 0.72rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.load-more-btn:hover {
+  background: #1f5139;
+  color: #fff;
+}
+.load-more-status {
+  color: #7b8b7f;
+  font-size: 0.68rem;
+}
