@@ -47,7 +47,9 @@ export default function ShoppingCart({
       if (saved) {
         const parsed = JSON.parse(saved);
         if (parsed && typeof parsed === "object") {
-          setCustomer((prev) => ({ ...prev, ...parsed }));
+          queueMicrotask(() => {
+            setCustomer((prev) => ({ ...prev, ...parsed }));
+          });
         }
       }
     } catch {

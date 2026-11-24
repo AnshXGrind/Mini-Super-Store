@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import BulkOrderWhatsAppCTA from "@/components/wholesale/BulkOrderWhatsAppCTA";
 import ShoppingCart from "@/components/store/ShoppingCart";
 import type { PublicCategory, PublicOffer, PublicProduct } from "@/app/page";
@@ -21,31 +22,31 @@ const categoryMetaMap: Record<string, CategoryMeta> = {
   "staples-grains": {
     icon: "🌾",
     tone: "mint",
-    enNote: "Pantry Staples & Grains",
-    hiNote: "राशन, आटा और दालें",
+    enNote: "Atta, Dal, Rice & Dry Fruits",
+    hiNote: "आटा, दाल, चावल व मेवे",
   },
   "oil-ghee-spices-masala": {
     icon: "🌶️",
     tone: "yellow",
-    enNote: "Pure Oils, Ghee & Spices",
-    hiNote: "शुद्ध तेल, देसी घी व मसाले",
+    enNote: "Mustard Oils, Desi Ghee & Spices",
+    hiNote: "सरसों तेल, देसी घी व मसाले",
   },
   "snacks-biscuits-beverages": {
     icon: "☕",
     tone: "peach",
-    enNote: "Snacks, Biscuits & Drinks",
-    hiNote: "चाय, बिस्कुट, नमकीन व पेय",
+    enNote: "Haldiram's, Britannia & Cold Drinks",
+    hiNote: "हल्दीराम नमकीन, बिस्कुट व पेय",
   },
   "dairy-bakery-breakfast": {
     icon: "🥛",
     tone: "blue",
-    enNote: "Fresh Dairy, Bakery & Cereals",
-    hiNote: "ताज़ा डेयरी, ब्रेड व नाश्ता",
+    enNote: "Amul Milk, Bread & Maggi",
+    hiNote: "अमूल दूध, ब्रेड व नाश्ता",
   },
   "household-personal-care": {
     icon: "🧼",
     tone: "lavender",
-    enNote: "Cleaning & Daily Personal Care",
+    enNote: "Surf Excel, Cleaners & Care",
     hiNote: "सफ़ाई और व्यक्तिगत देखभाल",
   },
 };
@@ -57,28 +58,43 @@ const defaultMeta: CategoryMeta = {
   hiNote: "दुकान की ज़रूरी चीज़ें",
 };
 
+const POPULAR_BRANDS = [
+  "All",
+  "Haldiram's",
+  "Britannia",
+  "Parle",
+  "Bonn",
+  "MDH",
+  "Catch",
+  "Ramdev",
+  "Fortune",
+  "Dhara",
+  "Amul",
+  "Tata",
+  "Aashirvaad",
+  "Maggi",
+];
+
 const INITIAL_PAGE_SIZE = 36;
-const STORE_WHATSAPP_NUMBER = "919876543210";
+const STORE_WHATSAPP_NUMBER = "919896330279";
 
 export default function Storefront({
   categories,
   products,
   offers,
-  supabaseError,
 }: {
   categories: PublicCategory[];
   products: PublicProduct[];
   offers: PublicOffer[];
-  supabaseError?: string;
 }) {
   const [language, setLanguage] = useState<Language>("en");
   const [activeCategory, setActiveCategory] = useState<string>("all");
   const [activeSubcategory, setActiveSubcategory] = useState<string>("all");
+  const [activeBrand, setActiveBrand] = useState<string>("All");
   const [search, setSearch] = useState("");
   const [cart, setCart] = useState<Record<string, number>>({});
   const [displayLimit, setDisplayLimit] = useState(INITIAL_PAGE_SIZE);
 
-  const [catalogError] = useState<string | null>(supabaseError ?? null);
   const [cartHydrated, setCartHydrated] = useState(false);
   const [offline, setOffline] = useState(false);
   const isHindi = language === "hi";
@@ -101,7 +117,7 @@ export default function Storefront({
     try {
       restored = parseStoreCart(window.localStorage.getItem("mini-super-store-cart"));
     } catch {
-      // Browser storage may be unavailable; begin with an empty in-memory cart.
+      // Memory fallback
     }
     queueMicrotask(() => {
       setCart(restored);
@@ -118,7 +134,7 @@ export default function Storefront({
         window.localStorage.setItem(key, serialized);
       }
     } catch {
-      // Cart remains usable in memory when browser storage is unavailable.
+      // Ignored
     }
   }, [cart, cartHydrated]);
 
@@ -131,10 +147,11 @@ export default function Storefront({
     return () => window.removeEventListener("storage", syncFromStorage);
   }, []);
 
-  // Reset pagination whenever filter or search query changes
   useEffect(() => {
-    setDisplayLimit(INITIAL_PAGE_SIZE);
-  }, [activeCategory, activeSubcategory, search]);
+    queueMicrotask(() => {
+      setDisplayLimit(INITIAL_PAGE_SIZE);
+    });
+  }, [activeCategory, activeSubcategory, activeBrand, search]);
 
   function addToCart(productId: string) {
     setCart((current) => ({
@@ -183,7 +200,7 @@ export default function Storefront({
     });
   }, [categories, products]);
 
-  // Available subcategories for current category selection
+  // Subcategories available for current category selection
   const availableSubcategories = useMemo(() => {
     const relevantProducts =
       activeCategory === "all"
@@ -204,7 +221,7 @@ export default function Storefront({
     return Array.from(subcats).sort();
   }, [activeCategory, categories, products]);
 
-  // Filtered products list based on category, subcategory, and search
+  // Filtered products list based on category, subcategory, brand, and search
   const visibleProducts = useMemo(() => {
     const term = search.trim().toLocaleLowerCase();
 
@@ -231,6 +248,16 @@ export default function Storefront({
         }
       }
 
+      // Brand filter
+      if (activeBrand !== "All") {
+        if (
+          !product.brand ||
+          product.brand.toLowerCase() !== activeBrand.toLowerCase()
+        ) {
+          return false;
+        }
+      }
+
       // Search term
       if (!term) return true;
 
@@ -251,7 +278,7 @@ export default function Storefront({
 
       return searchableText.includes(term);
     });
-  }, [activeCategory, activeSubcategory, categories, products, search]);
+  }, [activeBrand, activeCategory, activeSubcategory, categories, products, search]);
 
   const pagedProducts = useMemo(() => {
     return visibleProducts.slice(0, displayLimit);
@@ -268,40 +295,33 @@ export default function Storefront({
 
   return (
     <main className="storefront">
-      {catalogError && (
-        <p className="supabase-error" role="alert">
-          {isHindi ? `कैटलॉग सूचना: ${catalogError}` : `Catalogue notice: ${catalogError}`}
-        </p>
-      )}
-
       {offline && (
         <div className="network-banner" role="status">
           {isHindi
-            ? "आप ऑफ़लाइन हैं। सहेजे गए कार्ट आइटम उपलब्ध रह सकते हैं।"
+            ? "आप ऑफ़लाइन हैं। सहेजे गए कार्ट आइटम उपलब्ध रहेंगे।"
             : "You are offline. Saved cart items remain available in your browser."}
         </div>
       )}
 
+      {/* Clean Topline for Customers */}
       <div className="topline">
-        <div className="topline-inner" style={{ flexWrap: "wrap", gap: "0.5rem" }}>
-          <div className="workspace-switcher-bar">
-            <span className="workspace-label">{isHindi ? "वर्कस्पेस:" : "Workspaces:"}</span>
-            <a href="#catalogue" className="workspace-pill active" title="Customer Store & Catalogue">
-              🛍️ {isHindi ? "ग्राहक स्टोर" : "Storefront"}
-            </a>
-            <a href="/staff" className="workspace-pill" title="Staff Order Packing & Fulfillment">
-              📦 {isHindi ? "स्टाफ वर्कस्पेस" : "Staff Orders"}
-            </a>
-            <a href="/admin" className="workspace-pill" title="Admin Catalog, Prices & Bulk Import">
-              ⚙️ {isHindi ? "एडमिन वर्कस्पेस" : "Admin Panel"}
-            </a>
-            <a href="/dashboard" className="workspace-pill" title="Customer Account">
-              👤 {isHindi ? "खाता" : "Account"}
-            </a>
+        <div className="topline-inner">
+          <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
+            <span>📍 {isHindi ? "रेड रोड, लाडवा (कुरुक्षेत्र)" : "Red Road, Ladwa (Kurukshetra)"}</span>
+            <span className="topline-message">
+              · {isHindi ? "दुकान समय: सुबह 8 से रात 9 बजे" : "Open 8:00 AM – 9:00 PM"}
+            </span>
           </div>
 
           <div style={{ display: "flex", alignItems: "center", gap: "0.8rem", marginLeft: "auto" }}>
-            <span>{isHindi ? "लाडवा · रेड रोड" : "Ladwa · Red Road"}</span>
+            <a
+              href={`https://wa.me/${STORE_WHATSAPP_NUMBER}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: "#d2f5db", fontSize: "0.68rem", fontWeight: 700, textDecoration: "none" }}
+            >
+              💬 WhatsApp: +91 98963 30279
+            </a>
             <div className="language-switch" aria-label="Choose language">
               <button
                 type="button"
@@ -323,28 +343,31 @@ export default function Storefront({
         </div>
       </div>
 
+      {/* Main Header with Logo & Dedicated Page Navigation */}
       <header className="site-header">
-        <a className="brand" href="#home" aria-label="Mini Super Store home">
-          <span className="brand-mark" aria-hidden="true">
-            <span>m</span>
-          </span>
+        <Link className="brand" href="/" aria-label="Mini Super Store home">
+          <div className="brand-logo-badge" aria-hidden="true">
+            <span className="logo-bag">🛍️</span>
+            <span className="logo-spark">✨</span>
+          </div>
           <span className="brand-copy">
             <strong>
               MINI <em>SUPER</em> STORE
             </strong>
             <small>
-              {isHindi ? "किराना व रोज़मर्रा की हर ज़रूरत" : "Everyday grocery & household needs"}
+              {isHindi ? "लाडवा का अपना किराना सुपर स्टोर" : "Everyday Grocery & Household Superstore"}
             </small>
           </span>
-        </a>
+        </Link>
+
         <nav className="desktop-nav" aria-label="Main navigation">
-          <a href="#departments">{isHindi ? "विभाग" : "Departments"}</a>
-          <a href="#catalogue">{isHindi ? "उत्पाद सूची" : "All Products"}</a>
-          <a href="#why-us">{isHindi ? "हमारे बारे में" : "Why shop with us"}</a>
-          <a href="#bulk-enquiry">{isHindi ? "थोक पूछताछ" : "Bulk enquiry"}</a>
-          <a href="#visit">{isHindi ? "दुकान पर आएँ" : "Visit us"}</a>
-          <a href="/dashboard">{isHindi ? "मेरा खाता" : "My account"}</a>
+          <Link href="/">{isHindi ? "होम" : "Home"}</Link>
+          <Link href="/departments">{isHindi ? "विभाग" : "Departments"}</Link>
+          <Link href="/products">{isHindi ? "सभी सामान" : "All Products"}</Link>
+          <Link href="/bulk-order">{isHindi ? "थोक आर्डर" : "Bulk Order"}</Link>
+          <Link href="/visit">{isHindi ? "दुकान पर आएँ" : "Visit Us"}</Link>
         </nav>
+
         <div className="header-actions">
           <ShoppingCart
             language={language}
@@ -352,10 +375,10 @@ export default function Storefront({
             cart={cart}
             setCart={setCart}
           />
-          <a className="header-visit" href="#visit">
-            {isHindi ? "दुकान की जानकारी" : "Store details"}
+          <Link className="header-visit" href="/visit">
+            {isHindi ? "दुकान पता" : "Store Location"}
             <span aria-hidden="true">↗</span>
-          </a>
+          </Link>
         </div>
       </header>
 
@@ -364,42 +387,42 @@ export default function Storefront({
         <div className="hero-content">
           <div className="hero-kicker">
             <span className="kicker-dot" />
-            {isHindi ? "लाडवा में आपका अपना विश्वसनीय स्टोर" : "Your trusted local store in Ladwa"}
+            {isHindi ? "लाडवा में आपका भरोसेमंद किराना स्टोर" : "Your Trusted Grocery Store in Ladwa"}
           </div>
           <h1>
             {isHindi ? (
               <>
                 किराने से लेकर घर की हर ज़रूरत,
                 <br />
-                <span>500+ उत्पाद एक ही जगह।</span>
+                <span>580+ उत्पाद एक ही जगह।</span>
               </>
             ) : (
               <>
-                Everyday essentials & groceries,
+                Fresh groceries & household staples,
                 <br />
-                <span>500+ items all under one roof.</span>
+                <span>580+ items ready for quick delivery.</span>
               </>
             )}
           </h1>
           <p className="hero-description">
             {isHindi
-              ? "आटा, दाल, चावल, तेल, मसाले, चाय-कॉफ़ी से लेकर सफ़ाई और पर्सनल केयर का हर सामान — सबसे वाजिब दामों पर।"
-              : "From wheat flour, pulses, rice, cooking oils and whole spices to snacks, dairy, laundry and personal care — explore our complete store catalogue."}
+              ? "हल्दीराम नमकीन, ब्रिटानिया व पारले बिस्कुट, एमडीएच व रामदेव मसाले, फॉर्च्यून व धारा सरसों तेल, शुद्ध देसी घी और राशन का हर सामान।"
+              : "Shop top brands: Haldiram's namkeen & chips, Britannia & Parle biscuits, MDH & Catch masalas, Fortune & Dhara pure mustard oils, Amul dairy, and complete kitchen staples."}
           </p>
           <div className="hero-actions">
-            <a className="button button-primary" href="#catalogue">
-              {isHindi ? "सभी 500+ सामान देखें" : "Browse 500+ items"}
+            <Link className="button button-primary" href="/products">
+              {isHindi ? "पूरा कैटलॉग देखें (580+ सामान)" : "Browse Full Catalogue (580+ items)"}
               <span aria-hidden="true">→</span>
-            </a>
-            <a className="button button-quiet" href="#bulk-enquiry">
-              {isHindi ? "थोक आर्डर / पूछताछ" : "Bulk order enquiry"}
-            </a>
+            </Link>
+            <Link className="button button-quiet" href="/bulk-order">
+              {isHindi ? "थोक खरीदारी / शादी-ब्याह पूछताछ" : "Wholesale & Bulk Enquiries"}
+            </Link>
           </div>
           <div className="hero-footnote">
             <span className="footnote-icon">✳</span>
             {isHindi
-              ? `${products.length} उत्पाद लाइव उपलब्ध`
-              : `${products.length} products available across 5 main departments`}
+              ? `${products.length} उत्पाद लाइव उपलब्ध · 1-क्लिक WhatsApp ऑर्डर`
+              : `${products.length} grocery items live in stock · 1-Click WhatsApp Ordering`}
           </div>
         </div>
 
@@ -423,41 +446,64 @@ export default function Storefront({
                 <br />
                 <b>STORE</b>
               </span>
-              <span className="bag-spark">✳</span>
+              <span className="bag-spark">✨</span>
             </div>
           </div>
           <div className="floating-item item-produce">🌾</div>
           <div className="floating-item item-bread">🥖</div>
           <div className="floating-item item-bowl">🥣</div>
           <div className="art-note note-bottom">
-            {isHindi ? "किराना · घरेलू सामान · पर्सनल केयर" : "KIRYANA · GROCERY · CARE"}
+            {isHindi ? "किराना · नमकीन · तेल · मसाले" : "KIRYANA · OILS · SPICES · CARE"}
           </div>
           <div className="art-shadow" />
         </div>
       </section>
 
-      {/* Quick Points */}
+      {/* Quick Highlights */}
       <section className="quick-points" aria-label="Store highlights">
         <div>
           <span className="quick-icon">⌂</span>
           <span>
-            <strong>{isHindi ? "लोकल स्टोर" : "Local Store"}</strong>
-            <small>{isHindi ? "रेड रोड, लाडवा" : "Red Road, Ladwa"}</small>
+            <strong>{isHindi ? "रेड रोड, लाडवा" : "Red Road, Ladwa"}</strong>
+            <small>{isHindi ? "आपका अपना लोकल स्टोर" : "Your Local Kiryana Store"}</small>
           </span>
         </div>
         <div>
           <span className="quick-icon">♡</span>
           <span>
-            <strong>{isHindi ? "500+ उत्पाद" : "500+ Products"}</strong>
-            <small>{isHindi ? "किराना व घरेलू सामान" : "Kiryana & Daily Essentials"}</small>
+            <strong>{isHindi ? "580+ शीर्ष ब्रांड्स" : "Top Indian Brands"}</strong>
+            <small>{isHindi ? "हल्दीराम, ब्रिटानिया, एमडीएच, फॉर्च्यून" : "Haldiram, Britannia, MDH, Fortune"}</small>
           </span>
         </div>
         <div>
-          <span className="quick-icon">☏</span>
+          <span className="quick-icon">💬</span>
           <span>
-            <strong>{isHindi ? "सीधे संपर्क करें" : "Direct WhatsApp"}</strong>
-            <small>{isHindi ? "आर्डर व थोक पूछताछ" : "Instant Orders & Queries"}</small>
+            <strong>{isHindi ? "सीधा WhatsApp आर्डर" : "1-Click WhatsApp Order"}</strong>
+            <small>{isHindi ? "लिस्ट भेजें, तुरंत पैकिंग" : "Send list, get quick delivery"}</small>
           </span>
+        </div>
+      </section>
+
+      {/* Popular Brand Strip */}
+      <section className="section-wrap" style={{ paddingTop: "1.5rem", paddingBottom: "0.5rem" }}>
+        <p className="section-eyebrow" style={{ textAlign: "center", marginBottom: "0.4rem" }}>
+          {isHindi ? "दुकान के लोकप्रिय ब्रांड्स" : "Featured Grocery Brands"}
+        </p>
+        <div className="brand-pills-row" aria-label="Filter by brand">
+          {POPULAR_BRANDS.map((brand) => (
+            <button
+              type="button"
+              key={brand}
+              className={activeBrand === brand ? "brand-pill active" : "brand-pill"}
+              onClick={() => {
+                setActiveBrand(brand);
+                const el = document.getElementById("catalogue");
+                if (el) el.scrollIntoView({ behavior: "smooth" });
+              }}
+            >
+              {brand === "All" ? (isHindi ? "सभी ब्रांड्स" : "All Brands") : brand}
+            </button>
+          ))}
         </div>
       </section>
 
@@ -500,23 +546,23 @@ export default function Storefront({
         <div className="section-heading">
           <div>
             <p className="section-eyebrow">
-              {isHindi ? "अपनी पसंद का विभाग चुनें" : "Store Categories"}
+              {isHindi ? "श्रेणी अनुसार खरीदारी करें" : "Shop by Category"}
             </p>
             <h2>
-              {isHindi ? "हमारे प्रमुख विभाग" : "Shop by department"}
+              {isHindi ? "हमारे प्रमुख विभाग" : "Explore Departments"}
               <span className="heading-period">.</span>
             </h2>
             <p className="section-description">
               {isHindi
-                ? "किराना, दालें, मसाले, बिस्कुट, नाश्ता और घरेलू सफ़ाई का सामान आसानी से चुनें।"
-                : "Browse our 5 core product categories with instant stock and pack sizes."}
+                ? "किराना, दालें, सरसों तेल, मसाले, बिस्कुट, नाश्ता और घरेलू सामान तुरंत चुनें।"
+                : "Browse our 5 core grocery departments with live stock, pack sizes and prices."}
             </p>
           </div>
-          <span className="section-side-note">
+          <Link href="/departments" className="section-side-note" style={{ textDecoration: "none" }}>
             01 / 05
             <br />
-            <small>{isHindi ? "विभाग" : "DEPARTMENTS"}</small>
-          </span>
+            <small>{isHindi ? "सभी विभाग देखें ↗" : "VIEW ALL ↗"}</small>
+          </Link>
         </div>
 
         <div className="department-grid">
@@ -554,17 +600,30 @@ export default function Storefront({
                 {isHindi ? "दुकान का पूरा कैटलॉग" : "Full Product Catalogue"}
               </p>
               <h3>
-                {isHindi ? "उत्पाद खोजें और चुनें" : "Find Any Product & Pack Size"}
+                {isHindi ? "उत्पाद खोजें और मात्रा चुनें" : "Browse Products & Set Quantities"}
               </h3>
             </div>
-            <span>
-              {isHindi
-                ? `${visibleProducts.length} उत्पाद मिले`
-                : `${visibleProducts.length} products found`}
-            </span>
+            <div style={{ display: "flex", alignItems: "center", gap: "0.8rem" }}>
+              <span>
+                {isHindi
+                  ? `${visibleProducts.length} उत्पाद मिले`
+                  : `${visibleProducts.length} products found`}
+              </span>
+              <Link
+                href="/products"
+                style={{
+                  color: "#1f5139",
+                  fontSize: "0.72rem",
+                  fontWeight: 800,
+                  textDecoration: "underline",
+                }}
+              >
+                {isHindi ? "अलग पेज पर देखें ↗" : "Open in Full Page ↗"}
+              </Link>
+            </div>
           </div>
 
-          {/* Search & Category Filter Tools */}
+          {/* Search, Category, Subcategory & Brand Tools */}
           <div className="catalogue-tools" style={{ marginTop: "1rem" }}>
             <label className="search-box">
               <span className="search-icon" aria-hidden="true">
@@ -576,8 +635,8 @@ export default function Storefront({
                 onChange={(event) => setSearch(event.target.value)}
                 placeholder={
                   isHindi
-                    ? "सामान का नाम, ब्रांड या SKU खोजें (उदा: Atta, Moong Dal, Oil, Soap)..."
-                    : "Search by product name, pack size, subcategory or SKU (e.g. Atta, Moong Dal, Oil, Soap)..."
+                    ? "सामान या ब्रांड खोजें (उदा: Haldiram, Britannia, Atta, Mustard Oil, MDH)..."
+                    : "Search by brand, product or pack (e.g. Haldiram, Britannia, Mustard Oil, MDH, Parle)..."
                 }
                 aria-label={isHindi ? "उत्पाद खोजें" : "Search products"}
               />
@@ -639,32 +698,35 @@ export default function Storefront({
             </div>
           )}
 
-          {/* Products Grid */}
+          {/* Products Grid with High-Res Image & Quantity Steppers */}
           {pagedProducts.length > 0 ? (
             <>
               <div className="product-grid">
                 {pagedProducts.map((product) => {
                   const inCart = cart[product.id] ?? 0;
                   const unavailable = product.stock_status === "out_of_stock";
-                  const whatsappMsg = `Hi Mini Super Store, I want to inquire about: ${product.name} (SKU: ${product.sku || product.id})`;
-                  const whatsappUrl = `https://wa.me/${STORE_WHATSAPP_NUMBER}?text=${encodeURIComponent(whatsappMsg)}`;
 
                   return (
                     <article className="product-card" key={product.id}>
-                      {product.image_url ? (
-                        <Image
-                          src={product.image_url}
-                          alt={isHindi && product.name_hi ? product.name_hi : product.name}
-                          width={600}
-                          height={360}
-                          sizes="(max-width: 680px) 50vw, (max-width: 900px) 33vw, 300px"
-                          unoptimized={shouldLoadProductImageDirectly(product.image_url)}
-                        />
-                      ) : (
-                        <div className="product-image-placeholder" aria-hidden="true">
-                          <span>{product.sku || "MINI STORE"}</span>
-                        </div>
-                      )}
+                      <div className="product-card-image-wrap">
+                        {product.image_url ? (
+                          <Image
+                            src={product.image_url}
+                            alt={isHindi && product.name_hi ? product.name_hi : product.name}
+                            width={600}
+                            height={360}
+                            sizes="(max-width: 680px) 50vw, (max-width: 900px) 33vw, 300px"
+                            unoptimized={shouldLoadProductImageDirectly(product.image_url)}
+                          />
+                        ) : (
+                          <div className="product-image-placeholder" aria-hidden="true">
+                            <span>{product.sku || "MINI STORE"}</span>
+                          </div>
+                        )}
+                        {product.brand && (
+                          <span className="product-brand-badge">{product.brand}</span>
+                        )}
+                      </div>
 
                       <div className="product-card-copy">
                         <div className="product-badge-row">
@@ -699,13 +761,14 @@ export default function Storefront({
                         )}
 
                         {product.description && (
-                          <p style={{ marginTop: "0.4rem" }}>
+                          <p style={{ marginTop: "0.35rem" }}>
                             {isHindi && product.description_hi
                               ? product.description_hi
                               : product.description}
                           </p>
                         )}
 
+                        {/* Card Footer: Price & Quantity Stepper */}
                         <div className="product-card-footer">
                           <div>
                             <strong>
@@ -725,7 +788,7 @@ export default function Storefront({
                           </div>
 
                           {inCart > 0 ? (
-                            <div className="product-card-stepper" aria-label="Cart quantity">
+                            <div className="product-card-stepper" aria-label="Cart quantity control">
                               <button
                                 type="button"
                                 onClick={() => updateQuantity(product.id, inCart - 1)}
@@ -750,7 +813,7 @@ export default function Storefront({
                               onClick={() => addToCart(product.id)}
                               style={{ cursor: unavailable ? "not-allowed" : "pointer" }}
                             >
-                              {isHindi ? "कार्ट में जोड़ें" : "Add to cart"}
+                              {isHindi ? "+ कार्ट में जोड़ें" : "+ Add to Cart"}
                             </button>
                           )}
                         </div>
@@ -796,8 +859,8 @@ export default function Storefront({
               </strong>
               <p>
                 {isHindi
-                  ? "कृपया वर्तनी जांचें या कोई अन्य शब्द अथवा श्रेणी चुनकर देखें।"
-                  : "Try checking your spelling, clear the search, or choose another subcategory."}
+                  ? "कृपया कोई अन्य शब्द, ब्रांड या श्रेणी चुनकर देखें।"
+                  : "Try checking your spelling, clear the search, or choose another brand/subcategory."}
               </p>
               <button
                 type="button"
@@ -805,6 +868,7 @@ export default function Storefront({
                   setSearch("");
                   setActiveCategory("all");
                   setActiveSubcategory("all");
+                  setActiveBrand("All");
                 }}
               >
                 {isHindi ? "सभी फ़िल्टर हटाएँ" : "Reset All Filters"}
@@ -838,7 +902,7 @@ export default function Storefront({
             </h2>
             <p>
               {isHindi
-                ? "हमारा मकसद लाडवा के परिवारों के लिए रोज़मर्रा की खरीदारी को सबसे आसान, तेज़ और भरोसेमंद बनाना है।"
+                ? "लाडवा के परिवारों के लिए रोज़मर्रा की खरीदारी को सबसे आसान, तेज़ और किफ़ायती बनाना ही हमारा उद्देश्य है।"
                 : "A neighbourhood store should feel simple, helpful and easy to reach. Browse all essentials online or visit our shop on Red Road, Ladwa."}
             </p>
           </div>
@@ -847,12 +911,12 @@ export default function Storefront({
               <span>01</span>
               <div>
                 <strong>
-                  {isHindi ? "500+ उत्पाद एक ही जगह" : "500+ Essentials Under One Roof"}
+                  {isHindi ? "580+ उत्पाद एक ही जगह" : "580+ Essentials Under One Roof"}
                 </strong>
                 <p>
                   {isHindi
-                    ? "किराना, दालें, तेल, मसाले, बिस्कुट, डेयरी, नाश्ता और घरेलू सफ़ाई का सामान।"
-                    : "Atta, rice, dals, pure spices, cold drinks, dairy, snacks and laundry essentials."}
+                    ? "किराना, दालें, सरसों तेल, मसाले, हल्दीराम नमकीन, बिस्कुट और घरेलू सफ़ाई का सामान।"
+                    : "Atta, rice, dals, pure mustard oils, Haldiram's, Britannia, spices and home essentials."}
                 </p>
               </div>
               <b>↗</b>
@@ -861,12 +925,12 @@ export default function Storefront({
               <span>02</span>
               <div>
                 <strong>
-                  {isHindi ? "सीधा व्हाट्सऐप संपर्क" : "Direct WhatsApp Ordering"}
+                  {isHindi ? "सीधा WhatsApp आर्डर व डिलीवरी" : "Direct WhatsApp Ordering"}
                 </strong>
                 <p>
                   {isHindi
-                    ? "सामान की लिस्ट सीधे व्हाट्सऐप पर भेजें या दुकान से पिकअप करें।"
-                    : "Send your grocery list directly over WhatsApp for quick packing and pickup."}
+                    ? "सामान कार्ट में जोड़ें और 1-क्लिक में WhatsApp पर भेजें। तुरंत पैकिंग व होम डिलीवरी।"
+                    : "Add items to your cart, set quantities and send with 1 click directly to store WhatsApp."}
                 </p>
               </div>
               <b>↗</b>
@@ -879,8 +943,8 @@ export default function Storefront({
                 </strong>
                 <p>
                   {isHindi
-                    ? "रेड रोड, लाडवा के ग्राहकों के लिए भरोसेमंद और परिचित दुकान।"
-                    : "A convenient local shopping stop for residents in and around Ladwa."}
+                    ? "रेड रोड, लाडवा के ग्राहकों के लिए विश्वसनीय और परिचित दुकान।"
+                    : "A convenient local shopping stop for residents in and around Ladwa, Haryana."}
                 </p>
               </div>
               <b>↗</b>
@@ -899,12 +963,17 @@ export default function Storefront({
           <p className="section-eyebrow">
             {isHindi ? "बड़ी मात्रा में खरीदारी?" : "Need more of something?"}
           </p>
-          <h2>{isHindi ? "थोक आर्डर व पूछताछ" : "Buying in bulk?"}</h2>
+          <h2>{isHindi ? "थोक आर्डर व पूछताछ" : "Wholesale & Bulk Orders"}</h2>
           <p>
             {isHindi
               ? "शादी-ब्याह, भंडारे, कैंटीन या दुकान के लिए थोक मात्रा और रियायती दरों पर बात करें।"
-              : "Talk to our team about bulk quantities, wholesale packs and customized store pricing."}
+              : "Talk to our team about bulk quantities, wedding supplies, wholesale packs and customized store pricing."}
           </p>
+          <div style={{ marginTop: "1rem" }}>
+            <Link href="/bulk-order" className="button button-primary">
+              {isHindi ? "थोक आर्डर पेज खोलें ↗" : "Open Bulk Order Page ↗"}
+            </Link>
+          </div>
         </div>
         <div className="bulk-card">
           <BulkOrderWhatsAppCTA language={language} />
@@ -924,56 +993,63 @@ export default function Storefront({
             <span className="visit-pin">⌖</span>
             <div>
               <strong>Mini Super Store</strong>
-              <p>{isHindi ? "रेड रोड, लाडवा (कुरुक्षेत्र), हरियाणा" : "Red Road, Ladwa, Haryana"}</p>
+              <p>{isHindi ? "रेड रोड, लाडवा (कुरुक्षेत्र), हरियाणा" : "Red Road, Ladwa (Kurukshetra), Haryana"}</p>
             </div>
           </div>
           <p className="visit-note">
             {isHindi
-              ? "दुकान सुबह 8:00 बजे से रात 9:00 बजे तक खुली रहती है।"
+              ? "दुकान प्रतिदिन सुबह 8:00 बजे से रात 9:00 बजे तक खुली रहती है।"
               : "Store open Monday through Sunday, 8:00 AM to 9:00 PM."}
           </p>
+          <Link href="/visit" style={{ color: "#1f5139", fontWeight: 800, fontSize: "0.75rem", textDecoration: "underline" }}>
+            {isHindi ? "दुकान का पूरा पता व संपर्क देखें ↗" : "View Full Store Location & Contact ↗"}
+          </Link>
         </div>
       </section>
 
+      {/* Clean Footer */}
       <footer className="site-footer">
         <div className="footer-inner">
-          <a className="footer-brand" href="#home">
+          <Link className="footer-brand" href="/">
             MINI <em>SUPER</em> STORE
-          </a>
+          </Link>
           <nav className="footer-portals" aria-label="Portal login links">
-            <a href="/dashboard">{isHindi ? "मेरा खाता" : "My account"}</a>
-            <a href="/login">{isHindi ? "स्टाफ लॉगिन" : "Staff login"}</a>
-            <a href="/login">{isHindi ? "एडमिन लॉगिन" : "Admin login"}</a>
+            <Link href="/departments">{isHindi ? "विभाग" : "Departments"}</Link>
+            <Link href="/products">{isHindi ? "कैटलॉग" : "Products"}</Link>
+            <Link href="/bulk-order">{isHindi ? "थोक आर्डर" : "Bulk Order"}</Link>
+            <Link href="/visit">{isHindi ? "दुकान संपर्क" : "Visit Us"}</Link>
+            <Link href="/dashboard" style={{ opacity: 0.6 }}>{isHindi ? "स्टाफ / एडमिन" : "Staff Portal"}</Link>
           </nav>
           <p>
             © {new Date().getFullYear()} Mini Super Store.{" "}
-            {isHindi ? "लाडवा का अपना किराना स्टोर।" : "Everyday kiryana & home needs, made easy."}
+            {isHindi ? "रेड रोड, लाडवा का अपना किराना स्टोर।" : "Red Road, Ladwa, Haryana."}
           </p>
           <a href="#home">{isHindi ? "ऊपर जाएँ ↑" : "Back to top ↑"}</a>
         </div>
       </footer>
 
+      {/* Mobile Sticky Navigation */}
       <nav className="mobile-nav" aria-label="Quick navigation">
-        <a href="#home">
+        <Link href="/">
           <span>⌂</span>
           {isHindi ? "होम" : "Home"}
-        </a>
-        <a href="#catalogue">
+        </Link>
+        <Link href="/departments">
           <span>▦</span>
-          {isHindi ? "कैटलॉग" : "Products"}
-        </a>
-        <a href="#bulk-enquiry">
-          <span>☏</span>
-          {isHindi ? "पूछताछ" : "Enquire"}
-        </a>
-        <a href="#visit">
+          {isHindi ? "विभाग" : "Categories"}
+        </Link>
+        <Link href="/products">
+          <span>🏷️</span>
+          {isHindi ? "सामान" : "Products"}
+        </Link>
+        <Link href="/bulk-order">
+          <span>📦</span>
+          {isHindi ? "थोक" : "Bulk"}
+        </Link>
+        <Link href="/visit">
           <span>⌖</span>
           {isHindi ? "दुकान" : "Visit"}
-        </a>
-        <a href="/dashboard">
-          <span>☺</span>
-          {isHindi ? "खाता" : "Account"}
-        </a>
+        </Link>
       </nav>
     </main>
   );

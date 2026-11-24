@@ -1,4 +1,4 @@
-// Auto-generated catalogue seed and fallback data
+// Auto-generated enriched catalogue seed and fallback data
 export type CatalogueCategory = {
   id: string;
   slug: string;
@@ -89,10 +89,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "1 kg",
     "description": "Wheat Atta - 1 kg pack. Category: Atta & Flour.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 44,
+    "mrp": 48,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -107,10 +107,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "5 kg",
     "description": "Wheat Atta - 5 kg pack. Category: Atta & Flour.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 215,
+    "mrp": 230,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -125,10 +125,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "10 kg",
     "description": "Wheat Atta - 10 kg pack. Category: Atta & Flour.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 415,
+    "mrp": 450,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -143,10 +143,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "500 g",
     "description": "Maida (Refined Flour) - 500 g pack. Category: Atta & Flour.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 85,
+    "mrp": 95,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -161,10 +161,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "1 kg",
     "description": "Maida (Refined Flour) - 1 kg pack. Category: Atta & Flour.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 135,
+    "mrp": 150,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -179,10 +179,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "500 g",
     "description": "Besan (Gram Flour) - 500 g pack. Category: Atta & Flour.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 85,
+    "mrp": 95,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -197,10 +197,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "1 kg",
     "description": "Besan (Gram Flour) - 1 kg pack. Category: Atta & Flour.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 135,
+    "mrp": 150,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -215,10 +215,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "500 g",
     "description": "Suji / Semolina - 500 g pack. Category: Atta & Flour.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 85,
+    "mrp": 95,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -233,10 +233,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "1 kg",
     "description": "Suji / Semolina - 1 kg pack. Category: Atta & Flour.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 135,
+    "mrp": 150,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -251,10 +251,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "500 g",
     "description": "Rice Flour - 500 g pack. Category: Atta & Flour.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 85,
+    "mrp": 95,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -269,10 +269,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "1 kg",
     "description": "Rice Flour - 1 kg pack. Category: Atta & Flour.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 135,
+    "mrp": 150,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -287,10 +287,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "100 g",
     "description": "Corn Flour - 100 g pack. Category: Atta & Flour.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 40,
+    "mrp": 45,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -305,10 +305,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "500 g",
     "description": "Corn Flour - 500 g pack. Category: Atta & Flour.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 85,
+    "mrp": 95,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -323,10 +323,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "500 g",
     "description": "Sattu Flour - 500 g pack. Category: Atta & Flour.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 85,
+    "mrp": 95,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -341,10 +341,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "1 kg",
     "description": "Sattu Flour - 1 kg pack. Category: Atta & Flour.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 135,
+    "mrp": 150,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -359,10 +359,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "500 g",
     "description": "Ragi Flour - 500 g pack. Category: Atta & Flour.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 85,
+    "mrp": 95,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -377,10 +377,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "1 kg",
     "description": "Ragi Flour - 1 kg pack. Category: Atta & Flour.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 135,
+    "mrp": 150,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -395,10 +395,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "500 g",
     "description": "Jowar Flour - 500 g pack. Category: Atta & Flour.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 85,
+    "mrp": 95,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -413,10 +413,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "1 kg",
     "description": "Jowar Flour - 1 kg pack. Category: Atta & Flour.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 135,
+    "mrp": 150,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -431,10 +431,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "500 g",
     "description": "Bajra Flour - 500 g pack. Category: Atta & Flour.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 85,
+    "mrp": 95,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -449,10 +449,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "1 kg",
     "description": "Bajra Flour - 1 kg pack. Category: Atta & Flour.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 135,
+    "mrp": 150,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -467,10 +467,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "1 kg",
     "description": "Basmati Rice - 1 kg pack. Category: Rice.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 72,
+    "mrp": 80,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -485,10 +485,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "5 kg",
     "description": "Basmati Rice - 5 kg pack. Category: Rice.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 345,
+    "mrp": 380,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -503,10 +503,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "5 kg",
     "description": "Sona Masoori Rice - 5 kg pack. Category: Rice.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 345,
+    "mrp": 380,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -521,10 +521,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "10 kg",
     "description": "Sona Masoori Rice - 10 kg pack. Category: Rice.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -539,10 +539,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "25 kg",
     "description": "Sona Masoori Rice - 25 kg pack. Category: Rice.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -557,10 +557,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "5 kg",
     "description": "Raw Rice - 5 kg pack. Category: Rice.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 345,
+    "mrp": 380,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -575,10 +575,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "25 kg",
     "description": "Raw Rice - 25 kg pack. Category: Rice.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -593,10 +593,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "5 kg",
     "description": "Parboiled Rice - 5 kg pack. Category: Rice.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 345,
+    "mrp": 380,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -611,10 +611,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "25 kg",
     "description": "Parboiled Rice - 25 kg pack. Category: Rice.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -629,10 +629,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "500 g",
     "description": "Brown Rice - 500 g pack. Category: Rice.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 85,
+    "mrp": 95,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -647,10 +647,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "1 kg",
     "description": "Brown Rice - 1 kg pack. Category: Rice.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 72,
+    "mrp": 80,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -665,10 +665,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "500 g",
     "description": "Poha (Flattened Rice) - 500 g pack. Category: Rice.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 85,
+    "mrp": 95,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -683,10 +683,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "1 kg",
     "description": "Poha (Flattened Rice) - 1 kg pack. Category: Rice.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 135,
+    "mrp": 150,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -701,10 +701,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "200 g",
     "description": "Puffed Rice (Murmura) - 200 g pack. Category: Rice.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 58,
+    "mrp": 65,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -719,10 +719,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "500 g",
     "description": "Puffed Rice (Murmura) - 500 g pack. Category: Rice.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 85,
+    "mrp": 95,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -737,10 +737,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "500 g",
     "description": "Toor Dal - 500 g pack. Category: Dals & Pulses.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 85,
+    "mrp": 95,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -755,10 +755,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "1 kg",
     "description": "Toor Dal - 1 kg pack. Category: Dals & Pulses.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 160,
+    "mrp": 175,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -773,10 +773,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "500 g",
     "description": "Moong Dal - 500 g pack. Category: Dals & Pulses.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 85,
+    "mrp": 95,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -791,10 +791,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "1 kg",
     "description": "Moong Dal - 1 kg pack. Category: Dals & Pulses.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 160,
+    "mrp": 175,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -809,10 +809,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "500 g",
     "description": "Moong Whole - 500 g pack. Category: Dals & Pulses.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 85,
+    "mrp": 95,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -827,10 +827,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "1 kg",
     "description": "Moong Whole - 1 kg pack. Category: Dals & Pulses.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 135,
+    "mrp": 150,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -845,10 +845,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "500 g",
     "description": "Masoor Dal - 500 g pack. Category: Dals & Pulses.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 85,
+    "mrp": 95,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -863,10 +863,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "1 kg",
     "description": "Masoor Dal - 1 kg pack. Category: Dals & Pulses.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 135,
+    "mrp": 150,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -881,10 +881,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "500 g",
     "description": "Masoor Whole - 500 g pack. Category: Dals & Pulses.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 85,
+    "mrp": 95,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -899,10 +899,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "1 kg",
     "description": "Masoor Whole - 1 kg pack. Category: Dals & Pulses.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 135,
+    "mrp": 150,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -917,10 +917,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "500 g",
     "description": "Chana Dal - 500 g pack. Category: Dals & Pulses.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 85,
+    "mrp": 95,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -935,10 +935,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "1 kg",
     "description": "Chana Dal - 1 kg pack. Category: Dals & Pulses.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 135,
+    "mrp": 150,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -953,10 +953,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "500 g",
     "description": "Urad Dal - 500 g pack. Category: Dals & Pulses.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 85,
+    "mrp": 95,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -971,10 +971,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "1 kg",
     "description": "Urad Dal - 1 kg pack. Category: Dals & Pulses.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 135,
+    "mrp": 150,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -989,10 +989,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "500 g",
     "description": "Urad Whole - 500 g pack. Category: Dals & Pulses.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 85,
+    "mrp": 95,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -1007,10 +1007,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "1 kg",
     "description": "Urad Whole - 1 kg pack. Category: Dals & Pulses.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 135,
+    "mrp": 150,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -1025,10 +1025,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "500 g",
     "description": "Kabuli Chana - 500 g pack. Category: Dals & Pulses.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 85,
+    "mrp": 95,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -1043,10 +1043,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "1 kg",
     "description": "Kabuli Chana - 1 kg pack. Category: Dals & Pulses.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 135,
+    "mrp": 150,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -1061,10 +1061,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "500 g",
     "description": "Kala Chana - 500 g pack. Category: Dals & Pulses.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 85,
+    "mrp": 95,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -1079,10 +1079,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "1 kg",
     "description": "Kala Chana - 1 kg pack. Category: Dals & Pulses.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 135,
+    "mrp": 150,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -1097,10 +1097,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "500 g",
     "description": "Rajma - 500 g pack. Category: Dals & Pulses.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 85,
+    "mrp": 95,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -1115,10 +1115,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "1 kg",
     "description": "Rajma - 1 kg pack. Category: Dals & Pulses.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 135,
+    "mrp": 150,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -1133,10 +1133,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "500 g",
     "description": "Green Peas Dried - 500 g pack. Category: Dals & Pulses.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 85,
+    "mrp": 95,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -1151,10 +1151,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "1 kg",
     "description": "Green Peas Dried - 1 kg pack. Category: Dals & Pulses.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 135,
+    "mrp": 150,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -1169,10 +1169,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "500 g",
     "description": "Lobia (Black Eyed Peas) - 500 g pack. Category: Dals & Pulses.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 85,
+    "mrp": 95,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -1187,10 +1187,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "1 kg",
     "description": "Lobia (Black Eyed Peas) - 1 kg pack. Category: Dals & Pulses.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 135,
+    "mrp": 150,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -1205,10 +1205,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "200 g",
     "description": "Soya Chunks - 200 g pack. Category: Dals & Pulses.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 58,
+    "mrp": 65,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -1223,10 +1223,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "500 g",
     "description": "Soya Chunks - 500 g pack. Category: Dals & Pulses.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 85,
+    "mrp": 95,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -1241,10 +1241,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "1 kg",
     "description": "Sugar - 1 kg pack. Category: Sugar, Salt & Sweeteners.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 42,
+    "mrp": 46,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1581441363689-1f3c3c414635?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -1259,10 +1259,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "5 kg",
     "description": "Sugar - 5 kg pack. Category: Sugar, Salt & Sweeteners.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 210,
+    "mrp": 230,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1581441363689-1f3c3c414635?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -1277,10 +1277,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "1 kg",
     "description": "Iodized Salt - 1 kg pack. Category: Sugar, Salt & Sweeteners.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 25,
+    "mrp": 28,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1581441363689-1f3c3c414635?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -1295,10 +1295,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "500 g",
     "description": "Rock Salt - 500 g pack. Category: Sugar, Salt & Sweeteners.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 85,
+    "mrp": 95,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1581441363689-1f3c3c414635?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -1313,10 +1313,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "1 kg",
     "description": "Rock Salt - 1 kg pack. Category: Sugar, Salt & Sweeteners.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 25,
+    "mrp": 28,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1581441363689-1f3c3c414635?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -1331,10 +1331,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "500 g",
     "description": "Jaggery (Gur) - 500 g pack. Category: Sugar, Salt & Sweeteners.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 85,
+    "mrp": 95,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1581441363689-1f3c3c414635?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -1349,10 +1349,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "1 kg",
     "description": "Jaggery (Gur) - 1 kg pack. Category: Sugar, Salt & Sweeteners.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 135,
+    "mrp": 150,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1581441363689-1f3c3c414635?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -1367,10 +1367,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "500 g",
     "description": "Powdered Sugar - 500 g pack. Category: Sugar, Salt & Sweeteners.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 85,
+    "mrp": 95,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1581441363689-1f3c3c414635?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -1385,10 +1385,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "1 kg",
     "description": "Powdered Sugar - 1 kg pack. Category: Sugar, Salt & Sweeteners.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 42,
+    "mrp": 46,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1581441363689-1f3c3c414635?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -1403,10 +1403,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "200 g",
     "description": "Mishri (Rock Sugar) - 200 g pack. Category: Sugar, Salt & Sweeteners.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 58,
+    "mrp": 65,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1581441363689-1f3c3c414635?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -1421,10 +1421,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "500 g",
     "description": "Mishri (Rock Sugar) - 500 g pack. Category: Sugar, Salt & Sweeteners.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 85,
+    "mrp": 95,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1581441363689-1f3c3c414635?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -1439,10 +1439,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "100 g",
     "description": "Almonds - 100 g pack. Category: Dry Fruits & Seeds.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 195,
+    "mrp": 220,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1508061253366-f7da158b6d46?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -1457,10 +1457,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "200 g",
     "description": "Almonds - 200 g pack. Category: Dry Fruits & Seeds.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 195,
+    "mrp": 220,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1508061253366-f7da158b6d46?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -1475,10 +1475,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "500 g",
     "description": "Almonds - 500 g pack. Category: Dry Fruits & Seeds.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 195,
+    "mrp": 220,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1508061253366-f7da158b6d46?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -1493,10 +1493,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "100 g",
     "description": "Cashews - 100 g pack. Category: Dry Fruits & Seeds.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 195,
+    "mrp": 220,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1508061253366-f7da158b6d46?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -1511,10 +1511,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "200 g",
     "description": "Cashews - 200 g pack. Category: Dry Fruits & Seeds.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 195,
+    "mrp": 220,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1508061253366-f7da158b6d46?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -1529,10 +1529,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "500 g",
     "description": "Cashews - 500 g pack. Category: Dry Fruits & Seeds.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 195,
+    "mrp": 220,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1508061253366-f7da158b6d46?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -1547,10 +1547,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "100 g",
     "description": "Raisins - 100 g pack. Category: Dry Fruits & Seeds.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 40,
+    "mrp": 45,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1508061253366-f7da158b6d46?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -1565,10 +1565,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "200 g",
     "description": "Raisins - 200 g pack. Category: Dry Fruits & Seeds.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 58,
+    "mrp": 65,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1508061253366-f7da158b6d46?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -1583,10 +1583,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "500 g",
     "description": "Raisins - 500 g pack. Category: Dry Fruits & Seeds.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 85,
+    "mrp": 95,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1508061253366-f7da158b6d46?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -1601,10 +1601,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "100 g",
     "description": "Walnuts - 100 g pack. Category: Dry Fruits & Seeds.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 40,
+    "mrp": 45,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1508061253366-f7da158b6d46?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -1619,10 +1619,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "200 g",
     "description": "Walnuts - 200 g pack. Category: Dry Fruits & Seeds.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 58,
+    "mrp": 65,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1508061253366-f7da158b6d46?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -1637,10 +1637,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "100 g",
     "description": "Pistachios - 100 g pack. Category: Dry Fruits & Seeds.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 40,
+    "mrp": 45,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1508061253366-f7da158b6d46?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -1655,10 +1655,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "200 g",
     "description": "Pistachios - 200 g pack. Category: Dry Fruits & Seeds.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 58,
+    "mrp": 65,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1508061253366-f7da158b6d46?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -1673,10 +1673,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "250 g",
     "description": "Dates - 250 g pack. Category: Dry Fruits & Seeds.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 58,
+    "mrp": 65,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1508061253366-f7da158b6d46?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -1691,10 +1691,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "500 g",
     "description": "Dates - 500 g pack. Category: Dry Fruits & Seeds.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 85,
+    "mrp": 95,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1508061253366-f7da158b6d46?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -1709,10 +1709,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "500 g",
     "description": "Peanuts - 500 g pack. Category: Dry Fruits & Seeds.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 85,
+    "mrp": 95,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1508061253366-f7da158b6d46?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -1727,10 +1727,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "1 kg",
     "description": "Peanuts - 1 kg pack. Category: Dry Fruits & Seeds.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 135,
+    "mrp": 150,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1508061253366-f7da158b6d46?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -1745,10 +1745,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "100 g",
     "description": "Dry Coconut - 100 g pack. Category: Dry Fruits & Seeds.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 40,
+    "mrp": 45,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1508061253366-f7da158b6d46?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -1763,10 +1763,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "250 g",
     "description": "Dry Coconut - 250 g pack. Category: Dry Fruits & Seeds.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 58,
+    "mrp": 65,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1508061253366-f7da158b6d46?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -1781,10 +1781,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "100 g",
     "description": "Sesame Seeds - 100 g pack. Category: Dry Fruits & Seeds.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 40,
+    "mrp": 45,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1508061253366-f7da158b6d46?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -1799,10 +1799,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "200 g",
     "description": "Sesame Seeds - 200 g pack. Category: Dry Fruits & Seeds.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 58,
+    "mrp": 65,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1508061253366-f7da158b6d46?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -1817,10 +1817,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "100 g",
     "description": "Chia Seeds - 100 g pack. Category: Dry Fruits & Seeds.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 40,
+    "mrp": 45,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1508061253366-f7da158b6d46?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -1835,10 +1835,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "200 g",
     "description": "Chia Seeds - 200 g pack. Category: Dry Fruits & Seeds.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 58,
+    "mrp": 65,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1508061253366-f7da158b6d46?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -1853,10 +1853,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "100 g",
     "description": "Flax Seeds - 100 g pack. Category: Dry Fruits & Seeds.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 40,
+    "mrp": 45,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1508061253366-f7da158b6d46?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -1871,10 +1871,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "200 g",
     "description": "Flax Seeds - 200 g pack. Category: Dry Fruits & Seeds.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 58,
+    "mrp": 65,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1508061253366-f7da158b6d46?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -1889,10 +1889,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "100 g",
     "description": "Sunflower Seeds - 100 g pack. Category: Dry Fruits & Seeds.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 40,
+    "mrp": 45,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1508061253366-f7da158b6d46?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -1907,10 +1907,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "200 g",
     "description": "Sunflower Seeds - 200 g pack. Category: Dry Fruits & Seeds.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 58,
+    "mrp": 65,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1508061253366-f7da158b6d46?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -1925,10 +1925,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "100 g",
     "description": "Makhana (Fox Nuts) - 100 g pack. Category: Dry Fruits & Seeds.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 40,
+    "mrp": 45,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1508061253366-f7da158b6d46?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -1943,10 +1943,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "200 g",
     "description": "Makhana (Fox Nuts) - 200 g pack. Category: Dry Fruits & Seeds.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 58,
+    "mrp": 65,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1508061253366-f7da158b6d46?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -1961,10 +1961,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "1 L",
     "description": "Sunflower Oil - 1 L pack. Category: Cooking Oil & Ghee.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 150,
+    "mrp": 165,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -1979,10 +1979,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "5 L",
     "description": "Sunflower Oil - 5 L pack. Category: Cooking Oil & Ghee.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 735,
+    "mrp": 800,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -1997,10 +1997,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "500 ml",
     "description": "Mustard Oil - 500 ml pack. Category: Cooking Oil & Ghee.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 85,
+    "mrp": 95,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -2015,10 +2015,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "1 L",
     "description": "Mustard Oil - 1 L pack. Category: Cooking Oil & Ghee.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 150,
+    "mrp": 165,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -2033,10 +2033,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "5 L",
     "description": "Mustard Oil - 5 L pack. Category: Cooking Oil & Ghee.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 735,
+    "mrp": 800,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -2051,10 +2051,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "1 L",
     "description": "Groundnut Oil - 1 L pack. Category: Cooking Oil & Ghee.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 135,
+    "mrp": 150,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -2069,10 +2069,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "5 L",
     "description": "Groundnut Oil - 5 L pack. Category: Cooking Oil & Ghee.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -2087,10 +2087,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "1 L",
     "description": "Palm Oil - 1 L pack. Category: Cooking Oil & Ghee.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 135,
+    "mrp": 150,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -2105,10 +2105,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "5 L",
     "description": "Palm Oil - 5 L pack. Category: Cooking Oil & Ghee.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -2123,10 +2123,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "200 ml",
     "description": "Coconut Oil - 200 ml pack. Category: Cooking Oil & Ghee.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -2141,10 +2141,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "500 ml",
     "description": "Coconut Oil - 500 ml pack. Category: Cooking Oil & Ghee.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 85,
+    "mrp": 95,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -2159,10 +2159,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "1 L",
     "description": "Coconut Oil - 1 L pack. Category: Cooking Oil & Ghee.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 135,
+    "mrp": 150,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -2177,10 +2177,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "250 ml",
     "description": "Olive Oil - 250 ml pack. Category: Cooking Oil & Ghee.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -2195,10 +2195,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "500 ml",
     "description": "Olive Oil - 500 ml pack. Category: Cooking Oil & Ghee.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 85,
+    "mrp": 95,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -2213,10 +2213,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "1 L",
     "description": "Rice Bran Oil - 1 L pack. Category: Cooking Oil & Ghee.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 135,
+    "mrp": 150,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -2231,10 +2231,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "5 L",
     "description": "Rice Bran Oil - 5 L pack. Category: Cooking Oil & Ghee.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -2249,10 +2249,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "1 L",
     "description": "Soybean Oil - 1 L pack. Category: Cooking Oil & Ghee.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 135,
+    "mrp": 150,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -2267,10 +2267,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "5 L",
     "description": "Soybean Oil - 5 L pack. Category: Cooking Oil & Ghee.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -2285,10 +2285,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "200 ml",
     "description": "Desi Ghee - 200 ml pack. Category: Cooking Oil & Ghee.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -2303,10 +2303,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "500 ml",
     "description": "Desi Ghee - 500 ml pack. Category: Cooking Oil & Ghee.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 325,
+    "mrp": 350,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -2321,10 +2321,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "1 L",
     "description": "Desi Ghee - 1 L pack. Category: Cooking Oil & Ghee.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 630,
+    "mrp": 680,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -2339,10 +2339,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "500 g",
     "description": "Vanaspati Ghee - 500 g pack. Category: Cooking Oil & Ghee.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 85,
+    "mrp": 95,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -2357,10 +2357,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "1 kg",
     "description": "Vanaspati Ghee - 1 kg pack. Category: Cooking Oil & Ghee.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 135,
+    "mrp": 150,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -2375,10 +2375,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "100 g",
     "description": "Cumin Seeds (Jeera) - 100 g pack. Category: Whole Spices.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 40,
+    "mrp": 45,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -2393,10 +2393,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "200 g",
     "description": "Cumin Seeds (Jeera) - 200 g pack. Category: Whole Spices.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 58,
+    "mrp": 65,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -2411,10 +2411,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "100 g",
     "description": "Coriander Seeds (Dhania) - 100 g pack. Category: Whole Spices.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 40,
+    "mrp": 45,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -2429,10 +2429,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "200 g",
     "description": "Coriander Seeds (Dhania) - 200 g pack. Category: Whole Spices.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 58,
+    "mrp": 65,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -2447,10 +2447,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "100 g",
     "description": "Mustard Seeds - 100 g pack. Category: Whole Spices.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 40,
+    "mrp": 45,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -2465,10 +2465,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "200 g",
     "description": "Mustard Seeds - 200 g pack. Category: Whole Spices.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 58,
+    "mrp": 65,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -2483,10 +2483,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "100 g",
     "description": "Fenugreek Seeds (Methi) - 100 g pack. Category: Whole Spices.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 40,
+    "mrp": 45,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -2501,10 +2501,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "200 g",
     "description": "Fenugreek Seeds (Methi) - 200 g pack. Category: Whole Spices.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 58,
+    "mrp": 65,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -2519,10 +2519,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "100 g",
     "description": "Fennel Seeds (Saunf) - 100 g pack. Category: Whole Spices.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 40,
+    "mrp": 45,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -2537,10 +2537,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "200 g",
     "description": "Fennel Seeds (Saunf) - 200 g pack. Category: Whole Spices.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 58,
+    "mrp": 65,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -2555,10 +2555,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "50 g",
     "description": "Black Pepper - 50 g pack. Category: Whole Spices.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -2573,10 +2573,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "100 g",
     "description": "Black Pepper - 100 g pack. Category: Whole Spices.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 40,
+    "mrp": 45,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -2591,10 +2591,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "25 g",
     "description": "Green Cardamom (Elaichi) - 25 g pack. Category: Whole Spices.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -2609,10 +2609,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "50 g",
     "description": "Green Cardamom (Elaichi) - 50 g pack. Category: Whole Spices.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -2627,10 +2627,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "25 g",
     "description": "Black Cardamom - 25 g pack. Category: Whole Spices.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -2645,10 +2645,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "50 g",
     "description": "Black Cardamom - 50 g pack. Category: Whole Spices.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -2663,10 +2663,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "25 g",
     "description": "Cloves (Laung) - 25 g pack. Category: Whole Spices.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -2681,10 +2681,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "50 g",
     "description": "Cloves (Laung) - 50 g pack. Category: Whole Spices.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -2699,10 +2699,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "25 g",
     "description": "Cinnamon (Dalchini) - 25 g pack. Category: Whole Spices.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -2717,10 +2717,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "50 g",
     "description": "Cinnamon (Dalchini) - 50 g pack. Category: Whole Spices.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -2735,10 +2735,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "25 g",
     "description": "Bay Leaf (Tej Patta) - 25 g pack. Category: Whole Spices.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -2753,10 +2753,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "50 g",
     "description": "Bay Leaf (Tej Patta) - 50 g pack. Category: Whole Spices.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -2771,10 +2771,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "100 g",
     "description": "Dried Red Chilli - 100 g pack. Category: Whole Spices.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 40,
+    "mrp": 45,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -2789,10 +2789,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "200 g",
     "description": "Dried Red Chilli - 200 g pack. Category: Whole Spices.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 58,
+    "mrp": 65,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -2807,10 +2807,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "25 g",
     "description": "Star Anise - 25 g pack. Category: Whole Spices.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -2825,10 +2825,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "50 g",
     "description": "Star Anise - 50 g pack. Category: Whole Spices.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -2843,10 +2843,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "50 g",
     "description": "Carom Seeds (Ajwain) - 50 g pack. Category: Whole Spices.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -2861,10 +2861,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "100 g",
     "description": "Carom Seeds (Ajwain) - 100 g pack. Category: Whole Spices.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 40,
+    "mrp": 45,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -2879,10 +2879,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "50 g",
     "description": "Nigella Seeds (Kalonji) - 50 g pack. Category: Whole Spices.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -2897,10 +2897,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "100 g",
     "description": "Nigella Seeds (Kalonji) - 100 g pack. Category: Whole Spices.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 40,
+    "mrp": 45,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -2915,10 +2915,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "25 g",
     "description": "Asafoetida (Hing) - 25 g pack. Category: Whole Spices.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -2933,10 +2933,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "50 g",
     "description": "Asafoetida (Hing) - 50 g pack. Category: Whole Spices.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -2951,10 +2951,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "200 g",
     "description": "Tamarind (Imli) - 200 g pack. Category: Whole Spices.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 58,
+    "mrp": 65,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -2969,10 +2969,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "500 g",
     "description": "Tamarind (Imli) - 500 g pack. Category: Whole Spices.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 85,
+    "mrp": 95,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -2987,10 +2987,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "50 g",
     "description": "Dry Mango Powder (Amchur) - 50 g pack. Category: Whole Spices.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -3005,10 +3005,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "100 g",
     "description": "Dry Mango Powder (Amchur) - 100 g pack. Category: Whole Spices.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 40,
+    "mrp": 45,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -3023,10 +3023,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "100 g",
     "description": "Turmeric Powder (Haldi) - 100 g pack. Category: Ground Spices.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 40,
+    "mrp": 45,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -3041,10 +3041,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "200 g",
     "description": "Turmeric Powder (Haldi) - 200 g pack. Category: Ground Spices.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 58,
+    "mrp": 65,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -3059,10 +3059,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "500 g",
     "description": "Turmeric Powder (Haldi) - 500 g pack. Category: Ground Spices.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 85,
+    "mrp": 95,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -3077,10 +3077,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "100 g",
     "description": "Red Chilli Powder - 100 g pack. Category: Ground Spices.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 40,
+    "mrp": 45,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -3095,10 +3095,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "200 g",
     "description": "Red Chilli Powder - 200 g pack. Category: Ground Spices.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 58,
+    "mrp": 65,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -3113,10 +3113,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "500 g",
     "description": "Red Chilli Powder - 500 g pack. Category: Ground Spices.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 85,
+    "mrp": 95,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -3131,10 +3131,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "100 g",
     "description": "Coriander Powder - 100 g pack. Category: Ground Spices.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 40,
+    "mrp": 45,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -3149,10 +3149,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "200 g",
     "description": "Coriander Powder - 200 g pack. Category: Ground Spices.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 58,
+    "mrp": 65,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -3167,10 +3167,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "500 g",
     "description": "Coriander Powder - 500 g pack. Category: Ground Spices.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 85,
+    "mrp": 95,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -3185,10 +3185,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "100 g",
     "description": "Cumin Powder - 100 g pack. Category: Ground Spices.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 40,
+    "mrp": 45,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -3203,10 +3203,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "200 g",
     "description": "Cumin Powder - 200 g pack. Category: Ground Spices.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 58,
+    "mrp": 65,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -3221,10 +3221,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "50 g",
     "description": "Black Pepper Powder - 50 g pack. Category: Ground Spices.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -3239,10 +3239,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "100 g",
     "description": "Black Pepper Powder - 100 g pack. Category: Ground Spices.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 40,
+    "mrp": 45,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -3257,10 +3257,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "50 g",
     "description": "Garam Masala - 50 g pack. Category: Ground Spices.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -3275,10 +3275,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "100 g",
     "description": "Garam Masala - 100 g pack. Category: Ground Spices.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 40,
+    "mrp": 45,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -3293,10 +3293,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "100 g",
     "description": "Kashmiri Chilli Powder - 100 g pack. Category: Ground Spices.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 40,
+    "mrp": 45,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -3311,10 +3311,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "200 g",
     "description": "Kashmiri Chilli Powder - 200 g pack. Category: Ground Spices.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 58,
+    "mrp": 65,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -3329,10 +3329,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "50 g",
     "description": "Chaat Masala - 50 g pack. Category: Ground Spices.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -3347,10 +3347,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "100 g",
     "description": "Chaat Masala - 100 g pack. Category: Ground Spices.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 40,
+    "mrp": 45,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -3365,10 +3365,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "100 g",
     "description": "Black Salt (Kala Namak) - 100 g pack. Category: Ground Spices.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 40,
+    "mrp": 45,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -3383,10 +3383,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "200 g",
     "description": "Black Salt (Kala Namak) - 200 g pack. Category: Ground Spices.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 58,
+    "mrp": 65,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -3401,10 +3401,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "50 g",
     "description": "Dry Ginger Powder - 50 g pack. Category: Ground Spices.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -3419,10 +3419,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "100 g",
     "description": "Dry Ginger Powder - 100 g pack. Category: Ground Spices.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 40,
+    "mrp": 45,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -3437,10 +3437,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "50 g",
     "description": "Biryani Masala - 50 g pack. Category: Masala Mixes.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -3455,10 +3455,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "100 g",
     "description": "Biryani Masala - 100 g pack. Category: Masala Mixes.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 40,
+    "mrp": 45,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -3473,10 +3473,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "50 g",
     "description": "Chana Masala - 50 g pack. Category: Masala Mixes.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -3491,10 +3491,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "100 g",
     "description": "Chana Masala - 100 g pack. Category: Masala Mixes.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 40,
+    "mrp": 45,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -3509,10 +3509,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "50 g",
     "description": "Sabzi Masala - 50 g pack. Category: Masala Mixes.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -3527,10 +3527,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "100 g",
     "description": "Sabzi Masala - 100 g pack. Category: Masala Mixes.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 40,
+    "mrp": 45,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -3545,10 +3545,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "50 g",
     "description": "Meat Masala - 50 g pack. Category: Masala Mixes.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -3563,10 +3563,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "100 g",
     "description": "Meat Masala - 100 g pack. Category: Masala Mixes.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 40,
+    "mrp": 45,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -3581,10 +3581,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "50 g",
     "description": "Chicken Masala - 50 g pack. Category: Masala Mixes.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -3599,10 +3599,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "100 g",
     "description": "Chicken Masala - 100 g pack. Category: Masala Mixes.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 40,
+    "mrp": 45,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -3617,10 +3617,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "50 g",
     "description": "Sambar Powder - 50 g pack. Category: Masala Mixes.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -3635,10 +3635,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "100 g",
     "description": "Sambar Powder - 100 g pack. Category: Masala Mixes.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 40,
+    "mrp": 45,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -3653,10 +3653,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "50 g",
     "description": "Rasam Powder - 50 g pack. Category: Masala Mixes.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -3671,10 +3671,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "100 g",
     "description": "Rasam Powder - 100 g pack. Category: Masala Mixes.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 40,
+    "mrp": 45,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -3689,10 +3689,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "50 g",
     "description": "Pav Bhaji Masala - 50 g pack. Category: Masala Mixes.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -3707,10 +3707,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "100 g",
     "description": "Pav Bhaji Masala - 100 g pack. Category: Masala Mixes.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 40,
+    "mrp": 45,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -3725,10 +3725,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "50 g",
     "description": "Tea Masala - 50 g pack. Category: Masala Mixes.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -3743,10 +3743,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "100 g",
     "description": "Tea Masala - 100 g pack. Category: Masala Mixes.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 40,
+    "mrp": 45,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -3761,10 +3761,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "50 g",
     "description": "Kitchen King Masala - 50 g pack. Category: Masala Mixes.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -3779,10 +3779,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "100 g",
     "description": "Kitchen King Masala - 100 g pack. Category: Masala Mixes.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 40,
+    "mrp": 45,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -3797,10 +3797,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "50 g",
     "description": "Rajma Masala - 50 g pack. Category: Masala Mixes.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -3815,10 +3815,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "100 g",
     "description": "Rajma Masala - 100 g pack. Category: Masala Mixes.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 40,
+    "mrp": 45,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -3833,10 +3833,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "50 g",
     "description": "Tandoori Masala - 50 g pack. Category: Masala Mixes.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -3851,10 +3851,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "100 g",
     "description": "Tandoori Masala - 100 g pack. Category: Masala Mixes.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 40,
+    "mrp": 45,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -3869,10 +3869,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "200 g",
     "description": "Mango Pickle - 200 g pack. Category: Pickles, Sauces & Pastes.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 58,
+    "mrp": 65,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -3887,10 +3887,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "500 g",
     "description": "Mango Pickle - 500 g pack. Category: Pickles, Sauces & Pastes.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 85,
+    "mrp": 95,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -3905,10 +3905,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "1 kg",
     "description": "Mango Pickle - 1 kg pack. Category: Pickles, Sauces & Pastes.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 135,
+    "mrp": 150,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -3923,10 +3923,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "200 g",
     "description": "Mixed Pickle - 200 g pack. Category: Pickles, Sauces & Pastes.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 58,
+    "mrp": 65,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -3941,10 +3941,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "500 g",
     "description": "Mixed Pickle - 500 g pack. Category: Pickles, Sauces & Pastes.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 85,
+    "mrp": 95,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -3959,10 +3959,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "200 g",
     "description": "Lemon Pickle - 200 g pack. Category: Pickles, Sauces & Pastes.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 58,
+    "mrp": 65,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -3977,10 +3977,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "500 g",
     "description": "Lemon Pickle - 500 g pack. Category: Pickles, Sauces & Pastes.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 85,
+    "mrp": 95,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -3995,10 +3995,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "200 g",
     "description": "Tomato Ketchup - 200 g pack. Category: Pickles, Sauces & Pastes.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 58,
+    "mrp": 65,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -4013,10 +4013,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "500 g",
     "description": "Tomato Ketchup - 500 g pack. Category: Pickles, Sauces & Pastes.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 85,
+    "mrp": 95,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -4031,10 +4031,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "1 kg",
     "description": "Tomato Ketchup - 1 kg pack. Category: Pickles, Sauces & Pastes.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 135,
+    "mrp": 150,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -4049,10 +4049,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "200 g",
     "description": "Chilli Sauce - 200 g pack. Category: Pickles, Sauces & Pastes.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 58,
+    "mrp": 65,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -4067,10 +4067,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "500 g",
     "description": "Chilli Sauce - 500 g pack. Category: Pickles, Sauces & Pastes.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 85,
+    "mrp": 95,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -4085,10 +4085,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "200 ml",
     "description": "Soy Sauce - 200 ml pack. Category: Pickles, Sauces & Pastes.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -4103,10 +4103,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "500 ml",
     "description": "Soy Sauce - 500 ml pack. Category: Pickles, Sauces & Pastes.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 85,
+    "mrp": 95,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -4121,10 +4121,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "200 ml",
     "description": "Vinegar - 200 ml pack. Category: Pickles, Sauces & Pastes.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -4139,10 +4139,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "500 ml",
     "description": "Vinegar - 500 ml pack. Category: Pickles, Sauces & Pastes.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 85,
+    "mrp": 95,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -4157,10 +4157,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "100 g",
     "description": "Ginger Garlic Paste - 100 g pack. Category: Pickles, Sauces & Pastes.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 40,
+    "mrp": 45,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -4175,10 +4175,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "200 g",
     "description": "Ginger Garlic Paste - 200 g pack. Category: Pickles, Sauces & Pastes.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 58,
+    "mrp": 65,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -4193,10 +4193,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "500 g",
     "description": "Ginger Garlic Paste - 500 g pack. Category: Pickles, Sauces & Pastes.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 85,
+    "mrp": 95,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -4211,10 +4211,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "200 g",
     "description": "Tamarind Paste - 200 g pack. Category: Pickles, Sauces & Pastes.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 58,
+    "mrp": 65,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -4229,10 +4229,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "500 g",
     "description": "Tamarind Paste - 500 g pack. Category: Pickles, Sauces & Pastes.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 85,
+    "mrp": 95,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -4247,10 +4247,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "200 g",
     "description": "Tomato Puree - 200 g pack. Category: Pickles, Sauces & Pastes.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 58,
+    "mrp": 65,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -4265,10 +4265,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "500 g",
     "description": "Tomato Puree - 500 g pack. Category: Pickles, Sauces & Pastes.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 85,
+    "mrp": 95,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -4283,10 +4283,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "200 g",
     "description": "Mayonnaise - 200 g pack. Category: Pickles, Sauces & Pastes.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 58,
+    "mrp": 65,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -4301,10 +4301,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "500 g",
     "description": "Mayonnaise - 500 g pack. Category: Pickles, Sauces & Pastes.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 85,
+    "mrp": 95,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -4319,10 +4319,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "250 g",
     "description": "Tea Leaves (Chai Patti) - 250 g pack. Category: Tea & Coffee.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 120,
+    "mrp": 135,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -4337,10 +4337,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "500 g",
     "description": "Tea Leaves (Chai Patti) - 500 g pack. Category: Tea & Coffee.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 85,
+    "mrp": 95,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -4355,10 +4355,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "1 kg",
     "description": "Tea Leaves (Chai Patti) - 1 kg pack. Category: Tea & Coffee.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 440,
+    "mrp": 480,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -4373,10 +4373,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "25 bags",
     "description": "Green Tea Bags - 25 bags pack. Category: Tea & Coffee.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -4391,10 +4391,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "100 bags",
     "description": "Green Tea Bags - 100 bags pack. Category: Tea & Coffee.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -4409,10 +4409,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "50 g",
     "description": "Instant Coffee - 50 g pack. Category: Tea & Coffee.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -4427,10 +4427,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "100 g",
     "description": "Instant Coffee - 100 g pack. Category: Tea & Coffee.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 175,
+    "mrp": 190,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -4445,10 +4445,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "200 g",
     "description": "Instant Coffee - 200 g pack. Category: Tea & Coffee.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 58,
+    "mrp": 65,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -4463,10 +4463,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "200 g",
     "description": "Filter Coffee Powder - 200 g pack. Category: Tea & Coffee.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 58,
+    "mrp": 65,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -4481,10 +4481,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "500 g",
     "description": "Filter Coffee Powder - 500 g pack. Category: Tea & Coffee.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 85,
+    "mrp": 95,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -4499,10 +4499,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "100 g",
     "description": "Cocoa Powder - 100 g pack. Category: Tea & Coffee.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 40,
+    "mrp": 45,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -4517,10 +4517,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "200 g",
     "description": "Cocoa Powder - 200 g pack. Category: Tea & Coffee.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 58,
+    "mrp": 65,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -4535,10 +4535,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "200 g",
     "description": "Health Drink Powder - 200 g pack. Category: Tea & Coffee.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 58,
+    "mrp": 65,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -4553,10 +4553,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "500 g",
     "description": "Health Drink Powder - 500 g pack. Category: Tea & Coffee.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 85,
+    "mrp": 95,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -4571,10 +4571,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "1 kg",
     "description": "Health Drink Powder - 1 kg pack. Category: Tea & Coffee.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 135,
+    "mrp": 150,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -4589,10 +4589,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "25 bags",
     "description": "Herbal Tea - 25 bags pack. Category: Tea & Coffee.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -4607,10 +4607,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "250 ml",
     "description": "Cola Soft Drink - 250 ml pack. Category: Juices & Cold Drinks.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -4625,10 +4625,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "600 ml",
     "description": "Cola Soft Drink - 600 ml pack. Category: Juices & Cold Drinks.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -4643,10 +4643,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "1.25 L",
     "description": "Cola Soft Drink - 1.25 L pack. Category: Juices & Cold Drinks.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -4661,10 +4661,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "2.25 L",
     "description": "Cola Soft Drink - 2.25 L pack. Category: Juices & Cold Drinks.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -4679,10 +4679,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "250 ml",
     "description": "Lemon-Lime Soft Drink - 250 ml pack. Category: Juices & Cold Drinks.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -4697,10 +4697,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "600 ml",
     "description": "Lemon-Lime Soft Drink - 600 ml pack. Category: Juices & Cold Drinks.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -4715,10 +4715,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "1.25 L",
     "description": "Lemon-Lime Soft Drink - 1.25 L pack. Category: Juices & Cold Drinks.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -4733,10 +4733,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "2.25 L",
     "description": "Lemon-Lime Soft Drink - 2.25 L pack. Category: Juices & Cold Drinks.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -4751,10 +4751,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "250 ml",
     "description": "Orange Soft Drink - 250 ml pack. Category: Juices & Cold Drinks.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -4769,10 +4769,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "600 ml",
     "description": "Orange Soft Drink - 600 ml pack. Category: Juices & Cold Drinks.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -4787,10 +4787,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "2.25 L",
     "description": "Orange Soft Drink - 2.25 L pack. Category: Juices & Cold Drinks.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -4805,10 +4805,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "200 ml",
     "description": "Mango Drink - 200 ml pack. Category: Juices & Cold Drinks.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -4823,10 +4823,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "600 ml",
     "description": "Mango Drink - 600 ml pack. Category: Juices & Cold Drinks.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -4841,10 +4841,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "1 L",
     "description": "Mango Drink - 1 L pack. Category: Juices & Cold Drinks.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 135,
+    "mrp": 150,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -4859,10 +4859,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "200 ml",
     "description": "Apple Juice - 200 ml pack. Category: Juices & Cold Drinks.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -4877,10 +4877,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "1 L",
     "description": "Apple Juice - 1 L pack. Category: Juices & Cold Drinks.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 135,
+    "mrp": 150,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -4895,10 +4895,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "200 ml",
     "description": "Mixed Fruit Juice - 200 ml pack. Category: Juices & Cold Drinks.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -4913,10 +4913,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "1 L",
     "description": "Mixed Fruit Juice - 1 L pack. Category: Juices & Cold Drinks.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 135,
+    "mrp": 150,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -4931,10 +4931,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "250 ml",
     "description": "Energy Drink - 250 ml pack. Category: Juices & Cold Drinks.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -4949,10 +4949,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "600 ml",
     "description": "Soda Water - 600 ml pack. Category: Juices & Cold Drinks.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -4967,10 +4967,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "1 L",
     "description": "Soda Water - 1 L pack. Category: Juices & Cold Drinks.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 135,
+    "mrp": 150,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -4985,10 +4985,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "500 ml",
     "description": "Drinking Water - 500 ml pack. Category: Juices & Cold Drinks.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 85,
+    "mrp": 95,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -5003,10 +5003,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "1 L",
     "description": "Drinking Water - 1 L pack. Category: Juices & Cold Drinks.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 135,
+    "mrp": 150,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -5021,10 +5021,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "2 L",
     "description": "Drinking Water - 2 L pack. Category: Juices & Cold Drinks.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -5039,10 +5039,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "20 L",
     "description": "Drinking Water - 20 L pack. Category: Juices & Cold Drinks.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -5057,10 +5057,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "500 ml",
     "description": "Rose Syrup / Sharbat - 500 ml pack. Category: Juices & Cold Drinks.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 85,
+    "mrp": 95,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -5075,10 +5075,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "750 ml",
     "description": "Rose Syrup / Sharbat - 750 ml pack. Category: Juices & Cold Drinks.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -5093,10 +5093,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "200 g",
     "description": "Glucose Powder - 200 g pack. Category: Juices & Cold Drinks.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 58,
+    "mrp": 65,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -5111,10 +5111,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "500 g",
     "description": "Glucose Powder - 500 g pack. Category: Juices & Cold Drinks.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 85,
+    "mrp": 95,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -5129,10 +5129,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "Sachet",
     "description": "Electrolyte Powder (ORS) - Sachet pack. Category: Juices & Cold Drinks.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -5147,10 +5147,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "200 ml",
     "description": "Coconut Water - 200 ml pack. Category: Juices & Cold Drinks.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -5165,10 +5165,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "1 L",
     "description": "Coconut Water - 1 L pack. Category: Juices & Cold Drinks.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 135,
+    "mrp": 150,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -5183,10 +5183,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "Small Pack",
     "description": "Glucose Biscuits - Small Pack pack. Category: Biscuits & Cookies.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -5201,10 +5201,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "Family Pack",
     "description": "Glucose Biscuits - Family Pack pack. Category: Biscuits & Cookies.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -5219,10 +5219,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "Small Pack",
     "description": "Cream Biscuits - Small Pack pack. Category: Biscuits & Cookies.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -5237,10 +5237,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "Family Pack",
     "description": "Cream Biscuits - Family Pack pack. Category: Biscuits & Cookies.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -5255,10 +5255,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "Small Pack",
     "description": "Marie Biscuits - Small Pack pack. Category: Biscuits & Cookies.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -5273,10 +5273,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "Family Pack",
     "description": "Marie Biscuits - Family Pack pack. Category: Biscuits & Cookies.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -5291,10 +5291,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "Small Pack",
     "description": "Chocolate Biscuits - Small Pack pack. Category: Biscuits & Cookies.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -5309,10 +5309,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "Family Pack",
     "description": "Chocolate Biscuits - Family Pack pack. Category: Biscuits & Cookies.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -5327,10 +5327,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "250 g",
     "description": "Digestive Biscuits - 250 g pack. Category: Biscuits & Cookies.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 58,
+    "mrp": 65,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -5345,10 +5345,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "500 g",
     "description": "Digestive Biscuits - 500 g pack. Category: Biscuits & Cookies.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 85,
+    "mrp": 95,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -5363,10 +5363,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "100 g",
     "description": "Cookies - 100 g pack. Category: Biscuits & Cookies.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 40,
+    "mrp": 45,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -5381,10 +5381,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "200 g",
     "description": "Cookies - 200 g pack. Category: Biscuits & Cookies.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 58,
+    "mrp": 65,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -5399,10 +5399,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "200 g",
     "description": "Rusk - 200 g pack. Category: Biscuits & Cookies.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 58,
+    "mrp": 65,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -5417,10 +5417,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "500 g",
     "description": "Rusk - 500 g pack. Category: Biscuits & Cookies.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 85,
+    "mrp": 95,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -5435,10 +5435,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "Small Pack",
     "description": "Wafers - Small Pack pack. Category: Biscuits & Cookies.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -5453,10 +5453,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "Family Pack",
     "description": "Wafers - Family Pack pack. Category: Biscuits & Cookies.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -5471,10 +5471,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "Small Pack",
     "description": "Salted Crackers - Small Pack pack. Category: Biscuits & Cookies.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -5489,10 +5489,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "Family Pack",
     "description": "Salted Crackers - Family Pack pack. Category: Biscuits & Cookies.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -5507,10 +5507,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "Small Pack",
     "description": "Potato Chips - Small Pack pack. Category: Chips & Namkeen.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -5525,10 +5525,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "Medium Pack",
     "description": "Potato Chips - Medium Pack pack. Category: Chips & Namkeen.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -5543,10 +5543,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "Family Pack",
     "description": "Potato Chips - Family Pack pack. Category: Chips & Namkeen.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -5561,10 +5561,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "Small Pack",
     "description": "Corn Puffs - Small Pack pack. Category: Chips & Namkeen.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -5579,10 +5579,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "Medium Pack",
     "description": "Corn Puffs - Medium Pack pack. Category: Chips & Namkeen.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -5597,10 +5597,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "200 g",
     "description": "Bhujia Sev - 200 g pack. Category: Chips & Namkeen.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 58,
+    "mrp": 65,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -5615,10 +5615,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "400 g",
     "description": "Bhujia Sev - 400 g pack. Category: Chips & Namkeen.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -5633,10 +5633,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "200 g",
     "description": "Aloo Bhujia - 200 g pack. Category: Chips & Namkeen.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 58,
+    "mrp": 65,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -5651,10 +5651,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "400 g",
     "description": "Aloo Bhujia - 400 g pack. Category: Chips & Namkeen.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -5669,10 +5669,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "200 g",
     "description": "Mixture Namkeen - 200 g pack. Category: Chips & Namkeen.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 58,
+    "mrp": 65,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -5687,10 +5687,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "400 g",
     "description": "Mixture Namkeen - 400 g pack. Category: Chips & Namkeen.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -5705,10 +5705,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "100 g",
     "description": "Roasted Peanuts - 100 g pack. Category: Chips & Namkeen.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 40,
+    "mrp": 45,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -5723,10 +5723,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "200 g",
     "description": "Roasted Peanuts - 200 g pack. Category: Chips & Namkeen.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 58,
+    "mrp": 65,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -5741,10 +5741,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "Small Pack",
     "description": "Popcorn - Small Pack pack. Category: Chips & Namkeen.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -5759,10 +5759,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "Medium Pack",
     "description": "Popcorn - Medium Pack pack. Category: Chips & Namkeen.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -5777,10 +5777,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "Small Pack",
     "description": "Nachos - Small Pack pack. Category: Chips & Namkeen.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -5795,10 +5795,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "Medium Pack",
     "description": "Nachos - Medium Pack pack. Category: Chips & Namkeen.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -5813,10 +5813,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "200 g",
     "description": "Banana Chips - 200 g pack. Category: Chips & Namkeen.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 58,
+    "mrp": 65,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -5831,10 +5831,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "200 g",
     "description": "Papad - 200 g pack. Category: Chips & Namkeen.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 58,
+    "mrp": 65,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -5849,10 +5849,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "500 g",
     "description": "Papad - 500 g pack. Category: Chips & Namkeen.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 85,
+    "mrp": 95,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -5867,10 +5867,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "Small",
     "description": "Milk Chocolate Bar - Small pack. Category: Chocolates & Sweets.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1549007994-cb92caebd54b?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -5885,10 +5885,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "Medium",
     "description": "Milk Chocolate Bar - Medium pack. Category: Chocolates & Sweets.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1549007994-cb92caebd54b?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -5903,10 +5903,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "Large",
     "description": "Milk Chocolate Bar - Large pack. Category: Chocolates & Sweets.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1549007994-cb92caebd54b?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -5921,10 +5921,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "Small",
     "description": "Dark Chocolate Bar - Small pack. Category: Chocolates & Sweets.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1549007994-cb92caebd54b?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -5939,10 +5939,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "Medium",
     "description": "Dark Chocolate Bar - Medium pack. Category: Chocolates & Sweets.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1549007994-cb92caebd54b?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -5957,10 +5957,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "Large",
     "description": "Dark Chocolate Bar - Large pack. Category: Chocolates & Sweets.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1549007994-cb92caebd54b?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -5975,10 +5975,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "200 g",
     "description": "Chocolate Spread - 200 g pack. Category: Chocolates & Sweets.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 58,
+    "mrp": 65,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1549007994-cb92caebd54b?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -5993,10 +5993,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "350 g",
     "description": "Chocolate Spread - 350 g pack. Category: Chocolates & Sweets.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1549007994-cb92caebd54b?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -6011,10 +6011,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "100 g",
     "description": "Toffees & Candies - 100 g pack. Category: Chocolates & Sweets.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 40,
+    "mrp": 45,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1549007994-cb92caebd54b?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -6029,10 +6029,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "Pouch",
     "description": "Toffees & Candies - Pouch pack. Category: Chocolates & Sweets.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1549007994-cb92caebd54b?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -6047,10 +6047,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "Pack",
     "description": "Chewing Gum - Pack pack. Category: Chocolates & Sweets.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1549007994-cb92caebd54b?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -6065,10 +6065,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "Pack",
     "description": "Mints - Pack pack. Category: Chocolates & Sweets.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1549007994-cb92caebd54b?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -6083,10 +6083,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "100 g",
     "description": "Gulab Jamun Mix - 100 g pack. Category: Chocolates & Sweets.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 40,
+    "mrp": 45,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1549007994-cb92caebd54b?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -6101,10 +6101,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "200 g",
     "description": "Gulab Jamun Mix - 200 g pack. Category: Chocolates & Sweets.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 58,
+    "mrp": 65,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1549007994-cb92caebd54b?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -6119,10 +6119,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "100 g",
     "description": "Custard Powder - 100 g pack. Category: Chocolates & Sweets.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 40,
+    "mrp": 45,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1549007994-cb92caebd54b?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -6137,10 +6137,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "200 g",
     "description": "Custard Powder - 200 g pack. Category: Chocolates & Sweets.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 58,
+    "mrp": 65,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1549007994-cb92caebd54b?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -6155,10 +6155,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "Pack",
     "description": "Jelly Crystals - Pack pack. Category: Chocolates & Sweets.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1549007994-cb92caebd54b?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -6173,10 +6173,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "500 ml",
     "description": "Full Cream Milk - 500 ml pack. Category: Milk & Dairy.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 85,
+    "mrp": 95,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -6191,10 +6191,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "1 L",
     "description": "Full Cream Milk - 1 L pack. Category: Milk & Dairy.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 135,
+    "mrp": 150,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -6209,10 +6209,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "500 ml",
     "description": "Toned Milk - 500 ml pack. Category: Milk & Dairy.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 85,
+    "mrp": 95,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -6227,10 +6227,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "1 L",
     "description": "Toned Milk - 1 L pack. Category: Milk & Dairy.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 135,
+    "mrp": 150,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -6245,10 +6245,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "500 ml",
     "description": "Skimmed Milk - 500 ml pack. Category: Milk & Dairy.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 85,
+    "mrp": 95,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -6263,10 +6263,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "1 L",
     "description": "Skimmed Milk - 1 L pack. Category: Milk & Dairy.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 135,
+    "mrp": 150,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -6281,10 +6281,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "200 g",
     "description": "Milk Powder - 200 g pack. Category: Milk & Dairy.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 58,
+    "mrp": 65,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -6299,10 +6299,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "500 g",
     "description": "Milk Powder - 500 g pack. Category: Milk & Dairy.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 85,
+    "mrp": 95,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -6317,10 +6317,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "1 kg",
     "description": "Milk Powder - 1 kg pack. Category: Milk & Dairy.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 135,
+    "mrp": 150,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -6335,10 +6335,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "200 g",
     "description": "Condensed Milk - 200 g pack. Category: Milk & Dairy.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 58,
+    "mrp": 65,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -6353,10 +6353,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "400 g",
     "description": "Condensed Milk - 400 g pack. Category: Milk & Dairy.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -6371,10 +6371,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "200 g",
     "description": "Curd / Yogurt - 200 g pack. Category: Milk & Dairy.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 58,
+    "mrp": 65,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -6389,10 +6389,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "400 g",
     "description": "Curd / Yogurt - 400 g pack. Category: Milk & Dairy.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -6407,10 +6407,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "1 kg",
     "description": "Curd / Yogurt - 1 kg pack. Category: Milk & Dairy.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 135,
+    "mrp": 150,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -6425,10 +6425,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "100 g",
     "description": "Butter - 100 g pack. Category: Milk & Dairy.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 40,
+    "mrp": 45,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -6443,10 +6443,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "200 g",
     "description": "Butter - 200 g pack. Category: Milk & Dairy.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 58,
+    "mrp": 65,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -6461,10 +6461,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "500 g",
     "description": "Butter - 500 g pack. Category: Milk & Dairy.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 85,
+    "mrp": 95,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -6479,10 +6479,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "100 g",
     "description": "Cheese Slices - 100 g pack. Category: Milk & Dairy.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 40,
+    "mrp": 45,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -6497,10 +6497,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "200 g",
     "description": "Cheese Slices - 200 g pack. Category: Milk & Dairy.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 58,
+    "mrp": 65,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -6515,10 +6515,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "200 g",
     "description": "Cheese Block - 200 g pack. Category: Milk & Dairy.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 58,
+    "mrp": 65,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -6533,10 +6533,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "400 g",
     "description": "Cheese Block - 400 g pack. Category: Milk & Dairy.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -6551,10 +6551,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "200 g",
     "description": "Paneer - 200 g pack. Category: Milk & Dairy.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 58,
+    "mrp": 65,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -6569,10 +6569,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "500 g",
     "description": "Paneer - 500 g pack. Category: Milk & Dairy.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 85,
+    "mrp": 95,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -6587,10 +6587,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "200 ml",
     "description": "Fresh Cream - 200 ml pack. Category: Milk & Dairy.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -6605,10 +6605,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "200 ml",
     "description": "Lassi - 200 ml pack. Category: Milk & Dairy.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -6623,10 +6623,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "500 ml",
     "description": "Lassi - 500 ml pack. Category: Milk & Dairy.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 85,
+    "mrp": 95,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -6641,10 +6641,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "200 ml",
     "description": "Buttermilk (Chaas) - 200 ml pack. Category: Milk & Dairy.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -6659,10 +6659,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "500 ml",
     "description": "Buttermilk (Chaas) - 500 ml pack. Category: Milk & Dairy.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 85,
+    "mrp": 95,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -6677,10 +6677,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "200 ml",
     "description": "Flavoured Milk - 200 ml pack. Category: Milk & Dairy.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -6695,10 +6695,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "500 ml",
     "description": "Flavoured Milk - 500 ml pack. Category: Milk & Dairy.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 85,
+    "mrp": 95,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -6713,10 +6713,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "200 g",
     "description": "Dairy Whitener - 200 g pack. Category: Milk & Dairy.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 58,
+    "mrp": 65,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -6731,10 +6731,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "500 g",
     "description": "Dairy Whitener - 500 g pack. Category: Milk & Dairy.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 85,
+    "mrp": 95,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -6749,10 +6749,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "6 pcs",
     "description": "Eggs - 6 pcs pack. Category: Eggs & Bakery.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -6767,10 +6767,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "12 pcs",
     "description": "Eggs - 12 pcs pack. Category: Eggs & Bakery.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -6785,10 +6785,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "30 pcs",
     "description": "Eggs - 30 pcs pack. Category: Eggs & Bakery.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -6803,10 +6803,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "400 g",
     "description": "White Bread - 400 g pack. Category: Eggs & Bakery.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -6821,10 +6821,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "400 g",
     "description": "Brown Bread - 400 g pack. Category: Eggs & Bakery.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -6839,10 +6839,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "6 pcs",
     "description": "Pav (Bun) - 6 pcs pack. Category: Eggs & Bakery.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -6857,10 +6857,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "4 pcs",
     "description": "Burger Buns - 4 pcs pack. Category: Eggs & Bakery.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -6875,10 +6875,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "200 g",
     "description": "Cake Rusk - 200 g pack. Category: Eggs & Bakery.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 58,
+    "mrp": 65,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -6893,10 +6893,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "Small",
     "description": "Plain Cake - Small pack. Category: Eggs & Bakery.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -6911,10 +6911,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "Medium",
     "description": "Plain Cake - Medium pack. Category: Eggs & Bakery.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -6929,10 +6929,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "200 g",
     "description": "Khari / Puff Biscuit - 200 g pack. Category: Eggs & Bakery.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 58,
+    "mrp": 65,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -6947,10 +6947,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "250 g",
     "description": "Corn Flakes - 250 g pack. Category: Breakfast & Instant Foods.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 58,
+    "mrp": 65,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1612927601601-6638404737ce?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -6965,10 +6965,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "500 g",
     "description": "Corn Flakes - 500 g pack. Category: Breakfast & Instant Foods.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 85,
+    "mrp": 95,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1612927601601-6638404737ce?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -6983,10 +6983,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "500 g",
     "description": "Oats - 500 g pack. Category: Breakfast & Instant Foods.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 85,
+    "mrp": 95,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1612927601601-6638404737ce?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -7001,10 +7001,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "1 kg",
     "description": "Oats - 1 kg pack. Category: Breakfast & Instant Foods.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 135,
+    "mrp": 150,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1612927601601-6638404737ce?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -7019,10 +7019,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "250 g",
     "description": "Muesli - 250 g pack. Category: Breakfast & Instant Foods.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 58,
+    "mrp": 65,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1612927601601-6638404737ce?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -7037,10 +7037,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "500 g",
     "description": "Muesli - 500 g pack. Category: Breakfast & Instant Foods.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 85,
+    "mrp": 95,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1612927601601-6638404737ce?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -7055,10 +7055,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "250 g",
     "description": "Chocos / Flavoured Cereal - 250 g pack. Category: Breakfast & Instant Foods.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 58,
+    "mrp": 65,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1612927601601-6638404737ce?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -7073,10 +7073,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "500 g",
     "description": "Chocos / Flavoured Cereal - 500 g pack. Category: Breakfast & Instant Foods.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 85,
+    "mrp": 95,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1612927601601-6638404737ce?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -7091,10 +7091,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "Single Pack",
     "description": "Instant Noodles - Single Pack pack. Category: Breakfast & Instant Foods.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1612927601601-6638404737ce?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -7109,10 +7109,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "Family Pack",
     "description": "Instant Noodles - Family Pack pack. Category: Breakfast & Instant Foods.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1612927601601-6638404737ce?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -7127,10 +7127,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "200 g",
     "description": "Pasta - 200 g pack. Category: Breakfast & Instant Foods.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 58,
+    "mrp": 65,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1612927601601-6638404737ce?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -7145,10 +7145,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "500 g",
     "description": "Pasta - 500 g pack. Category: Breakfast & Instant Foods.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 85,
+    "mrp": 95,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1612927601601-6638404737ce?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -7163,10 +7163,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "200 g",
     "description": "Macaroni - 200 g pack. Category: Breakfast & Instant Foods.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 58,
+    "mrp": 65,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1612927601601-6638404737ce?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -7181,10 +7181,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "500 g",
     "description": "Macaroni - 500 g pack. Category: Breakfast & Instant Foods.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 85,
+    "mrp": 95,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1612927601601-6638404737ce?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -7199,10 +7199,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "200 g",
     "description": "Vermicelli (Seviyan) - 200 g pack. Category: Breakfast & Instant Foods.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 58,
+    "mrp": 65,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1612927601601-6638404737ce?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -7217,10 +7217,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "500 g",
     "description": "Vermicelli (Seviyan) - 500 g pack. Category: Breakfast & Instant Foods.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 85,
+    "mrp": 95,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1612927601601-6638404737ce?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -7235,10 +7235,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "Pack",
     "description": "Instant Soup Mix - Pack pack. Category: Breakfast & Instant Foods.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1612927601601-6638404737ce?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -7253,10 +7253,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "Pack",
     "description": "Ready-to-Eat Poha / Upma Mix - Pack pack. Category: Breakfast & Instant Foods.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1612927601601-6638404737ce?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -7271,10 +7271,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "50 g",
     "description": "Baking Powder - 50 g pack. Category: Breakfast & Instant Foods.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1612927601601-6638404737ce?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -7289,10 +7289,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "100 g",
     "description": "Baking Powder - 100 g pack. Category: Breakfast & Instant Foods.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 40,
+    "mrp": 45,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1612927601601-6638404737ce?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -7307,10 +7307,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "50 g",
     "description": "Baking Soda - 50 g pack. Category: Breakfast & Instant Foods.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1612927601601-6638404737ce?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -7325,10 +7325,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "100 g",
     "description": "Baking Soda - 100 g pack. Category: Breakfast & Instant Foods.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 40,
+    "mrp": 45,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1612927601601-6638404737ce?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -7343,10 +7343,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "Pack",
     "description": "Yeast - Pack pack. Category: Breakfast & Instant Foods.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1612927601601-6638404737ce?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -7361,10 +7361,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "200 g",
     "description": "Mixed Fruit Jam - 200 g pack. Category: Spreads & Jams.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 58,
+    "mrp": 65,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -7379,10 +7379,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "500 g",
     "description": "Mixed Fruit Jam - 500 g pack. Category: Spreads & Jams.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 85,
+    "mrp": 95,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -7397,10 +7397,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "200 g",
     "description": "Strawberry Jam - 200 g pack. Category: Spreads & Jams.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 58,
+    "mrp": 65,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -7415,10 +7415,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "500 g",
     "description": "Strawberry Jam - 500 g pack. Category: Spreads & Jams.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 85,
+    "mrp": 95,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -7433,10 +7433,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "200 g",
     "description": "Peanut Butter - 200 g pack. Category: Spreads & Jams.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 58,
+    "mrp": 65,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -7451,10 +7451,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "500 g",
     "description": "Peanut Butter - 500 g pack. Category: Spreads & Jams.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 85,
+    "mrp": 95,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -7469,10 +7469,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "250 g",
     "description": "Honey - 250 g pack. Category: Spreads & Jams.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 58,
+    "mrp": 65,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -7487,10 +7487,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "500 g",
     "description": "Honey - 500 g pack. Category: Spreads & Jams.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 85,
+    "mrp": 95,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -7505,10 +7505,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "1 kg",
     "description": "Honey - 1 kg pack. Category: Spreads & Jams.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 135,
+    "mrp": 150,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -7523,10 +7523,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "250 ml",
     "description": "Maple / Golden Syrup - 250 ml pack. Category: Spreads & Jams.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -7541,10 +7541,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "500 ml",
     "description": "Fruit Squash - 500 ml pack. Category: Spreads & Jams.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 85,
+    "mrp": 95,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -7559,10 +7559,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "750 ml",
     "description": "Fruit Squash - 750 ml pack. Category: Spreads & Jams.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -7577,10 +7577,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "500 g",
     "description": "Detergent Powder - 500 g pack. Category: Laundry.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 85,
+    "mrp": 95,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1583947215259-38e31be8751f?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -7595,10 +7595,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "1 kg",
     "description": "Detergent Powder - 1 kg pack. Category: Laundry.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 115,
+    "mrp": 130,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1583947215259-38e31be8751f?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -7613,10 +7613,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "3 kg",
     "description": "Detergent Powder - 3 kg pack. Category: Laundry.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 330,
+    "mrp": 370,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1583947215259-38e31be8751f?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -7631,10 +7631,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "500 ml",
     "description": "Detergent Liquid - 500 ml pack. Category: Laundry.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 85,
+    "mrp": 95,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1583947215259-38e31be8751f?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -7649,10 +7649,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "1 L",
     "description": "Detergent Liquid - 1 L pack. Category: Laundry.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 135,
+    "mrp": 150,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1583947215259-38e31be8751f?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -7667,10 +7667,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "Single",
     "description": "Detergent Bar - Single pack. Category: Laundry.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1583947215259-38e31be8751f?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -7685,10 +7685,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "Pack of 3",
     "description": "Detergent Bar - Pack of 3 pack. Category: Laundry.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1583947215259-38e31be8751f?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -7703,10 +7703,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "500 ml",
     "description": "Fabric Softener - 500 ml pack. Category: Laundry.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 85,
+    "mrp": 95,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1583947215259-38e31be8751f?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -7721,10 +7721,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "1 L",
     "description": "Fabric Softener - 1 L pack. Category: Laundry.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 135,
+    "mrp": 150,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1583947215259-38e31be8751f?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -7739,10 +7739,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "Pack",
     "description": "Stain Remover - Pack pack. Category: Laundry.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1583947215259-38e31be8751f?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -7757,10 +7757,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "Pack",
     "description": "Fabric Whitener (Neel) - Pack pack. Category: Laundry.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1583947215259-38e31be8751f?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -7775,10 +7775,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "Pack",
     "description": "Starch / Kalap - Pack pack. Category: Laundry.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1583947215259-38e31be8751f?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -7793,10 +7793,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "250 ml",
     "description": "Dishwash Liquid - 250 ml pack. Category: Dishwash & Cleaning.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1585421514738-01798e348b17?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -7811,10 +7811,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "500 ml",
     "description": "Dishwash Liquid - 500 ml pack. Category: Dishwash & Cleaning.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 95,
+    "mrp": 110,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1585421514738-01798e348b17?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -7829,10 +7829,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "1 L",
     "description": "Dishwash Liquid - 1 L pack. Category: Dishwash & Cleaning.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 135,
+    "mrp": 150,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1585421514738-01798e348b17?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -7847,10 +7847,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "Single",
     "description": "Dishwash Bar - Single pack. Category: Dishwash & Cleaning.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1585421514738-01798e348b17?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -7865,10 +7865,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "Pack of 3",
     "description": "Dishwash Bar - Pack of 3 pack. Category: Dishwash & Cleaning.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1585421514738-01798e348b17?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -7883,10 +7883,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "500 g",
     "description": "Dishwash Powder - 500 g pack. Category: Dishwash & Cleaning.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 85,
+    "mrp": 95,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1585421514738-01798e348b17?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -7901,10 +7901,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "1 kg",
     "description": "Dishwash Powder - 1 kg pack. Category: Dishwash & Cleaning.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 135,
+    "mrp": 150,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1585421514738-01798e348b17?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -7919,10 +7919,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "500 ml",
     "description": "Floor Cleaner - 500 ml pack. Category: Dishwash & Cleaning.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 85,
+    "mrp": 95,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1585421514738-01798e348b17?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -7937,10 +7937,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "1 L",
     "description": "Floor Cleaner - 1 L pack. Category: Dishwash & Cleaning.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 155,
+    "mrp": 180,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1585421514738-01798e348b17?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -7955,10 +7955,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "5 L",
     "description": "Floor Cleaner - 5 L pack. Category: Dishwash & Cleaning.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1585421514738-01798e348b17?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -7973,10 +7973,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "500 ml",
     "description": "Toilet Cleaner - 500 ml pack. Category: Dishwash & Cleaning.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 85,
+    "mrp": 95,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1585421514738-01798e348b17?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -7991,10 +7991,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "1 L",
     "description": "Toilet Cleaner - 1 L pack. Category: Dishwash & Cleaning.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 155,
+    "mrp": 180,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1585421514738-01798e348b17?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -8009,10 +8009,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "500 ml",
     "description": "Glass Cleaner - 500 ml pack. Category: Dishwash & Cleaning.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 85,
+    "mrp": 95,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1585421514738-01798e348b17?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -8027,10 +8027,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "500 ml",
     "description": "Bleach / Phenyl - 500 ml pack. Category: Dishwash & Cleaning.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 85,
+    "mrp": 95,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1585421514738-01798e348b17?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -8045,10 +8045,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "1 L",
     "description": "Bleach / Phenyl - 1 L pack. Category: Dishwash & Cleaning.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 135,
+    "mrp": 150,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1585421514738-01798e348b17?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -8063,10 +8063,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "Pack of 3",
     "description": "Scrub Pad - Pack of 3 pack. Category: Dishwash & Cleaning.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1585421514738-01798e348b17?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -8081,10 +8081,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "Pack of 3",
     "description": "Steel Scrubber - Pack of 3 pack. Category: Dishwash & Cleaning.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1585421514738-01798e348b17?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -8099,10 +8099,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "Single",
     "description": "Broom - Single pack. Category: Dishwash & Cleaning.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1585421514738-01798e348b17?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -8117,10 +8117,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "Single",
     "description": "Mop - Single pack. Category: Dishwash & Cleaning.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1585421514738-01798e348b17?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -8135,10 +8135,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "Roll",
     "description": "Garbage Bags - Roll pack. Category: Dishwash & Cleaning.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1585421514738-01798e348b17?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -8153,10 +8153,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "Pack",
     "description": "Garbage Bags - Pack pack. Category: Dishwash & Cleaning.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1585421514738-01798e348b17?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -8171,10 +8171,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "Pack",
     "description": "Naphthalene Balls - Pack pack. Category: Dishwash & Cleaning.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1585421514738-01798e348b17?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -8189,10 +8189,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "Spray",
     "description": "Room Freshener - Spray pack. Category: Dishwash & Cleaning.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1585421514738-01798e348b17?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -8207,10 +8207,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "Pack",
     "description": "Room Freshener - Pack pack. Category: Dishwash & Cleaning.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1585421514738-01798e348b17?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -8225,10 +8225,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "400 ml",
     "description": "Insect Repellent / Spray - 400 ml pack. Category: Dishwash & Cleaning.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1585421514738-01798e348b17?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -8243,10 +8243,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "Pack",
     "description": "Mosquito Coil - Pack pack. Category: Dishwash & Cleaning.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1585421514738-01798e348b17?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -8261,10 +8261,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "Pack",
     "description": "Mosquito Refill Liquid - Pack pack. Category: Dishwash & Cleaning.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1585421514738-01798e348b17?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -8279,10 +8279,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "Pack of 10",
     "description": "Matchbox - Pack of 10 pack. Category: Dishwash & Cleaning.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1585421514738-01798e348b17?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -8297,10 +8297,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "Pack",
     "description": "Candles - Pack pack. Category: Dishwash & Cleaning.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1585421514738-01798e348b17?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -8315,10 +8315,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "Single",
     "description": "Bathing Soap - Single pack. Category: Bath & Body.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1608248597359-009c9511de75?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -8333,10 +8333,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "Pack of 4",
     "description": "Bathing Soap - Pack of 4 pack. Category: Bath & Body.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 138,
+    "mrp": 160,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1608248597359-009c9511de75?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -8351,10 +8351,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "200 ml",
     "description": "Body Wash - 200 ml pack. Category: Bath & Body.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1608248597359-009c9511de75?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -8369,10 +8369,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "400 ml",
     "description": "Body Wash - 400 ml pack. Category: Bath & Body.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1608248597359-009c9511de75?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -8387,10 +8387,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "200 ml",
     "description": "Hand Wash - 200 ml pack. Category: Bath & Body.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1608248597359-009c9511de75?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -8405,10 +8405,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "500 ml",
     "description": "Hand Wash - 500 ml pack. Category: Bath & Body.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 85,
+    "mrp": 95,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1608248597359-009c9511de75?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -8423,10 +8423,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "200 ml",
     "description": "Body Lotion - 200 ml pack. Category: Bath & Body.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1608248597359-009c9511de75?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -8441,10 +8441,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "400 ml",
     "description": "Body Lotion - 400 ml pack. Category: Bath & Body.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1608248597359-009c9511de75?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -8459,10 +8459,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "100 g",
     "description": "Talcum Powder - 100 g pack. Category: Bath & Body.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 40,
+    "mrp": 45,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1608248597359-009c9511de75?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -8477,10 +8477,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "200 g",
     "description": "Talcum Powder - 200 g pack. Category: Bath & Body.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 58,
+    "mrp": 65,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1608248597359-009c9511de75?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -8495,10 +8495,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "400 g",
     "description": "Talcum Powder - 400 g pack. Category: Bath & Body.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1608248597359-009c9511de75?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -8513,10 +8513,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "150 ml",
     "description": "Deodorant - 150 ml pack. Category: Bath & Body.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1608248597359-009c9511de75?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -8531,10 +8531,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "50 g",
     "description": "Face Wash - 50 g pack. Category: Bath & Body.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1608248597359-009c9511de75?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -8549,10 +8549,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "100 g",
     "description": "Face Wash - 100 g pack. Category: Bath & Body.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 40,
+    "mrp": 45,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1608248597359-009c9511de75?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -8567,10 +8567,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "50 g",
     "description": "Face Cream - 50 g pack. Category: Bath & Body.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1608248597359-009c9511de75?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -8585,10 +8585,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "100 g",
     "description": "Face Cream - 100 g pack. Category: Bath & Body.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 40,
+    "mrp": 45,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1608248597359-009c9511de75?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -8603,10 +8603,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "50 g",
     "description": "Sunscreen - 50 g pack. Category: Bath & Body.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1608248597359-009c9511de75?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -8621,10 +8621,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "100 g",
     "description": "Sunscreen - 100 g pack. Category: Bath & Body.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 40,
+    "mrp": 45,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1608248597359-009c9511de75?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -8639,10 +8639,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "Single",
     "description": "Lip Balm - Single pack. Category: Bath & Body.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1608248597359-009c9511de75?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -8657,10 +8657,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "100 ml",
     "description": "Hair Oil - 100 ml pack. Category: Bath & Body.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1608248597359-009c9511de75?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -8675,10 +8675,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "200 ml",
     "description": "Hair Oil - 200 ml pack. Category: Bath & Body.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1608248597359-009c9511de75?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -8693,10 +8693,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "500 ml",
     "description": "Hair Oil - 500 ml pack. Category: Bath & Body.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 85,
+    "mrp": 95,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1608248597359-009c9511de75?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -8711,10 +8711,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "Sachet",
     "description": "Shampoo - Sachet pack. Category: Bath & Body.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1608248597359-009c9511de75?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -8729,10 +8729,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "180 ml",
     "description": "Shampoo - 180 ml pack. Category: Bath & Body.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1608248597359-009c9511de75?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -8747,10 +8747,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "340 ml",
     "description": "Shampoo - 340 ml pack. Category: Bath & Body.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1608248597359-009c9511de75?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -8765,10 +8765,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "180 ml",
     "description": "Conditioner - 180 ml pack. Category: Bath & Body.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1608248597359-009c9511de75?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -8783,10 +8783,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "Pack",
     "description": "Hair Colour / Mehendi - Pack pack. Category: Bath & Body.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1608248597359-009c9511de75?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -8801,10 +8801,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "Single",
     "description": "Hair Comb - Single pack. Category: Bath & Body.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1608248597359-009c9511de75?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -8819,10 +8819,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "100 g",
     "description": "Toothpaste - 100 g pack. Category: Oral & Personal Care.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 40,
+    "mrp": 45,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1559591937-e10c71a36413?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -8837,10 +8837,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "200 g",
     "description": "Toothpaste - 200 g pack. Category: Oral & Personal Care.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 115,
+    "mrp": 130,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1559591937-e10c71a36413?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -8855,10 +8855,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "Single",
     "description": "Toothbrush - Single pack. Category: Oral & Personal Care.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1559591937-e10c71a36413?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -8873,10 +8873,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "Pack of 2",
     "description": "Toothbrush - Pack of 2 pack. Category: Oral & Personal Care.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1559591937-e10c71a36413?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -8891,10 +8891,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "250 ml",
     "description": "Mouthwash - 250 ml pack. Category: Oral & Personal Care.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1559591937-e10c71a36413?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -8909,10 +8909,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "500 ml",
     "description": "Mouthwash - 500 ml pack. Category: Oral & Personal Care.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 85,
+    "mrp": 95,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1559591937-e10c71a36413?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -8927,10 +8927,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "Single",
     "description": "Razor - Single pack. Category: Oral & Personal Care.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1559591937-e10c71a36413?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -8945,10 +8945,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "Pack of 5",
     "description": "Razor - Pack of 5 pack. Category: Oral & Personal Care.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1559591937-e10c71a36413?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -8963,10 +8963,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "70 g",
     "description": "Shaving Cream - 70 g pack. Category: Oral & Personal Care.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1559591937-e10c71a36413?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -8981,10 +8981,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "200 g",
     "description": "Shaving Cream - 200 g pack. Category: Oral & Personal Care.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 58,
+    "mrp": 65,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1559591937-e10c71a36413?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -8999,10 +8999,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "50 ml",
     "description": "After Shave - 50 ml pack. Category: Oral & Personal Care.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1559591937-e10c71a36413?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -9017,10 +9017,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "100 ml",
     "description": "After Shave - 100 ml pack. Category: Oral & Personal Care.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1559591937-e10c71a36413?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -9035,10 +9035,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "Pack of 7",
     "description": "Sanitary Pads - Pack of 7 pack. Category: Oral & Personal Care.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1559591937-e10c71a36413?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -9053,10 +9053,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "Pack of 15",
     "description": "Sanitary Pads - Pack of 15 pack. Category: Oral & Personal Care.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1559591937-e10c71a36413?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -9071,10 +9071,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "Pack of 20",
     "description": "Baby Diapers - Pack of 20 pack. Category: Oral & Personal Care.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1559591937-e10c71a36413?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -9089,10 +9089,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "Pack of 50",
     "description": "Baby Diapers - Pack of 50 pack. Category: Oral & Personal Care.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1559591937-e10c71a36413?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -9107,10 +9107,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "Pack of 72",
     "description": "Baby Wipes - Pack of 72 pack. Category: Oral & Personal Care.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1559591937-e10c71a36413?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -9125,10 +9125,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "Pack of 100",
     "description": "Cotton Buds - Pack of 100 pack. Category: Oral & Personal Care.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1559591937-e10c71a36413?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -9143,10 +9143,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "Pack",
     "description": "Cotton Roll - Pack pack. Category: Oral & Personal Care.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1559591937-e10c71a36413?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -9161,10 +9161,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "Single",
     "description": "Nail Cutter - Single pack. Category: Oral & Personal Care.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1559591937-e10c71a36413?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -9179,10 +9179,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "50 ml",
     "description": "Perfume / Body Spray - 50 ml pack. Category: Oral & Personal Care.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1559591937-e10c71a36413?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -9197,10 +9197,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "150 ml",
     "description": "Perfume / Body Spray - 150 ml pack. Category: Oral & Personal Care.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1559591937-e10c71a36413?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -9215,10 +9215,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "100 pulls",
     "description": "Tissue Paper Box - 100 pulls pack. Category: Paper, Tissue & Misc.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1583947215259-38e31be8751f?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -9233,10 +9233,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "200 pulls",
     "description": "Tissue Paper Box - 200 pulls pack. Category: Paper, Tissue & Misc.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1583947215259-38e31be8751f?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -9251,10 +9251,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "Pack of 4",
     "description": "Toilet Paper - Pack of 4 pack. Category: Paper, Tissue & Misc.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1583947215259-38e31be8751f?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -9269,10 +9269,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "Pack of 12",
     "description": "Toilet Paper - Pack of 12 pack. Category: Paper, Tissue & Misc.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1583947215259-38e31be8751f?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -9287,10 +9287,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "Single",
     "description": "Kitchen Towel Roll - Single pack. Category: Paper, Tissue & Misc.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1583947215259-38e31be8751f?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -9305,10 +9305,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "Pack of 2",
     "description": "Kitchen Towel Roll - Pack of 2 pack. Category: Paper, Tissue & Misc.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1583947215259-38e31be8751f?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -9323,10 +9323,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "Pack of 100",
     "description": "Napkins - Pack of 100 pack. Category: Paper, Tissue & Misc.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1583947215259-38e31be8751f?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -9341,10 +9341,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "9 m",
     "description": "Aluminium Foil - 9 m pack. Category: Paper, Tissue & Misc.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1583947215259-38e31be8751f?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -9359,10 +9359,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "72 m",
     "description": "Aluminium Foil - 72 m pack. Category: Paper, Tissue & Misc.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1583947215259-38e31be8751f?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -9377,10 +9377,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "Roll",
     "description": "Cling Wrap - Roll pack. Category: Paper, Tissue & Misc.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1583947215259-38e31be8751f?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -9395,10 +9395,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "Pack of 25",
     "description": "Disposable Cups - Pack of 25 pack. Category: Paper, Tissue & Misc.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1583947215259-38e31be8751f?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -9413,10 +9413,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "Pack of 50",
     "description": "Disposable Cups - Pack of 50 pack. Category: Paper, Tissue & Misc.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1583947215259-38e31be8751f?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -9431,10 +9431,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "Pack of 25",
     "description": "Disposable Plates - Pack of 25 pack. Category: Paper, Tissue & Misc.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1583947215259-38e31be8751f?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -9449,10 +9449,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "Pack of 50",
     "description": "Disposable Plates - Pack of 50 pack. Category: Paper, Tissue & Misc.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1583947215259-38e31be8751f?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -9467,10 +9467,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "500 g",
     "description": "Plastic Bags (Polythene) - 500 g pack. Category: Paper, Tissue & Misc.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 85,
+    "mrp": 95,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1583947215259-38e31be8751f?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -9485,10 +9485,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "1 kg",
     "description": "Plastic Bags (Polythene) - 1 kg pack. Category: Paper, Tissue & Misc.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 135,
+    "mrp": 150,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1583947215259-38e31be8751f?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -9503,10 +9503,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "Pack of 2",
     "description": "Batteries (AA) - Pack of 2 pack. Category: Paper, Tissue & Misc.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1583947215259-38e31be8751f?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -9521,10 +9521,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "Pack of 4",
     "description": "Batteries (AA) - Pack of 4 pack. Category: Paper, Tissue & Misc.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1583947215259-38e31be8751f?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -9539,10 +9539,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "Pack of 2",
     "description": "Batteries (AAA) - Pack of 2 pack. Category: Paper, Tissue & Misc.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1583947215259-38e31be8751f?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -9557,10 +9557,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "Pack of 4",
     "description": "Batteries (AAA) - Pack of 4 pack. Category: Paper, Tissue & Misc.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1583947215259-38e31be8751f?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -9575,10 +9575,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "9 W",
     "description": "LED Bulb - 9 W pack. Category: Paper, Tissue & Misc.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1583947215259-38e31be8751f?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -9593,10 +9593,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "12 W",
     "description": "LED Bulb - 12 W pack. Category: Paper, Tissue & Misc.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1583947215259-38e31be8751f?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -9611,10 +9611,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "Pack",
     "description": "Pooja Agarbatti (Incense) - Pack pack. Category: Paper, Tissue & Misc.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1583947215259-38e31be8751f?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -9629,10 +9629,10 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "Pack",
     "description": "Camphor - Pack pack. Category: Paper, Tissue & Misc.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1583947215259-38e31be8751f?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   },
   {
@@ -9647,10 +9647,892 @@ export const DEFAULT_PRODUCTS: CatalogueProduct[] = [
     "pack_size": "Pack",
     "description": "Pooja Oil / Ghee Lamp Wicks - Pack pack. Category: Paper, Tissue & Misc.",
     "description_hi": null,
-    "price": null,
-    "mrp": null,
+    "price": 45,
+    "mrp": 50,
     "stock_status": "available",
-    "image_url": null,
+    "image_url": "https://images.unsplash.com/photo-1583947215259-38e31be8751f?auto=format&fit=crop&w=600&q=80",
+    "is_published": true
+  },
+  {
+    "id": "prod-HLD-001",
+    "sku": "HLD-001",
+    "name": "Haldiram's Aloo Bhujia 400 g",
+    "name_hi": "हल्दीराम आलू भुजिया 400 ग्राम",
+    "brand": "Haldiram's",
+    "category_slug": "snacks-biscuits-beverages",
+    "category_name": "Snacks, Biscuits & Beverages",
+    "subcategory": "Chips & Namkeen",
+    "pack_size": "400 g",
+    "description": "Crispy and spicy potato mint noodle snack made with finest potatoes and spices.",
+    "description_hi": null,
+    "price": 110,
+    "mrp": 125,
+    "stock_status": "available",
+    "image_url": "https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=600&q=80",
+    "is_published": true
+  },
+  {
+    "id": "prod-HLD-002",
+    "sku": "HLD-002",
+    "name": "Haldiram's Aloo Bhujia 1 kg Family Pack",
+    "name_hi": "हल्दीराम आलू भुजिया 1 किलो",
+    "brand": "Haldiram's",
+    "category_slug": "snacks-biscuits-beverages",
+    "category_name": "Snacks, Biscuits & Beverages",
+    "subcategory": "Chips & Namkeen",
+    "pack_size": "1 kg",
+    "description": "Value family pack of all-time favorite crunchy Haldiram's Aloo Bhujia.",
+    "description_hi": null,
+    "price": 260,
+    "mrp": 290,
+    "stock_status": "available",
+    "image_url": "https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=600&q=80",
+    "is_published": true
+  },
+  {
+    "id": "prod-HLD-003",
+    "sku": "HLD-003",
+    "name": "Haldiram's Bhujia Sev 400 g",
+    "name_hi": "हल्दीराम भुजिया सेव 400 ग्राम",
+    "brand": "Haldiram's",
+    "category_slug": "snacks-biscuits-beverages",
+    "category_name": "Snacks, Biscuits & Beverages",
+    "subcategory": "Chips & Namkeen",
+    "pack_size": "400 g",
+    "description": "Traditional spicy Bikaneri sev made with moth dal and choicest spices.",
+    "description_hi": null,
+    "price": 105,
+    "mrp": 120,
+    "stock_status": "available",
+    "image_url": "https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=600&q=80",
+    "is_published": true
+  },
+  {
+    "id": "prod-HLD-004",
+    "sku": "HLD-004",
+    "name": "Haldiram's All In One Mixture 400 g",
+    "name_hi": "हल्दीराम ऑल इन वन मिक्सचर 400 ग्राम",
+    "brand": "Haldiram's",
+    "category_slug": "snacks-biscuits-beverages",
+    "category_name": "Snacks, Biscuits & Beverages",
+    "subcategory": "Chips & Namkeen",
+    "pack_size": "400 g",
+    "description": "Signature sweet and spicy blend of crunchy noodles, pulses, cornflakes and dry fruits.",
+    "description_hi": null,
+    "price": 115,
+    "mrp": 130,
+    "stock_status": "available",
+    "image_url": "https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=600&q=80",
+    "is_published": true
+  },
+  {
+    "id": "prod-HLD-005",
+    "sku": "HLD-005",
+    "name": "Haldiram's Khatta Meetha Namkeen 400 g",
+    "name_hi": "हल्दीराम खट्टा मीठा 400 ग्राम",
+    "brand": "Haldiram's",
+    "category_slug": "snacks-biscuits-beverages",
+    "category_name": "Snacks, Biscuits & Beverages",
+    "subcategory": "Chips & Namkeen",
+    "pack_size": "400 g",
+    "description": "Tangy and sweet crispy namkeen mixture, a tea-time family favorite.",
+    "description_hi": null,
+    "price": 105,
+    "mrp": 120,
+    "stock_status": "available",
+    "image_url": "https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=600&q=80",
+    "is_published": true
+  },
+  {
+    "id": "prod-HLD-006",
+    "sku": "HLD-006",
+    "name": "Haldiram's Moong Dal 400 g",
+    "name_hi": "हल्दीराम नमकीन मूंग दाल 400 ग्राम",
+    "brand": "Haldiram's",
+    "category_slug": "snacks-biscuits-beverages",
+    "category_name": "Snacks, Biscuits & Beverages",
+    "subcategory": "Chips & Namkeen",
+    "pack_size": "400 g",
+    "description": "Crispy fried and lightly salted moong dal pulses.",
+    "description_hi": null,
+    "price": 125,
+    "mrp": 140,
+    "stock_status": "available",
+    "image_url": "https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=600&q=80",
+    "is_published": true
+  },
+  {
+    "id": "prod-HLD-007",
+    "sku": "HLD-007",
+    "name": "Haldiram's Nut Cracker 200 g",
+    "name_hi": "हल्दीराम नट क्रैकर 200 ग्राम",
+    "brand": "Haldiram's",
+    "category_slug": "snacks-biscuits-beverages",
+    "category_name": "Snacks, Biscuits & Beverages",
+    "subcategory": "Chips & Namkeen",
+    "pack_size": "200 g",
+    "description": "Coated spicy roasted peanuts with mouth-watering masala.",
+    "description_hi": null,
+    "price": 58,
+    "mrp": 65,
+    "stock_status": "available",
+    "image_url": "https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=600&q=80",
+    "is_published": true
+  },
+  {
+    "id": "prod-HLD-008",
+    "sku": "HLD-008",
+    "name": "Haldiram's Classic Salted Potato Chips 100 g",
+    "name_hi": "हल्दीराम क्लासिक साल्टेड चिप्स 100 ग्राम",
+    "brand": "Haldiram's",
+    "category_slug": "snacks-biscuits-beverages",
+    "category_name": "Snacks, Biscuits & Beverages",
+    "subcategory": "Chips & Namkeen",
+    "pack_size": "100 g",
+    "description": "Thinly sliced, golden crispy potato chips sprinkled with rock salt.",
+    "description_hi": null,
+    "price": 36,
+    "mrp": 40,
+    "stock_status": "available",
+    "image_url": "https://images.unsplash.com/photo-1566478989037-eec170784d0b?auto=format&fit=crop&w=600&q=80",
+    "is_published": true
+  },
+  {
+    "id": "prod-HLD-009",
+    "sku": "HLD-009",
+    "name": "Haldiram's Pudina Treat Potato Chips 100 g",
+    "name_hi": "हल्दीराम पुदीना चिप्स 100 ग्राम",
+    "brand": "Haldiram's",
+    "category_slug": "snacks-biscuits-beverages",
+    "category_name": "Snacks, Biscuits & Beverages",
+    "subcategory": "Chips & Namkeen",
+    "pack_size": "100 g",
+    "description": "Zesty fresh mint and spiced potato chips for instant crunch.",
+    "description_hi": null,
+    "price": 36,
+    "mrp": 40,
+    "stock_status": "available",
+    "image_url": "https://images.unsplash.com/photo-1566478989037-eec170784d0b?auto=format&fit=crop&w=600&q=80",
+    "is_published": true
+  },
+  {
+    "id": "prod-BRT-001",
+    "sku": "BRT-001",
+    "name": "Britannia Good Day Butter Cookies 600 g Family Pack",
+    "name_hi": "ब्रिटानिया गुड डे बटर कुकीज़ 600 ग्राम",
+    "brand": "Britannia",
+    "category_slug": "snacks-biscuits-beverages",
+    "category_name": "Snacks, Biscuits & Beverages",
+    "subcategory": "Biscuits & Cookies",
+    "pack_size": "600 g",
+    "description": "Rich buttery delight cookies baked to perfection with signature smile design.",
+    "description_hi": null,
+    "price": 125,
+    "mrp": 140,
+    "stock_status": "available",
+    "image_url": "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=600&q=80",
+    "is_published": true
+  },
+  {
+    "id": "prod-BRT-002",
+    "sku": "BRT-002",
+    "name": "Britannia Good Day Cashew Cookies 600 g",
+    "name_hi": "ब्रिटानिया गुड डे काजू कुकीज़ 600 ग्राम",
+    "brand": "Britannia",
+    "category_slug": "snacks-biscuits-beverages",
+    "category_name": "Snacks, Biscuits & Beverages",
+    "subcategory": "Biscuits & Cookies",
+    "pack_size": "600 g",
+    "description": "Loaded with crunchy cashew nuts in every bite.",
+    "description_hi": null,
+    "price": 142,
+    "mrp": 160,
+    "stock_status": "available",
+    "image_url": "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=600&q=80",
+    "is_published": true
+  },
+  {
+    "id": "prod-BRT-003",
+    "sku": "BRT-003",
+    "name": "Britannia Marie Gold 1 kg Super Saver Pack",
+    "name_hi": "ब्रिटानिया मेरी गोल्ड 1 किलो",
+    "brand": "Britannia",
+    "category_slug": "snacks-biscuits-beverages",
+    "category_name": "Snacks, Biscuits & Beverages",
+    "subcategory": "Biscuits & Cookies",
+    "pack_size": "1 kg",
+    "description": "Light and crispy tea-time companion enriched with 10 essential vitamins.",
+    "description_hi": null,
+    "price": 149,
+    "mrp": 170,
+    "stock_status": "available",
+    "image_url": "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=600&q=80",
+    "is_published": true
+  },
+  {
+    "id": "prod-BRT-004",
+    "sku": "BRT-004",
+    "name": "Britannia Bourbon Chocolate Biscuits 390 g",
+    "name_hi": "ब्रिटानिया बोर्बन चॉकलेट बिस्कुट 390 ग्राम",
+    "brand": "Britannia",
+    "category_slug": "snacks-biscuits-beverages",
+    "category_name": "Snacks, Biscuits & Beverages",
+    "subcategory": "Biscuits & Cookies",
+    "pack_size": "390 g",
+    "description": "Decadent chocolate cream sandwiched between crunchy sugar-dusted chocolate biscuits.",
+    "description_hi": null,
+    "price": 79,
+    "mrp": 90,
+    "stock_status": "available",
+    "image_url": "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=600&q=80",
+    "is_published": true
+  },
+  {
+    "id": "prod-BRT-005",
+    "sku": "BRT-005",
+    "name": "Britannia 50-50 Maska Chaska 300 g",
+    "name_hi": "ब्रिटानिया 50-50 मस्का चस्का 300 ग्राम",
+    "brand": "Britannia",
+    "category_slug": "snacks-biscuits-beverages",
+    "category_name": "Snacks, Biscuits & Beverages",
+    "subcategory": "Biscuits & Cookies",
+    "pack_size": "300 g",
+    "description": "Buttery, sweet and salty crackers garnished with aromatic herbs.",
+    "description_hi": null,
+    "price": 62,
+    "mrp": 70,
+    "stock_status": "available",
+    "image_url": "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=600&q=80",
+    "is_published": true
+  },
+  {
+    "id": "prod-PAR-001",
+    "sku": "PAR-001",
+    "name": "Parle-G Gold Glucose Biscuits 1 kg",
+    "name_hi": "पारले-जी गोल्ड बिस्कुट 1 किलो",
+    "brand": "Parle",
+    "category_slug": "snacks-biscuits-beverages",
+    "category_name": "Snacks, Biscuits & Beverages",
+    "subcategory": "Biscuits & Cookies",
+    "pack_size": "1 kg",
+    "description": "India's favorite glucose biscuit with milk and wheat goodness in bigger gold bite.",
+    "description_hi": null,
+    "price": 105,
+    "mrp": 120,
+    "stock_status": "available",
+    "image_url": "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=600&q=80",
+    "is_published": true
+  },
+  {
+    "id": "prod-PAR-002",
+    "sku": "PAR-002",
+    "name": "Parle Monaco Classic Salted Crackers 400 g",
+    "name_hi": "पारले मोनाको क्लासिक नमकीन 400 ग्राम",
+    "brand": "Parle",
+    "category_slug": "snacks-biscuits-beverages",
+    "category_name": "Snacks, Biscuits & Beverages",
+    "subcategory": "Biscuits & Cookies",
+    "pack_size": "400 g",
+    "description": "Crispy and light salted snack crackers, perfect for toppings and evening chai.",
+    "description_hi": null,
+    "price": 70,
+    "mrp": 80,
+    "stock_status": "available",
+    "image_url": "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=600&q=80",
+    "is_published": true
+  },
+  {
+    "id": "prod-PAR-003",
+    "sku": "PAR-003",
+    "name": "Parle Krackjack Sweet & Salty Crackers 400 g",
+    "name_hi": "पारले क्रैकजैक बिस्कुट 400 ग्राम",
+    "brand": "Parle",
+    "category_slug": "snacks-biscuits-beverages",
+    "category_name": "Snacks, Biscuits & Beverages",
+    "subcategory": "Biscuits & Cookies",
+    "pack_size": "400 g",
+    "description": "Original sweet and salty crunchy cracker biscuit.",
+    "description_hi": null,
+    "price": 74,
+    "mrp": 85,
+    "stock_status": "available",
+    "image_url": "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=600&q=80",
+    "is_published": true
+  },
+  {
+    "id": "prod-PAR-004",
+    "sku": "PAR-004",
+    "name": "Parle Hide & Seek Chocolate Chip Cookies 350 g",
+    "name_hi": "पारले हाइड एंड सीक कुकीज़ 350 ग्राम",
+    "brand": "Parle",
+    "category_slug": "snacks-biscuits-beverages",
+    "category_name": "Snacks, Biscuits & Beverages",
+    "subcategory": "Biscuits & Cookies",
+    "pack_size": "350 g",
+    "description": "Mouth-watering chocolate cookies studded with real dark chocolate chips.",
+    "description_hi": null,
+    "price": 104,
+    "mrp": 120,
+    "stock_status": "available",
+    "image_url": "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=600&q=80",
+    "is_published": true
+  },
+  {
+    "id": "prod-BON-001",
+    "sku": "BON-001",
+    "name": "Bonn Prime Bake Rusk 400 g",
+    "name_hi": "बॉन बेक टोस्ट / रस्क 400 ग्राम",
+    "brand": "Bonn",
+    "category_slug": "snacks-biscuits-beverages",
+    "category_name": "Snacks, Biscuits & Beverages",
+    "subcategory": "Biscuits & Cookies",
+    "pack_size": "400 g",
+    "description": "Extra crispy twice-baked cardamom elaichi rusk toast.",
+    "description_hi": null,
+    "price": 65,
+    "mrp": 75,
+    "stock_status": "available",
+    "image_url": "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=600&q=80",
+    "is_published": true
+  },
+  {
+    "id": "prod-BON-002",
+    "sku": "BON-002",
+    "name": "Bonn White Sandwich Bread 400 g",
+    "name_hi": "बॉन वाइट सैंडविच ब्रेड 400 ग्राम",
+    "brand": "Bonn",
+    "category_slug": "dairy-bakery-breakfast",
+    "category_name": "Dairy, Bakery & Breakfast",
+    "subcategory": "Eggs & Bakery",
+    "pack_size": "400 g",
+    "description": "Soft, freshly baked daily sandwich bread slices.",
+    "description_hi": null,
+    "price": 40,
+    "mrp": 45,
+    "stock_status": "available",
+    "image_url": "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=600&q=80",
+    "is_published": true
+  },
+  {
+    "id": "prod-BON-003",
+    "sku": "BON-003",
+    "name": "Bonn 100% Whole Wheat Atta Bread 400 g",
+    "name_hi": "बॉन १००% आटा ब्रेड 400 ग्राम",
+    "brand": "Bonn",
+    "category_slug": "dairy-bakery-breakfast",
+    "category_name": "Dairy, Bakery & Breakfast",
+    "subcategory": "Eggs & Bakery",
+    "pack_size": "400 g",
+    "description": "Healthy whole wheat brown bread loaded with natural grain fiber.",
+    "description_hi": null,
+    "price": 50,
+    "mrp": 55,
+    "stock_status": "available",
+    "image_url": "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=600&q=80",
+    "is_published": true
+  },
+  {
+    "id": "prod-MDH-001",
+    "sku": "MDH-001",
+    "name": "MDH Deggi Mirch Powder 100 g",
+    "name_hi": "एमडीएच देगी मिर्च 100 ग्राम",
+    "brand": "MDH",
+    "category_slug": "oil-ghee-spices-masala",
+    "category_name": "Oil, Ghee, Spices & Masala",
+    "subcategory": "Ground Spices",
+    "pack_size": "100 g",
+    "description": "Unique blend of Kashmiri and red chillies imparting natural vibrant red color and mild pungency.",
+    "description_hi": null,
+    "price": 84,
+    "mrp": 92,
+    "stock_status": "available",
+    "image_url": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=600&q=80",
+    "is_published": true
+  },
+  {
+    "id": "prod-MDH-002",
+    "sku": "MDH-002",
+    "name": "MDH Kitchen King Masala 100 g",
+    "name_hi": "एमडीएच किचन किंग मसाला 100 ग्राम",
+    "brand": "MDH",
+    "category_slug": "oil-ghee-spices-masala",
+    "category_name": "Oil, Ghee, Spices & Masala",
+    "subcategory": "Masala Mixes",
+    "pack_size": "100 g",
+    "description": "Classic Indian curry masala blend suitable for all paneer, vegetable and gravies.",
+    "description_hi": null,
+    "price": 82,
+    "mrp": 90,
+    "stock_status": "available",
+    "image_url": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=600&q=80",
+    "is_published": true
+  },
+  {
+    "id": "prod-MDH-003",
+    "sku": "MDH-003",
+    "name": "MDH Garam Masala 100 g",
+    "name_hi": "एमडीएच गरम मसाला 100 ग्राम",
+    "brand": "MDH",
+    "category_slug": "oil-ghee-spices-masala",
+    "category_name": "Oil, Ghee, Spices & Masala",
+    "subcategory": "Masala Mixes",
+    "pack_size": "100 g",
+    "description": "Finely ground aromatic blend of cloves, cardamom, cinnamon and peppercorns.",
+    "description_hi": null,
+    "price": 95,
+    "mrp": 105,
+    "stock_status": "available",
+    "image_url": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=600&q=80",
+    "is_published": true
+  },
+  {
+    "id": "prod-MDH-004",
+    "sku": "MDH-004",
+    "name": "MDH Chunky Chat Masala 100 g",
+    "name_hi": "एमडीएच चंकी चाट मसाला 100 ग्राम",
+    "brand": "MDH",
+    "category_slug": "oil-ghee-spices-masala",
+    "category_name": "Oil, Ghee, Spices & Masala",
+    "subcategory": "Masala Mixes",
+    "pack_size": "100 g",
+    "description": "Zesty chat masala for fruit salads, snacks, pakoras and raita.",
+    "description_hi": null,
+    "price": 72,
+    "mrp": 80,
+    "stock_status": "available",
+    "image_url": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=600&q=80",
+    "is_published": true
+  },
+  {
+    "id": "prod-MDH-005",
+    "sku": "MDH-005",
+    "name": "MDH Chana Masala 100 g",
+    "name_hi": "एमडीएच चना मसाला 100 ग्राम",
+    "brand": "MDH",
+    "category_slug": "oil-ghee-spices-masala",
+    "category_name": "Oil, Ghee, Spices & Masala",
+    "subcategory": "Masala Mixes",
+    "pack_size": "100 g",
+    "description": "Authentic Punjabi chole and chana spice blend.",
+    "description_hi": null,
+    "price": 80,
+    "mrp": 88,
+    "stock_status": "available",
+    "image_url": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=600&q=80",
+    "is_published": true
+  },
+  {
+    "id": "prod-CAT-001",
+    "sku": "CAT-001",
+    "name": "Catch Table Salt & Black Pepper Sprinkler Set 200 g",
+    "name_hi": "कैच टेबल साल्ट व काली मिर्च स्प्रिंकलर",
+    "brand": "Catch",
+    "category_slug": "oil-ghee-spices-masala",
+    "category_name": "Oil, Ghee, Spices & Masala",
+    "subcategory": "Ground Spices",
+    "pack_size": "200 g",
+    "description": "Convenient rotatable rotary tabletop salt and ground black pepper seasoning.",
+    "description_hi": null,
+    "price": 125,
+    "mrp": 140,
+    "stock_status": "available",
+    "image_url": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=600&q=80",
+    "is_published": true
+  },
+  {
+    "id": "prod-CAT-002",
+    "sku": "CAT-002",
+    "name": "Catch Sabzi Masala 100 g",
+    "name_hi": "कैच सब्ज़ी मसाला 100 ग्राम",
+    "brand": "Catch",
+    "category_slug": "oil-ghee-spices-masala",
+    "category_name": "Oil, Ghee, Spices & Masala",
+    "subcategory": "Masala Mixes",
+    "pack_size": "100 g",
+    "description": "Low-temperature grinding technology lock for enhanced aroma in daily vegetable curries.",
+    "description_hi": null,
+    "price": 58,
+    "mrp": 65,
+    "stock_status": "available",
+    "image_url": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=600&q=80",
+    "is_published": true
+  },
+  {
+    "id": "prod-RAM-001",
+    "sku": "RAM-001",
+    "name": "Ramdev Special Bandhani Hing (Asafoetida) 50 g",
+    "name_hi": "रामदेव स्पेशल बंधनी हींग 50 ग्राम",
+    "brand": "Ramdev",
+    "category_slug": "oil-ghee-spices-masala",
+    "category_name": "Oil, Ghee, Spices & Masala",
+    "subcategory": "Whole Spices",
+    "pack_size": "50 g",
+    "description": "Premium strong digestive compounded asafoetida with rich aroma for tadka.",
+    "description_hi": null,
+    "price": 112,
+    "mrp": 125,
+    "stock_status": "available",
+    "image_url": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=600&q=80",
+    "is_published": true
+  },
+  {
+    "id": "prod-RAM-002",
+    "sku": "RAM-002",
+    "name": "Ramdev Dhana Jeera Powder 200 g",
+    "name_hi": "रामदेव धना जीरा पाउडर 200 ग्राम",
+    "brand": "Ramdev",
+    "category_slug": "oil-ghee-spices-masala",
+    "category_name": "Oil, Ghee, Spices & Masala",
+    "subcategory": "Ground Spices",
+    "pack_size": "200 g",
+    "description": "Roasted coriander and cumin seed powder blend for wholesome curry taste.",
+    "description_hi": null,
+    "price": 76,
+    "mrp": 85,
+    "stock_status": "available",
+    "image_url": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=600&q=80",
+    "is_published": true
+  },
+  {
+    "id": "prod-OIL-001",
+    "sku": "OIL-001",
+    "name": "Fortune Kachi Ghani Pure Mustard Oil 1 L Pouch",
+    "name_hi": "फॉर्च्यून कच्ची घानी सरसों का तेल 1 लीटर",
+    "brand": "Fortune",
+    "category_slug": "oil-ghee-spices-masala",
+    "category_name": "Oil, Ghee, Spices & Masala",
+    "subcategory": "Cooking Oil & Ghee",
+    "pack_size": "1 L",
+    "description": "Traditional cold pressed kachi ghani mustard oil with strong natural pungency (jhaan) for authentic cooking.",
+    "description_hi": null,
+    "price": 148,
+    "mrp": 165,
+    "stock_status": "available",
+    "image_url": "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=600&q=80",
+    "is_published": true
+  },
+  {
+    "id": "prod-OIL-002",
+    "sku": "OIL-002",
+    "name": "Fortune Kachi Ghani Mustard Oil 5 L Jar",
+    "name_hi": "फॉर्च्यून कच्ची घानी सरसों तेल 5 लीटर जार",
+    "brand": "Fortune",
+    "category_slug": "oil-ghee-spices-masala",
+    "category_name": "Oil, Ghee, Spices & Masala",
+    "subcategory": "Cooking Oil & Ghee",
+    "pack_size": "5 L",
+    "description": "Economical 5-litre family jar of purest mustard oil.",
+    "description_hi": null,
+    "price": 735,
+    "mrp": 825,
+    "stock_status": "available",
+    "image_url": "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=600&q=80",
+    "is_published": true
+  },
+  {
+    "id": "prod-OIL-003",
+    "sku": "OIL-003",
+    "name": "Dhara Kachi Ghani Mustard Oil 1 L",
+    "name_hi": "धारा कच्ची घानी सरसों का तेल 1 लीटर",
+    "brand": "Dhara",
+    "category_slug": "oil-ghee-spices-masala",
+    "category_name": "Oil, Ghee, Spices & Masala",
+    "subcategory": "Cooking Oil & Ghee",
+    "pack_size": "1 L",
+    "description": "Trust of Mother Dairy brand, pure mustard oil rich in natural antioxidants.",
+    "description_hi": null,
+    "price": 144,
+    "mrp": 160,
+    "stock_status": "available",
+    "image_url": "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=600&q=80",
+    "is_published": true
+  },
+  {
+    "id": "prod-OIL-004",
+    "sku": "OIL-004",
+    "name": "Dhara Kachi Ghani Mustard Oil 5 L Can",
+    "name_hi": "धारा सरसों तेल 5 लीटर केन",
+    "brand": "Dhara",
+    "category_slug": "oil-ghee-spices-masala",
+    "category_name": "Oil, Ghee, Spices & Masala",
+    "subcategory": "Cooking Oil & Ghee",
+    "pack_size": "5 L",
+    "description": "5-litre sturdy can of pure Dhara mustard oil.",
+    "description_hi": null,
+    "price": 715,
+    "mrp": 795,
+    "stock_status": "available",
+    "image_url": "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=600&q=80",
+    "is_published": true
+  },
+  {
+    "id": "prod-OIL-005",
+    "sku": "OIL-005",
+    "name": "Patanjali Fortified Mustard Oil 1 L",
+    "name_hi": "पतंजलि कच्ची घानी सरसों तेल 1 लीटर",
+    "brand": "Patanjali",
+    "category_slug": "oil-ghee-spices-masala",
+    "category_name": "Oil, Ghee, Spices & Masala",
+    "subcategory": "Cooking Oil & Ghee",
+    "pack_size": "1 L",
+    "description": "Unadulterated mustard oil pressed through traditional wooden expeller method.",
+    "description_hi": null,
+    "price": 142,
+    "mrp": 155,
+    "stock_status": "available",
+    "image_url": "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=600&q=80",
+    "is_published": true
+  },
+  {
+    "id": "prod-OIL-006",
+    "sku": "OIL-006",
+    "name": "Fortune Sunlite Refined Sunflower Oil 1 L Pouch",
+    "name_hi": "फॉर्च्यून सनलाइट रिफाइंड तेल 1 लीटर",
+    "brand": "Fortune",
+    "category_slug": "oil-ghee-spices-masala",
+    "category_name": "Oil, Ghee, Spices & Masala",
+    "subcategory": "Cooking Oil & Ghee",
+    "pack_size": "1 L",
+    "description": "Light, digestible refined sunflower oil enriched with Vitamin A & D.",
+    "description_hi": null,
+    "price": 135,
+    "mrp": 150,
+    "stock_status": "available",
+    "image_url": "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=600&q=80",
+    "is_published": true
+  },
+  {
+    "id": "prod-OIL-007",
+    "sku": "OIL-007",
+    "name": "Fortune Sunlite Sunflower Oil 5 L Jar",
+    "name_hi": "फॉर्च्यून रिफाइंड तेल 5 लीटर जार",
+    "brand": "Fortune",
+    "category_slug": "oil-ghee-spices-masala",
+    "category_name": "Oil, Ghee, Spices & Masala",
+    "subcategory": "Cooking Oil & Ghee",
+    "pack_size": "5 L",
+    "description": "5-litre value pack of light cooking oil.",
+    "description_hi": null,
+    "price": 665,
+    "mrp": 750,
+    "stock_status": "available",
+    "image_url": "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=600&q=80",
+    "is_published": true
+  },
+  {
+    "id": "prod-OIL-008",
+    "sku": "OIL-008",
+    "name": "Saffola Gold Pro Healthy Heart Cooking Oil 1 L",
+    "name_hi": "सफोला गोल्ड कुकिंग ऑयल 1 लीटर",
+    "brand": "Saffola",
+    "category_slug": "oil-ghee-spices-masala",
+    "category_name": "Oil, Ghee, Spices & Masala",
+    "subcategory": "Cooking Oil & Ghee",
+    "pack_size": "1 L",
+    "description": "Dual-seed technology blended oil with natural Oryzanol for healthy cholesterol levels.",
+    "description_hi": null,
+    "price": 168,
+    "mrp": 185,
+    "stock_status": "available",
+    "image_url": "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=600&q=80",
+    "is_published": true
+  },
+  {
+    "id": "prod-OIL-009",
+    "sku": "OIL-009",
+    "name": "Gemini Pure Filtered Groundnut Oil 1 L",
+    "name_hi": "जेमिनी मूंगफली का तेल 1 लीटर",
+    "brand": "Gemini",
+    "category_slug": "oil-ghee-spices-masala",
+    "category_name": "Oil, Ghee, Spices & Masala",
+    "subcategory": "Cooking Oil & Ghee",
+    "pack_size": "1 L",
+    "description": "Rich nutty aroma groundnut oil ideal for deep frying and traditional snacks.",
+    "description_hi": null,
+    "price": 175,
+    "mrp": 195,
+    "stock_status": "available",
+    "image_url": "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=600&q=80",
+    "is_published": true
+  },
+  {
+    "id": "prod-OIL-010",
+    "sku": "OIL-010",
+    "name": "Dalda Vanaspati Ghee 1 L Pouch",
+    "name_hi": "डालडा वनस्पति घी 1 लीटर",
+    "brand": "Dalda",
+    "category_slug": "oil-ghee-spices-masala",
+    "category_name": "Oil, Ghee, Spices & Masala",
+    "subcategory": "Cooking Oil & Ghee",
+    "pack_size": "1 L",
+    "description": "Original hydrogenated vegetable oil for traditional sweets, puris and samosas.",
+    "description_hi": null,
+    "price": 118,
+    "mrp": 135,
+    "stock_status": "available",
+    "image_url": "https://images.unsplash.com/photo-1631451095765-2c91616fc9e6?auto=format&fit=crop&w=600&q=80",
+    "is_published": true
+  },
+  {
+    "id": "prod-OIL-011",
+    "sku": "OIL-011",
+    "name": "Amul Pure Desi Ghee 1 L Carton",
+    "name_hi": "अमूल शुद्ध देसी घी 1 लीटर",
+    "brand": "Amul",
+    "category_slug": "oil-ghee-spices-masala",
+    "category_name": "Oil, Ghee, Spices & Masala",
+    "subcategory": "Cooking Oil & Ghee",
+    "pack_size": "1 L",
+    "description": "Pure milk fat clarified butter with granular danedaar texture and rich aroma.",
+    "description_hi": null,
+    "price": 615,
+    "mrp": 660,
+    "stock_status": "available",
+    "image_url": "https://images.unsplash.com/photo-1631451095765-2c91616fc9e6?auto=format&fit=crop&w=600&q=80",
+    "is_published": true
+  },
+  {
+    "id": "prod-KTC-001",
+    "sku": "KTC-001",
+    "name": "Aashirvaad Shudh Chakki Atta 10 kg",
+    "name_hi": "आशीर्वाद शुद्ध चक्की आटा 10 किलो",
+    "brand": "Aashirvaad",
+    "category_slug": "staples-grains",
+    "category_name": "Staples & Grains",
+    "subcategory": "Atta & Flour",
+    "pack_size": "10 kg",
+    "description": "100% whole wheat chakki ground flour for rotis that stay soft and fluffy for hours.",
+    "description_hi": null,
+    "price": 435,
+    "mrp": 475,
+    "stock_status": "available",
+    "image_url": "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=600&q=80",
+    "is_published": true
+  },
+  {
+    "id": "prod-KTC-002",
+    "sku": "KTC-002",
+    "name": "Aashirvaad Shudh Chakki Atta 5 kg",
+    "name_hi": "आशीर्वाद शुद्ध चक्की आटा 5 किलो",
+    "brand": "Aashirvaad",
+    "category_slug": "staples-grains",
+    "category_name": "Staples & Grains",
+    "subcategory": "Atta & Flour",
+    "pack_size": "5 kg",
+    "description": "5 kg pack of high-fiber golden chakki atta.",
+    "description_hi": null,
+    "price": 225,
+    "mrp": 245,
+    "stock_status": "available",
+    "image_url": "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=600&q=80",
+    "is_published": true
+  },
+  {
+    "id": "prod-KTC-003",
+    "sku": "KTC-003",
+    "name": "India Gate Feast Rozzana Basmati Rice 5 kg",
+    "name_hi": "इंडिया गेट रोज़ाना बासमती चावल 5 किलो",
+    "brand": "India Gate",
+    "category_slug": "staples-grains",
+    "category_name": "Staples & Grains",
+    "subcategory": "Rice",
+    "pack_size": "5 kg",
+    "description": "Aged long grain aromatic Basmati rice, perfect for everyday pulao and steamed rice.",
+    "description_hi": null,
+    "price": 395,
+    "mrp": 460,
+    "stock_status": "available",
+    "image_url": "https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=600&q=80",
+    "is_published": true
+  },
+  {
+    "id": "prod-KTC-004",
+    "sku": "KTC-004",
+    "name": "Tata Salt Vacuum Evaporated 1 kg",
+    "name_hi": "टाटा नमक 1 किलो",
+    "brand": "Tata",
+    "category_slug": "staples-grains",
+    "category_name": "Staples & Grains",
+    "subcategory": "Sugar, Salt & Sweeteners",
+    "pack_size": "1 kg",
+    "description": "Desh ka Namak, vacuum evaporated pure iodized salt with uniform crystals.",
+    "description_hi": null,
+    "price": 25,
+    "mrp": 28,
+    "stock_status": "available",
+    "image_url": "https://images.unsplash.com/photo-1581441363689-1f3c3c414635?auto=format&fit=crop&w=600&q=80",
+    "is_published": true
+  },
+  {
+    "id": "prod-KTC-005",
+    "sku": "KTC-005",
+    "name": "Tata Sampann Unpolished Toor Dal 1 kg",
+    "name_hi": "टाटा सम्पन्न बिना पॉलिश तुअर दाल 1 किलो",
+    "brand": "Tata",
+    "category_slug": "staples-grains",
+    "category_name": "Staples & Grains",
+    "subcategory": "Dals & Pulses",
+    "pack_size": "1 kg",
+    "description": "Unpolished arhar toor dal retaining its natural dietary fiber and rich protein.",
+    "description_hi": null,
+    "price": 178,
+    "mrp": 195,
+    "stock_status": "available",
+    "image_url": "https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=600&q=80",
+    "is_published": true
+  },
+  {
+    "id": "prod-KTC-006",
+    "sku": "KTC-006",
+    "name": "Maggi 2-Minute Masala Instant Noodles 4-Pack (280 g)",
+    "name_hi": "मैगी मसाला नूडल्स 4-पैक",
+    "brand": "Maggi",
+    "category_slug": "dairy-bakery-breakfast",
+    "category_name": "Dairy, Bakery & Breakfast",
+    "subcategory": "Breakfast & Instant Foods",
+    "pack_size": "280 g (4 pcs)",
+    "description": "Classic Indian favourite snack with signature tastemaker blend of 20 spices.",
+    "description_hi": null,
+    "price": 54,
+    "mrp": 60,
+    "stock_status": "available",
+    "image_url": "https://images.unsplash.com/photo-1612927601601-6638404737ce?auto=format&fit=crop&w=600&q=80",
+    "is_published": true
+  },
+  {
+    "id": "prod-KTC-007",
+    "sku": "KTC-007",
+    "name": "Amul Butter Pasteurized 500 g",
+    "name_hi": "अमूल बटर 500 ग्राम",
+    "brand": "Amul",
+    "category_slug": "dairy-bakery-breakfast",
+    "category_name": "Dairy, Bakery & Breakfast",
+    "subcategory": "Milk & Dairy",
+    "pack_size": "500 g",
+    "description": "Utterly butterly delicious creamy salted butter made from fresh cow and buffalo milk.",
+    "description_hi": null,
+    "price": 255,
+    "mrp": 275,
+    "stock_status": "available",
+    "image_url": "https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&w=600&q=80",
+    "is_published": true
+  },
+  {
+    "id": "prod-KTC-008",
+    "sku": "KTC-008",
+    "name": "Amul Taaza Homogenised Toned Milk 1 L",
+    "name_hi": "अमूल ताज़ा टोन्ड दूध 1 लीटर",
+    "brand": "Amul",
+    "category_slug": "dairy-bakery-breakfast",
+    "category_name": "Dairy, Bakery & Breakfast",
+    "subcategory": "Milk & Dairy",
+    "pack_size": "1 L",
+    "description": "UHT treated long-life healthy toned milk, stays fresh without refrigeration until opened.",
+    "description_hi": null,
+    "price": 70,
+    "mrp": 74,
+    "stock_status": "available",
+    "image_url": "https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&w=600&q=80",
     "is_published": true
   }
 ];

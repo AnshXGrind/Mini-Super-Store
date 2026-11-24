@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import AuthForm from "@/components/auth/AuthForm";
 import { getSafeAuthRedirect } from "@/lib/auth-redirect";
 
+export const dynamic = "force-dynamic";
+
 export const metadata: Metadata = {
   title: "Sign in | Mini Super Store",
   alternates: { canonical: "/login" },
