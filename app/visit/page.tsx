@@ -6,8 +6,8 @@ export const metadata: Metadata = {
   description: "Mini Super Store location, timings, contact number and map directions on Red Road, Ladwa, Kurukshetra, Haryana.",
 };
 
-const STORE_PHONE = "+91 87082 97764";
-const STORE_WHATSAPP = "918708297764";
+const STORE_PHONE = "+91 98963 30279";
+const STORE_WHATSAPP = "919896330279";
 
 export default function VisitPage() {
   return (
@@ -15,7 +15,11 @@ export default function VisitPage() {
       <div className="topline">
         <div className="topline-inner">
           <span>📍 Red Road, Ladwa (Kurukshetra)</span>
-          <span className="topline-message">· Open 8:00 AM – 9:00 PM Daily</span>
+          <span className="topline-message">· Open 9:30 AM – 8:00 PM Mon-Sat</span>
+          <span className="topline-message">· Open 10:00 AM – 1:00 PM Sun</span>
+          <span className="topline-message">· WhatsApp & Call: {STORE_PHONE}</span>
+          <span className="topline-message">· Home Delivery in Ladwa</span>
+          <span className="topline-message">· Curbside Pickup Available</span>
           <Link href="/" style={{ color: "#d2f5db", fontSize: "0.68rem", fontWeight: 700, marginLeft: "auto" }}>
             ← Back to Store
           </Link>
@@ -70,7 +74,8 @@ export default function VisitPage() {
                 🕒 Store Opening Hours
               </span>
               <p style={{ color: "#4f6356", fontSize: "0.8rem", margin: "0.4rem 0 0" }}>
-                <strong>Monday to Sunday:</strong> 8:00 AM – 9:00 PM<br />
+                <strong>Monday to Saturday:</strong> 9:30 AM – 8:00 PM<br />
+                <strong>Sunday:</strong> 10:00 AM – 1:00 PM<br />
                 Open 7 days a week including public holidays.
               </p>
             </div>
@@ -81,8 +86,8 @@ export default function VisitPage() {
             <h3 style={{ margin: "0.6rem 0 0.3rem" }}>Contact & Orders</h3>
             <p style={{ color: "#4f6356", fontSize: "0.85rem", lineHeight: 1.6 }}>
               <strong>WhatsApp & Phone:</strong> {STORE_PHONE}<br />
-              <strong>Customer Support:</strong> 8:00 AM to 9:00 PM<br />
-              <strong>Home Delivery:</strong> Available across Ladwa town.
+                {/* <strong>Customer Support:</strong> 8:00 AM to 9:00 PM<br /> */}
+                <strong>Home Delivery:</strong> Available across Ladwa town.
             </p>
 
             <div style={{ display: "grid", gap: "0.6rem", marginTop: "1.5rem" }}>

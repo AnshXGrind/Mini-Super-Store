@@ -7,7 +7,16 @@ import BulkOrderWhatsAppCTA from "@/components/wholesale/BulkOrderWhatsAppCTA";
 import ShoppingCart from "@/components/store/ShoppingCart";
 import type { PublicCategory, PublicOffer, PublicProduct } from "@/app/page";
 import { parseStoreCart } from "@/lib/cart";
-import { shouldLoadProductImageDirectly } from "@/lib/product-image";
+import {
+  getProductImageArt,
+  getProductImageUrl,
+  isSeedCatalogueImage,
+  shouldLoadProductImageDirectly,
+} from "@/lib/product-image";
+import {
+  groupWeightedProductVariants,
+  type ProductVariantGroup,
+} from "@/lib/product-variants";
 
 type Language = "en" | "hi";
 
@@ -98,6 +107,9 @@ export default function Storefront({
   const [search, setSearch] = useState("");
   const [cart, setCart] = useState<Record<string, number>>({});
   const [displayLimit, setDisplayLimit] = useState(INITIAL_PAGE_SIZE);
+  const [variantPicker, setVariantPicker] =
+    useState<ProductVariantGroup<PublicProduct> | null>(null);
+  const [selectedVariantId, setSelectedVariantId] = useState<string | null>(null);
 
   const [cartHydrated, setCartHydrated] = useState(false);
   const [offline, setOffline] = useState(false);
@@ -175,6 +187,20 @@ export default function Storefront({
       }
       return next;
     });
+  }
+
+  function openVariantPicker(group: ProductVariantGroup<PublicProduct>) {
+    const firstAvailable =
+      group.variants.find((variant) => variant.stock_status !== "out_of_stock") ??
+      group.variants[0];
+    setSelectedVariantId(firstAvailable.id);
+    setVariantPicker(group);
+  }
+
+  function addSelectedVariant() {
+    if (!selectedVariantId) return;
+    addToCart(selectedVariantId);
+    setVariantPicker(null);
   }
 
   // Derive department cards from active categories
@@ -285,9 +311,17 @@ export default function Storefront({
     });
   }, [activeBrand, activeCategory, activeSubcategory, categories, products, search]);
 
-  const pagedProducts = useMemo(() => {
-    return visibleProducts.slice(0, displayLimit);
-  }, [visibleProducts, displayLimit]);
+  const visibleProductGroups = useMemo(() => {
+    const visibleIds = new Set(visibleProducts.map((product) => product.id));
+    return groupWeightedProductVariants(products).filter((group) =>
+      group.variants.some((variant) => visibleIds.has(variant.id)),
+    );
+  }, [products, visibleProducts]);
+
+  const pagedProducts = useMemo(
+    () => visibleProductGroups.slice(0, displayLimit),
+    [displayLimit, visibleProductGroups],
+  );
 
   return (
     <main className="storefront">
@@ -626,8 +660,8 @@ export default function Storefront({
             <div style={{ display: "flex", alignItems: "center", gap: "0.8rem" }}>
               <span>
                 {isHindi
-                  ? `${visibleProducts.length} उत्पाद मिले`
-                  : `${visibleProducts.length} products found`}
+                  ? `${visibleProductGroups.length} उत्पाद मिले`
+                  : `${visibleProductGroups.length} products found`}
               </span>
             </div>
           </div>
@@ -711,25 +745,46 @@ export default function Storefront({
           {pagedProducts.length > 0 ? (
             <>
               <div className="product-grid">
-                {pagedProducts.map((product) => {
-                  const inCart = cart[product.id] ?? 0;
-                  const unavailable = product.stock_status === "out_of_stock";
+                {pagedProducts.map((group) => {
+                  const product = group.variants[0];
+                  const inCart = group.variants.reduce(
+                    (total, variant) => total + (cart[variant.id] ?? 0),
+                    0,
+                  );
+                  const unavailable = group.variants.every(
+                    (variant) => variant.stock_status === "out_of_stock",
+                  );
+                  const hasWeightChoices = group.variants.length > 1;
+                  const stockStatus = unavailable
+                    ? "out_of_stock"
+                    : group.variants.some(
+                          (variant) => variant.stock_status === "available",
+                        )
+                      ? "available"
+                      : "limited";
+                  const imageArt = getProductImageArt(group.name);
 
                   return (
-                    <article className="product-card" key={product.id}>
+                    <article className="product-card" key={group.id}>
                       <div className="product-card-image-wrap">
-                        {product.image_url ? (
+                        {product.image_url && !isSeedCatalogueImage(product.image_url) ? (
                           <Image
-                            src={product.image_url}
-                            alt={isHindi && product.name_hi ? product.name_hi : product.name}
-                            width={600}
-                            height={360}
-                            sizes="(max-width: 680px) 50vw, (max-width: 900px) 33vw, 300px"
+                            src={getProductImageUrl(product.image_url, 420)}
+                            alt={isHindi && group.name_hi ? group.name_hi : group.name}
+                            width={420}
+                            height={252}
+                            quality={75}
+                            loading="lazy"
+                            sizes="(max-width: 680px) 50vw, (max-width: 900px) 33vw, 280px"
                             unoptimized={shouldLoadProductImageDirectly(product.image_url)}
                           />
                         ) : (
-                          <div className="product-image-placeholder" aria-hidden="true">
-                            <span>{product.sku || "MINI STORE"}</span>
+                          <div
+                            className={`product-image-placeholder product-image-art art-${imageArt.theme}`}
+                            aria-hidden="true"
+                          >
+                            <span>{imageArt.emoji}</span>
+                            <small>{group.name}</small>
                           </div>
                         )}
                         {product.brand && (
@@ -739,15 +794,15 @@ export default function Storefront({
 
                       <div className="product-card-copy">
                         <div className="product-badge-row">
-                          {product.sku && (
+                          {product.sku && !hasWeightChoices && (
                             <span className="product-sku-tag">{product.sku}</span>
                           )}
-                          <span className={`stock-label stock-${product.stock_status}`}>
+                          <span className={`stock-label stock-${stockStatus}`}>
                             {unavailable
                               ? isHindi
                                 ? "उपलब्ध नहीं"
                                 : "Out of stock"
-                              : product.stock_status === "limited"
+                              : stockStatus === "limited"
                                 ? isHindi
                                   ? "सीमित"
                                   : "Limited"
@@ -761,15 +816,19 @@ export default function Storefront({
                           <p className="product-subcat-label">{product.subcategory}</p>
                         )}
 
-                        <h4>{isHindi && product.name_hi ? product.name_hi : product.name}</h4>
+                        <h4>{isHindi && group.name_hi ? group.name_hi : group.name}</h4>
 
-                        {product.pack_size && (
+                        {hasWeightChoices ? (
+                          <div className="product-pack-tag">
+                            ⚖ {group.variants.map((variant) => variant.pack_size).join(" · ")}
+                          </div>
+                        ) : product.pack_size ? (
                           <div className="product-pack-tag">
                             ⚖ {product.pack_size}
                           </div>
-                        )}
+                        ) : null}
 
-                        {product.description && (
+                        {product.description && !hasWeightChoices && (
                           <p style={{ marginTop: "0.35rem" }}>
                             {isHindi && product.description_hi
                               ? product.description_hi
@@ -779,7 +838,17 @@ export default function Storefront({
 
                         {/* Card Footer: Quantity and cart controls */}
                         <div className="product-card-footer">
-                          {inCart > 0 ? (
+                          {hasWeightChoices ? (
+                            <button
+                              type="button"
+                              disabled={unavailable}
+                              onClick={() => openVariantPicker(group)}
+                              style={{ cursor: unavailable ? "not-allowed" : "pointer" }}
+                            >
+                              {isHindi ? "वज़न चुनें" : "Choose pack size"}
+                              {inCart > 0 ? ` · ${inCart}` : ""}
+                            </button>
+                          ) : inCart > 0 ? (
                             <div className="product-card-stepper" aria-label="Cart quantity control">
                               <button
                                 type="button"
@@ -816,12 +885,12 @@ export default function Storefront({
               </div>
 
               {/* Pagination Controls */}
-              {visibleProducts.length > displayLimit && (
+              {visibleProductGroups.length > displayLimit && (
                 <div className="load-more-container">
                   <p className="load-more-status">
                     {isHindi
-                      ? `${visibleProducts.length} में से ${Math.min(displayLimit, visibleProducts.length)} उत्पाद दिखाए गए हैं`
-                      : `Showing ${Math.min(displayLimit, visibleProducts.length)} of ${visibleProducts.length} products`}
+                      ? `${visibleProductGroups.length} में से ${Math.min(displayLimit, visibleProductGroups.length)} उत्पाद दिखाए गए हैं`
+                      : `Showing ${Math.min(displayLimit, visibleProductGroups.length)} of ${visibleProductGroups.length} products`}
                   </p>
                   <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap" }}>
                     <button
@@ -835,9 +904,9 @@ export default function Storefront({
                       type="button"
                       className="load-more-btn"
                       style={{ background: "#f5f8f3" }}
-                      onClick={() => setDisplayLimit(visibleProducts.length)}
+                      onClick={() => setDisplayLimit(visibleProductGroups.length)}
                     >
-                      {isHindi ? `सभी ${visibleProducts.length} सामान देखें` : `Show All (${visibleProducts.length})`}
+                      {isHindi ? `सभी ${visibleProductGroups.length} सामान देखें` : `Show All (${visibleProductGroups.length})`}
                     </button>
                   </div>
                 </div>
@@ -870,6 +939,101 @@ export default function Storefront({
         </div>
         )}
       </section>
+
+      {variantPicker && (
+        <div
+          className="variant-picker-overlay"
+          role="presentation"
+          onMouseDown={(event) => {
+            if (event.target === event.currentTarget) setVariantPicker(null);
+          }}
+          onKeyDown={(event) => {
+            if (event.key === "Escape") setVariantPicker(null);
+          }}
+        >
+          <section
+            className="variant-picker-dialog"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="variant-picker-title"
+          >
+            <header className="variant-picker-heading">
+              <div>
+                <p>{isHindi ? "उपलब्ध पैक साइज़" : "AVAILABLE PACK SIZES"}</p>
+                <h2 id="variant-picker-title">
+                  {isHindi && variantPicker.name_hi
+                    ? variantPicker.name_hi
+                    : variantPicker.name}
+                </h2>
+              </div>
+              <button
+                type="button"
+                onClick={() => setVariantPicker(null)}
+                aria-label={isHindi ? "बंद करें" : "Close size selector"}
+              >
+                ×
+              </button>
+            </header>
+
+            <p className="variant-picker-help">
+              {isHindi
+                ? "कैटलॉग में उपलब्ध पैक साइज़ चुनें। आप कार्ट में एक से अधिक साइज़ जोड़ सकते हैं।"
+                : "Choose an available size. You can add more than one size of this product to your cart."}
+            </p>
+
+            <div className="variant-picker-options">
+              {variantPicker.variants.map((variant) => {
+                const unavailable = variant.stock_status === "out_of_stock";
+                const quantity = cart[variant.id] ?? 0;
+                return (
+                  <button
+                    type="button"
+                    key={variant.id}
+                    className={
+                      selectedVariantId === variant.id
+                        ? "variant-picker-option selected"
+                        : "variant-picker-option"
+                    }
+                    aria-pressed={selectedVariantId === variant.id}
+                    disabled={unavailable}
+                    onClick={() => setSelectedVariantId(variant.id)}
+                  >
+                    <strong>{variant.pack_size}</strong>
+                    <small>
+                      {unavailable
+                        ? isHindi
+                          ? "उपलब्ध नहीं"
+                          : "Out of stock"
+                        : quantity > 0
+                          ? isHindi
+                            ? `कार्ट में ${quantity}`
+                            : `${quantity} in cart`
+                          : isHindi
+                            ? "उपलब्ध"
+                            : "Available"}
+                    </small>
+                  </button>
+                );
+              })}
+            </div>
+
+            <button
+              type="button"
+              className="variant-picker-add"
+              disabled={
+                !variantPicker.variants.some(
+                  (variant) =>
+                    variant.id === selectedVariantId &&
+                    variant.stock_status !== "out_of_stock",
+                )
+              }
+              onClick={addSelectedVariant}
+            >
+              {isHindi ? "चुना हुआ साइज़ कार्ट में जोड़ें" : "Add selected size to cart"}
+            </button>
+          </section>
+        </div>
+      )}
 
       {!isOrderPage && (
       <>

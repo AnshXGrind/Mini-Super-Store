@@ -3,7 +3,13 @@
 import { useEffect, useMemo, useState } from "react";
 import Image from "next/image";
 import type { PublicProduct } from "@/app/page";
-import { shouldLoadProductImageDirectly } from "@/lib/product-image";
+import {
+  getProductImageArt,
+  getProductImageUrl,
+  isSeedCatalogueImage,
+  shouldLoadProductImageDirectly,
+} from "@/lib/product-image";
+import { buildWhatsAppOrderMessage } from "@/lib/whatsapp-order-message";
 
 type Language = "en" | "hi";
 
@@ -115,57 +121,18 @@ export default function ShoppingCart({
 
   // Construct structured WhatsApp order message (prices intentionally omitted)
   const whatsappMessage = useMemo(() => {
-    const greeting = isHindi
-      ? "🛒 *नया किराना ऑर्डर — Mini Super Store (लाडवा)*"
-      : "🛒 *NEW GROCERY ORDER — MINI SUPER STORE*";
-
-    const customerDetails = [
-      `📍 *Store*: Red Road, Ladwa`,
-      `----------------------------------------`,
-      `👤 *Customer*: ${customer.name.trim() || (isHindi ? "ग्राहक" : "Customer")}`,
-      customer.phone.trim() ? `📱 *Phone*: ${customer.phone.trim()}` : null,
-      `🚚 *Fulfilment*: ${
-        customer.fulfilment === "delivery"
-          ? isHindi
-            ? "🏠 होम डिलीवरी (Home Delivery)"
-            : "🏠 Home Delivery"
-          : isHindi
-            ? "🏪 दुकान से पिकअप (Store Pickup)"
-            : "🏪 Take it from store (Store Pickup)"
-      }`,
-      customer.fulfilment === "delivery" && customer.address.trim()
-        ? `🏠 *Address*: ${customer.address.trim()}`
-        : customer.fulfilment === "pickup"
-          ? `🏪 *Pickup Point*: Mini Super Store, Red Road, Ladwa`
-          : null,
-      customer.notes.trim() ? `📝 *Notes*: ${customer.notes.trim()}` : null,
-      `----------------------------------------`,
-      `📋 *ORDER LIST (${lines.length} items, ${itemCount} units)*:\n`,
-    ]
-      .filter(Boolean)
-      .join("\n");
-
-    const itemsText = lines
-      .map(({ product, quantity }, index) => {
-        const name = isHindi && product.name_hi ? product.name_hi : product.name;
-        const brandText = product.brand ? ` [${product.brand}]` : "";
-        const packText = product.pack_size ? ` (${product.pack_size})` : "";
-
-        return `${index + 1}. *${name}*${brandText}${packText}\n   ▫ Quantity: *${quantity}*`;
-      })
-      .join("\n\n");
-
-    const closingText = [
-      `\n----------------------------------------`,
-      `📦 *Total*: ${itemCount} units (${lines.length} distinct items)`,
-      `----------------------------------------`,
-      isHindi
-        ? "🙏 कृपया यह सामान पैक करें और अंतिम बिल राशि व डिलीवरी समय की पुष्टि WhatsApp पर भेजें। धन्यवाद!"
-        : "🙏 Please pack this order and confirm the final bill amount and delivery time. Thank you!",
-    ].join("\n");
-
-    return `${greeting}\n${customerDetails}\n${itemsText}${closingText}`;
-  }, [customer, isHindi, itemCount, lines]);
+    return buildWhatsAppOrderMessage({
+      language,
+      customer,
+      items: lines.map(({ product, quantity }) => ({
+        name: product.name,
+        name_hi: product.name_hi,
+        brand: product.brand,
+        pack_size: product.pack_size,
+        quantity,
+      })),
+    });
+  }, [customer, language, lines]);
 
   function validateOrder(): boolean {
     if (!customer.name.trim()) {
@@ -331,9 +298,9 @@ export default function ShoppingCart({
                 <div className="cart-lines">
                   {lines.map(({ product, quantity }) => (
                     <div className="cart-line" key={product.id}>
-                      {product.image_url ? (
+                      {product.image_url && !isSeedCatalogueImage(product.image_url) ? (
                         <Image
-                          src={product.image_url}
+                          src={getProductImageUrl(product.image_url, 116)}
                           alt={
                             isHindi && product.name_hi
                               ? product.name_hi
@@ -341,6 +308,8 @@ export default function ShoppingCart({
                           }
                           width={116}
                           height={116}
+                          quality={75}
+                          loading="lazy"
                           sizes="58px"
                           unoptimized={shouldLoadProductImageDirectly(
                             product.image_url,
@@ -351,7 +320,7 @@ export default function ShoppingCart({
                           className="cart-line-placeholder"
                           aria-hidden="true"
                         >
-                          {product.sku ? product.sku.slice(-3) : "M"}
+                          {getProductImageArt(product.name).emoji}
                         </span>
                       )}
 
@@ -376,7 +345,7 @@ export default function ShoppingCart({
                         </strong>
 
                         <small style={{ color: "#3e6347", fontWeight: 700, fontSize: "0.72rem" }}>
-                          {quantity} {isHindi ? "मात्रा चुनी गई" : "unit(s) selected"}
+                          {quantity} {isHindi ? "पैक चुने गए" : "pack(s) selected"}
                         </small>
                       </div>
 
@@ -424,7 +393,7 @@ export default function ShoppingCart({
                     </small>
                   </div>
                   <strong style={{ color: "#1f5139", fontSize: "1.25rem", whiteSpace: "nowrap" }}>
-                    {itemCount} {isHindi ? "यूनिट" : "units"}
+                    {itemCount} {isHindi ? "पैक" : "packs"}
                   </strong>
                 </div>
 

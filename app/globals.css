@@ -977,3 +977,142 @@ button { cursor: pointer; }
   border-radius: 4px;
   letter-spacing: 0.03em;
 }
+
+.variant-picker-overlay {
+  position: fixed;
+  z-index: 70;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  background: #18302399;
+  backdrop-filter: blur(3px);
+}
+.variant-picker-dialog {
+  width: min(440px, 100%);
+  max-height: min(90vh, 680px);
+  overflow-y: auto;
+  padding: 1.25rem;
+  border: 1px solid #e1e9df;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 20px 60px #10221840;
+}
+.variant-picker-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.variant-picker-heading p {
+  margin: 0 0 .35rem;
+  color: #78877b;
+  font-size: .62rem;
+  font-weight: 800;
+  letter-spacing: .08em;
+}
+.variant-picker-heading h2 {
+  margin: 0;
+  color: #22372a;
+  font-size: 1.3rem;
+}
+.variant-picker-heading > button {
+  width: 34px;
+  height: 34px;
+  border: 1px solid #e2e8df;
+  border-radius: 50%;
+  color: #607064;
+  background: #fff;
+  font-size: 1.25rem;
+}
+.variant-picker-help {
+  margin: .8rem 0 1rem;
+  color: #718075;
+  font-size: .72rem;
+  line-height: 1.5;
+}
+.variant-picker-options {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: .55rem;
+}
+.variant-picker-option {
+  display: grid;
+  gap: .25rem;
+  padding: .7rem;
+  border: 1px solid #dce5da;
+  border-radius: 8px;
+  color: #334b39;
+  background: #fff;
+  text-align: left;
+}
+.variant-picker-option.selected {
+  border-color: #1f5139;
+  background: #eef6ec;
+  box-shadow: inset 0 0 0 1px #1f5139;
+}
+.variant-picker-option:disabled {
+  opacity: .5;
+  cursor: not-allowed;
+}
+.variant-picker-option strong {
+  font-size: .9rem;
+}
+.variant-picker-option small {
+  color: #718075;
+  font-size: .62rem;
+}
+.variant-picker-add {
+  width: 100%;
+  min-height: 44px;
+  margin-top: .9rem;
+  border: 0;
+  border-radius: 7px;
+  color: #fff;
+  background: #1f5139;
+  font-size: .75rem;
+  font-weight: 800;
+}
+.variant-picker-add:disabled {
+  opacity: .5;
+  cursor: not-allowed;
+}
+.product-image-art {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: .45rem;
+  padding: .8rem;
+  color: #355340;
+  text-align: center;
+}
+.product-image-art > span {
+  font-size: 3.8rem;
+  line-height: 1;
+  filter: drop-shadow(0 5px 5px #1f513925);
+}
+.product-image-art > small {
+  max-width: 100%;
+  overflow: hidden;
+  color: #4f6857;
+  font-size: .64rem;
+  font-weight: 800;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.art-grains { background: linear-gradient(135deg, #f8f2dd, #e9dfba); }
+.art-rice { background: linear-gradient(135deg, #f9f6ec, #e8e4d7); }
+.art-pulses { background: linear-gradient(135deg, #f2ebdd, #d9c7a8); }
+.art-sugar { background: linear-gradient(135deg, #fbf7ed, #e8e3d8); }
+.art-nuts { background: linear-gradient(135deg, #f4eddd, #e6d3ae); }
+.art-oil { background: linear-gradient(135deg, #fbf2cb, #f0d98a); }
+.art-spices { background: linear-gradient(135deg, #f9e9d8, #efc5a5); }
+.art-dairy { background: linear-gradient(135deg, #edf5f8, #d5e8ef); }
+.art-beverages { background: linear-gradient(135deg, #f4eddf, #e5d7b6); }
+.art-bakery { background: linear-gradient(135deg, #f6ebdd, #e4c9a7); }
+.art-snacks { background: linear-gradient(135deg, #fff0df, #f1d0a8); }
+.art-breakfast { background: linear-gradient(135deg, #f4f1dc, #e5dfae); }
+.art-personal-care { background: linear-gradient(135deg, #f3eafb, #dfcdef); }
+.art-cleaning { background: linear-gradient(135deg, #e9f4f0, #cce4d9); }
+.art-general { background: linear-gradient(135deg, #eef3e9, #f5efe5); }
