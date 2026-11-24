@@ -76,19 +76,23 @@ const POPULAR_BRANDS = [
 ];
 
 const INITIAL_PAGE_SIZE = 36;
-const STORE_WHATSAPP_NUMBER = "919896330279";
+const STORE_WHATSAPP_NUMBER = "918708297764";
 
 export default function Storefront({
   categories,
   products,
   offers,
+  mode = "home",
+  initialCategory = "all",
 }: {
   categories: PublicCategory[];
   products: PublicProduct[];
   offers: PublicOffer[];
+  mode?: "home" | "order";
+  initialCategory?: string;
 }) {
   const [language, setLanguage] = useState<Language>("en");
-  const [activeCategory, setActiveCategory] = useState<string>("all");
+  const [activeCategory, setActiveCategory] = useState(initialCategory);
   const [activeSubcategory, setActiveSubcategory] = useState<string>("all");
   const [activeBrand, setActiveBrand] = useState<string>("All");
   const [search, setSearch] = useState("");
@@ -98,6 +102,7 @@ export default function Storefront({
   const [cartHydrated, setCartHydrated] = useState(false);
   const [offline, setOffline] = useState(false);
   const isHindi = language === "hi";
+  const isOrderPage = mode === "order";
 
   useEffect(() => {
     function updateNetworkStatus() {
@@ -284,15 +289,6 @@ export default function Storefront({
     return visibleProducts.slice(0, displayLimit);
   }, [visibleProducts, displayLimit]);
 
-  function handleSelectCategory(catSlug: string) {
-    setActiveCategory(catSlug);
-    setActiveSubcategory("all");
-    const target = document.getElementById("catalogue");
-    if (target) {
-      target.scrollIntoView({ behavior: "smooth" });
-    }
-  }
-
   return (
     <main className="storefront">
       {offline && (
@@ -320,7 +316,7 @@ export default function Storefront({
               rel="noopener noreferrer"
               style={{ color: "#d2f5db", fontSize: "0.68rem", fontWeight: 700, textDecoration: "none" }}
             >
-              💬 WhatsApp: +91 98963 30279
+              💬 WhatsApp: +91 87082 97764
             </a>
             <div className="language-switch" aria-label="Choose language">
               <button
@@ -362,19 +358,22 @@ export default function Storefront({
 
         <nav className="desktop-nav" aria-label="Main navigation">
           <Link href="/">{isHindi ? "होम" : "Home"}</Link>
-          <Link href="/departments">{isHindi ? "विभाग" : "Departments"}</Link>
-          <Link href="/products">{isHindi ? "सभी सामान" : "All Products"}</Link>
+          <Link href="/order" style={isOrderPage ? { color: "#1f5139", fontWeight: 800 } : undefined}>
+            {isHindi ? "ऑर्डर" : "Order"}
+          </Link>
           <Link href="/bulk-order">{isHindi ? "थोक आर्डर" : "Bulk Order"}</Link>
           <Link href="/visit">{isHindi ? "दुकान पर आएँ" : "Visit Us"}</Link>
         </nav>
 
         <div className="header-actions">
-          <ShoppingCart
-            language={language}
-            products={products}
-            cart={cart}
-            setCart={setCart}
-          />
+          {isOrderPage && (
+            <ShoppingCart
+              language={language}
+              products={products}
+              cart={cart}
+              setCart={setCart}
+            />
+          )}
           <Link className="header-visit" href="/visit">
             {isHindi ? "दुकान पता" : "Store Location"}
             <span aria-hidden="true">↗</span>
@@ -382,6 +381,8 @@ export default function Storefront({
         </div>
       </header>
 
+      {!isOrderPage && (
+      <>
       {/* Hero Section */}
       <section className="hero" id="home">
         <div className="hero-content">
@@ -410,7 +411,7 @@ export default function Storefront({
               : "Shop top brands: Haldiram's namkeen & chips, Britannia & Parle biscuits, MDH & Catch masalas, Fortune & Dhara pure mustard oils, Amul dairy, and complete kitchen staples."}
           </p>
           <div className="hero-actions">
-            <Link className="button button-primary" href="/products">
+            <Link className="button button-primary" href="/order">
               {isHindi ? "पूरा कैटलॉग देखें (580+ सामान)" : "Browse Full Catalogue (580+ items)"}
               <span aria-hidden="true">→</span>
             </Link>
@@ -483,8 +484,11 @@ export default function Storefront({
           </span>
         </div>
       </section>
+      </>
+      )}
 
       {/* Popular Brand Strip */}
+      {isOrderPage && (
       <section className="section-wrap" style={{ paddingTop: "1.5rem", paddingBottom: "0.5rem" }}>
         <p className="section-eyebrow" style={{ textAlign: "center", marginBottom: "0.4rem" }}>
           {isHindi ? "दुकान के लोकप्रिय ब्रांड्स" : "Featured Grocery Brands"}
@@ -506,9 +510,10 @@ export default function Storefront({
           ))}
         </div>
       </section>
+      )}
 
       {/* Offers Section */}
-      {offers.length > 0 && (
+      {!isOrderPage && offers.length > 0 && (
         <section className="offers-section section-wrap" aria-labelledby="offers-title">
           <div className="offers-heading">
             <div>
@@ -541,37 +546,50 @@ export default function Storefront({
         </section>
       )}
 
-      {/* Department Cards Section */}
-      <section className="departments-section section-wrap" id="departments">
+      {/* Department Cards and Order Catalogue */}
+      <section
+        className="departments-section section-wrap"
+        id={isOrderPage ? "order" : "departments"}
+      >
         <div className="section-heading">
           <div>
             <p className="section-eyebrow">
-              {isHindi ? "श्रेणी अनुसार खरीदारी करें" : "Shop by Category"}
+              {isOrderPage
+                ? isHindi ? "ऑनलाइन ऑर्डर" : "Order Online"
+                : isHindi ? "श्रेणी अनुसार खरीदारी करें" : "Shop by Category"}
             </p>
             <h2>
-              {isHindi ? "हमारे प्रमुख विभाग" : "Explore Departments"}
+              {isOrderPage
+                ? isHindi ? "अपना सामान चुनें" : "Choose Your Items"
+                : isHindi ? "हमारे प्रमुख विभाग" : "Explore Departments"}
               <span className="heading-period">.</span>
             </h2>
             <p className="section-description">
-              {isHindi
-                ? "किराना, दालें, सरसों तेल, मसाले, बिस्कुट, नाश्ता और घरेलू सामान तुरंत चुनें।"
-                : "Browse our 5 core grocery departments with live stock, pack sizes and prices."}
+              {isOrderPage
+                ? isHindi
+                  ? "सामान कार्ट में जोड़ें, फिर नाम, फ़ोन और डिलीवरी या दुकान से पिकअप की जानकारी भरकर WhatsApp पर ऑर्डर भेजें।"
+                  : "Add groceries to your cart, then send your order on WhatsApp with your name, phone number, and delivery or store-pickup details."
+                : isHindi
+                  ? "किराना, दालें, सरसों तेल, मसाले, बिस्कुट, नाश्ता और घरेलू सामान तुरंत चुनें।"
+                  : "Explore our grocery and household departments, then place your order online."}
             </p>
           </div>
-          <Link href="/departments" className="section-side-note" style={{ textDecoration: "none" }}>
-            01 / 05
-            <br />
-            <small>{isHindi ? "सभी विभाग देखें ↗" : "VIEW ALL ↗"}</small>
-          </Link>
+          {!isOrderPage && (
+            <Link href="/order" className="section-side-note" style={{ textDecoration: "none" }}>
+              01 / 05
+              <br />
+              <small>{isHindi ? "ऑर्डर शुरू करें ↗" : "START ORDER ↗"}</small>
+            </Link>
+          )}
         </div>
 
-        <div className="department-grid">
+        {!isOrderPage && <div className="department-grid">
           {departments.map((dept, index) => (
-            <article
+            <Link
+              href={`/order?category=${encodeURIComponent(dept.slug)}`}
               className={`department-card tone-${dept.tone}`}
               key={dept.id}
-              onClick={() => handleSelectCategory(dept.slug)}
-              style={{ cursor: "pointer" }}
+              style={{ cursor: "pointer", textDecoration: "none" }}
             >
               <div className="department-card-top">
                 <span className="department-index">0{index + 1}</span>
@@ -588,11 +606,13 @@ export default function Storefront({
                 <h3>{isHindi ? dept.hindiTitle : dept.title}</h3>
                 <p>{isHindi ? dept.hindiDescription : dept.description}</p>
               </div>
-            </article>
+            </Link>
           ))}
         </div>
+        }
 
         {/* Live Catalogue & Search Anchor */}
+        {isOrderPage && (
         <div className="live-catalogue" id="catalogue">
           <div className="live-catalogue-heading">
             <div>
@@ -609,17 +629,6 @@ export default function Storefront({
                   ? `${visibleProducts.length} उत्पाद मिले`
                   : `${visibleProducts.length} products found`}
               </span>
-              <Link
-                href="/products"
-                style={{
-                  color: "#1f5139",
-                  fontSize: "0.72rem",
-                  fontWeight: 800,
-                  textDecoration: "underline",
-                }}
-              >
-                {isHindi ? "अलग पेज पर देखें ↗" : "Open in Full Page ↗"}
-              </Link>
             </div>
           </div>
 
@@ -768,25 +777,8 @@ export default function Storefront({
                           </p>
                         )}
 
-                        {/* Card Footer: Price & Quantity Stepper */}
+                        {/* Card Footer: Quantity and cart controls */}
                         <div className="product-card-footer">
-                          <div>
-                            <strong>
-                              {product.price === null ? (
-                                isHindi ? "MRP पर उपलब्ध" : "MRP on pack"
-                              ) : (
-                                <>
-                                  ₹{product.price.toFixed(2)}
-                                  {product.mrp && product.mrp > product.price && (
-                                    <span className="product-mrp-strike">
-                                      ₹{product.mrp.toFixed(2)}
-                                    </span>
-                                  )}
-                                </>
-                              )}
-                            </strong>
-                          </div>
-
                           {inCart > 0 ? (
                             <div className="product-card-stepper" aria-label="Cart quantity control">
                               <button
@@ -876,8 +868,11 @@ export default function Storefront({
             </div>
           )}
         </div>
+        )}
       </section>
 
+      {!isOrderPage && (
+      <>
       {/* Why Us Section */}
       <section className="why-section" id="why-us">
         <div className="why-inner section-wrap">
@@ -1006,6 +1001,8 @@ export default function Storefront({
           </Link>
         </div>
       </section>
+      </>
+      )}
 
       {/* Clean Footer */}
       <footer className="site-footer">
@@ -1014,8 +1011,7 @@ export default function Storefront({
             MINI <em>SUPER</em> STORE
           </Link>
           <nav className="footer-portals" aria-label="Portal login links">
-            <Link href="/departments">{isHindi ? "विभाग" : "Departments"}</Link>
-            <Link href="/products">{isHindi ? "कैटलॉग" : "Products"}</Link>
+            <Link href="/order">{isHindi ? "ऑर्डर" : "Order Online"}</Link>
             <Link href="/bulk-order">{isHindi ? "थोक आर्डर" : "Bulk Order"}</Link>
             <Link href="/visit">{isHindi ? "दुकान संपर्क" : "Visit Us"}</Link>
             <Link href="/dashboard" style={{ opacity: 0.6 }}>{isHindi ? "स्टाफ / एडमिन" : "Staff Portal"}</Link>
@@ -1034,13 +1030,9 @@ export default function Storefront({
           <span>⌂</span>
           {isHindi ? "होम" : "Home"}
         </Link>
-        <Link href="/departments">
+        <Link href="/order">
           <span>▦</span>
-          {isHindi ? "विभाग" : "Categories"}
-        </Link>
-        <Link href="/products">
-          <span>🏷️</span>
-          {isHindi ? "सामान" : "Products"}
+          {isHindi ? "ऑर्डर" : "Order"}
         </Link>
         <Link href="/bulk-order">
           <span>📦</span>

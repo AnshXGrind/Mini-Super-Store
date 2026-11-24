@@ -6,8 +6,8 @@ export const metadata: Metadata = {
   description: "Mini Super Store location, timings, contact number and map directions on Red Road, Ladwa, Kurukshetra, Haryana.",
 };
 
-const STORE_PHONE = "+91 98963 30279";
-const STORE_WHATSAPP = "919896330279";
+const STORE_PHONE = "+91 87082 97764";
+const STORE_WHATSAPP = "918708297764";
 
 export default function VisitPage() {
   return (
@@ -37,8 +37,7 @@ export default function VisitPage() {
         </Link>
         <nav className="desktop-nav">
           <Link href="/">Home</Link>
-          <Link href="/departments">Departments</Link>
-          <Link href="/products">All 580+ Products</Link>
+          <Link href="/order">Order Online</Link>
           <Link href="/bulk-order">Bulk Order</Link>
           <Link href="/visit" style={{ color: "#1f5139", fontWeight: 800 }}>Visit Us</Link>
         </nav>
@@ -113,8 +112,7 @@ export default function VisitPage() {
           <Link className="footer-brand" href="/">MINI <em>SUPER</em> STORE</Link>
           <nav className="footer-portals">
             <Link href="/">Home</Link>
-            <Link href="/departments">Departments</Link>
-            <Link href="/products">All Products</Link>
+            <Link href="/order">Order Online</Link>
             <Link href="/bulk-order">Bulk Order</Link>
             <Link href="/visit">Visit Us</Link>
           </nav>

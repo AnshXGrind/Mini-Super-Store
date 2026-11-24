@@ -7,15 +7,17 @@ import { shouldLoadProductImageDirectly } from "@/lib/product-image";
 
 type Language = "en" | "hi";
 
+type FulfilmentType = "delivery" | "pickup";
+
 type CustomerInfo = {
   name: string;
   phone: string;
-  fulfilment: "delivery" | "pickup";
+  fulfilment: FulfilmentType;
   address: string;
   notes: string;
 };
 
-const DEFAULT_STORE_PHONE = "919896330279"; // Red Road, Ladwa Store WhatsApp
+const DEFAULT_STORE_PHONE = "918708297764"; // Red Road, Ladwa Store WhatsApp
 
 export default function ShoppingCart({
   language,
@@ -31,6 +33,7 @@ export default function ShoppingCart({
   const isHindi = language === "hi";
   const [open, setOpen] = useState(false);
   const [copied, setCopied] = useState(false);
+  const [validationError, setValidationError] = useState<string | null>(null);
 
   // Customer order details remembered in browser storage
   const [customer, setCustomer] = useState<CustomerInfo>({
@@ -58,6 +61,7 @@ export default function ShoppingCart({
   }, []);
 
   function updateCustomer(field: keyof CustomerInfo, value: string) {
+    setValidationError(null);
     setCustomer((prev) => {
       const updated = { ...prev, [field]: value };
       try {
@@ -85,13 +89,6 @@ export default function ShoppingCart({
 
   const itemCount = lines.reduce((total, line) => total + line.quantity, 0);
 
-  const total = lines.reduce(
-    (sum, line) => sum + (line.product.price ?? 0) * line.quantity,
-    0,
-  );
-
-  const hasUnknownPrice = lines.some((line) => line.product.price === null);
-
   const configuredPhone = (
     process.env.NEXT_PUBLIC_WHOLESALE_WHATSAPP_NUMBER ?? ""
   ).replace(/\D/g, "");
@@ -116,7 +113,7 @@ export default function ShoppingCart({
     }
   }
 
-  // Construct structured WhatsApp order message
+  // Construct structured WhatsApp order message (prices intentionally omitted)
   const whatsappMessage = useMemo(() => {
     const greeting = isHindi
       ? "🛒 *नया किराना ऑर्डर — Mini Super Store (लाडवा)*"
@@ -130,17 +127,20 @@ export default function ShoppingCart({
       `🚚 *Fulfilment*: ${
         customer.fulfilment === "delivery"
           ? isHindi
-            ? "होम डिलीवरी"
-            : "Home Delivery"
+            ? "🏠 होम डिलीवरी (Home Delivery)"
+            : "🏠 Home Delivery"
           : isHindi
-            ? "दुकान से पिकअप (Store Pickup)"
-            : "Store Pickup"
+            ? "🏪 दुकान से पिकअप (Store Pickup)"
+            : "🏪 Take it from store (Store Pickup)"
       }`,
       customer.fulfilment === "delivery" && customer.address.trim()
         ? `🏠 *Address*: ${customer.address.trim()}`
-        : null,
+        : customer.fulfilment === "pickup"
+          ? `🏪 *Pickup Point*: Mini Super Store, Red Road, Ladwa`
+          : null,
+      customer.notes.trim() ? `📝 *Notes*: ${customer.notes.trim()}` : null,
       `----------------------------------------`,
-      `📋 *ITEMS ORDERED (${lines.length} items, ${itemCount} units)*:\n`,
+      `📋 *ORDER LIST (${lines.length} items, ${itemCount} units)*:\n`,
     ]
       .filter(Boolean)
       .join("\n");
@@ -148,44 +148,63 @@ export default function ShoppingCart({
     const itemsText = lines
       .map(({ product, quantity }, index) => {
         const name = isHindi && product.name_hi ? product.name_hi : product.name;
-        const skuText = product.sku ? ` (${product.sku})` : "";
-        const packText = product.pack_size ? `\n   ▫ Pack: ${product.pack_size}` : "";
-        const priceText =
-          product.price === null
-            ? isHindi
-              ? "MRP पर (दुकान से पुष्टि होगी)"
-              : "MRP on pack (to confirm)"
-            : `₹${product.price.toFixed(2)} each (₹${(product.price * quantity).toFixed(2)})`;
+        const brandText = product.brand ? ` [${product.brand}]` : "";
+        const packText = product.pack_size ? ` (${product.pack_size})` : "";
 
-        return `${index + 1}. *${name}*${skuText}${packText}\n   ▫ Qty: *${quantity}*\n   ▫ Price: ${priceText}`;
+        return `${index + 1}. *${name}*${brandText}${packText}\n   ▫ Quantity: *${quantity}*`;
       })
       .join("\n\n");
 
-    const totalText = [
+    const closingText = [
       `\n----------------------------------------`,
-      `💰 *Estimated Total*: ₹${total.toFixed(2)}${
-        hasUnknownPrice
-          ? isHindi
-            ? " (+ बिना कीमत वाले उत्पाद)"
-            : " (+ items with price on request)"
-          : ""
-      }`,
-      customer.notes.trim() ? `📝 *Note*: ${customer.notes.trim()}` : null,
+      `📦 *Total*: ${itemCount} units (${lines.length} distinct items)`,
       `----------------------------------------`,
       isHindi
-        ? "🙏 कृपया ऑर्डर पैकिंग, अंतिम बिल और डिलीवरी समय की पुष्टि करें। धन्यवाद!"
-        : "🙏 Please confirm order packing, final bill amount and delivery time. Thank you!",
-    ]
-      .filter(Boolean)
-      .join("\n");
+        ? "🙏 कृपया यह सामान पैक करें और अंतिम बिल राशि व डिलीवरी समय की पुष्टि WhatsApp पर भेजें। धन्यवाद!"
+        : "🙏 Please pack this order and confirm the final bill amount and delivery time. Thank you!",
+    ].join("\n");
 
-    return `${greeting}\n${customerDetails}\n${itemsText}${totalText}`;
-  }, [customer, hasUnknownPrice, isHindi, itemCount, lines, total]);
+    return `${greeting}\n${customerDetails}\n${itemsText}${closingText}`;
+  }, [customer, isHindi, itemCount, lines]);
 
-  const whatsappUrl =
-    lines.length > 0
-      ? `https://wa.me/${storePhone}?text=${encodeURIComponent(whatsappMessage)}`
-      : null;
+  function validateOrder(): boolean {
+    if (!customer.name.trim()) {
+      setValidationError(
+        isHindi
+          ? "कृपया अपना नाम लिखें।"
+          : "Please enter your name to proceed.",
+      );
+      return false;
+    }
+    const phoneDigits = customer.phone.replace(/\D/g, "");
+    if (phoneDigits.length < 10 || phoneDigits.length > 15) {
+      setValidationError(
+        isHindi
+          ? "कृपया 10 अंकों का मोबाइल / WhatsApp नंबर लिखें।"
+          : "Please enter a valid phone number with 10 to 15 digits.",
+      );
+      return false;
+    }
+    if (customer.fulfilment === "delivery" && !customer.address.trim()) {
+      setValidationError(
+        isHindi
+          ? "होम डिलीवरी के लिए कृपया अपना पता व लैंडमार्क लिखें।"
+          : "Please provide a delivery address & landmark for Home Delivery.",
+      );
+      return false;
+    }
+    setValidationError(null);
+    return true;
+  }
+
+  function handleSendWhatsApp(e: React.MouseEvent) {
+    if (!validateOrder()) {
+      e.preventDefault();
+      return;
+    }
+    const url = `https://wa.me/${storePhone}?text=${encodeURIComponent(whatsappMessage)}`;
+    window.open(url, "_blank", "noopener,noreferrer");
+  }
 
   async function handleCopyText() {
     try {
@@ -220,11 +239,9 @@ export default function ShoppingCart({
             <span className="cart-badge-icon">🛒 {itemCount}</span>
             <div>
               <strong>
-                {hasUnknownPrice
-                  ? `₹${total.toFixed(2)}+`
-                  : `₹${total.toFixed(2)}`}
+                {itemCount} {isHindi ? "सामान कार्ट में" : "Items in Cart"}
               </strong>
-              <small>{isHindi ? "ऑर्डर तैयार है" : "Ready to order"}</small>
+              <small>{isHindi ? "WhatsApp ऑर्डर तैयार है" : "Ready for WhatsApp Order"}</small>
             </div>
           </div>
           <button
@@ -297,7 +314,7 @@ export default function ShoppingCart({
                 <p>
                   {isHindi
                     ? "कैटलॉग से अपनी पसंद का सामान जोड़ें और एक क्लिक में WhatsApp पर भेजें।"
-                    : "Browse our 500+ items, tap 'Add to Cart', and send your entire order to WhatsApp with one click."}
+                    : "Browse our 580+ items, tap 'Add to Cart', and send your entire order list to WhatsApp with one click."}
                 </p>
                 <button
                   type="button"
@@ -338,37 +355,28 @@ export default function ShoppingCart({
                         </span>
                       )}
 
-                      <div style={{ minWidth: 0 }}>
+                      <div style={{ minWidth: 0, flex: 1 }}>
                         <div style={{ display: "flex", alignItems: "center", gap: "0.3rem", flexWrap: "wrap" }}>
-                          {product.sku && (
-                            <span className="product-sku-tag" style={{ fontSize: "0.52rem", padding: "0.1rem 0.3rem" }}>
-                              {product.sku}
+                          {product.brand && (
+                            <span className="product-sku-tag" style={{ fontSize: "0.55rem", padding: "0.1rem 0.35rem", background: "#e8f2e6", color: "#1b4d2e" }}>
+                              {product.brand}
                             </span>
                           )}
                           {product.pack_size && (
-                            <span style={{ fontSize: "0.6rem", color: "#2b6140", fontWeight: 700 }}>
+                            <span style={{ fontSize: "0.62rem", color: "#2b6140", fontWeight: 700 }}>
                               ⚖ {product.pack_size}
                             </span>
                           )}
                         </div>
 
-                        <strong style={{ fontSize: "0.78rem", marginTop: "0.15rem" }}>
+                        <strong style={{ fontSize: "0.82rem", marginTop: "0.15rem", display: "block" }}>
                           {isHindi && product.name_hi
                             ? product.name_hi
                             : product.name}
                         </strong>
 
-                        <small style={{ color: "#46584b", fontWeight: 600 }}>
-                          {product.price === null ? (
-                            isHindi ? "MRP पर उपलब्ध" : "MRP on pack"
-                          ) : (
-                            <>
-                              ₹{product.price.toFixed(2)} × {quantity} ={" "}
-                              <strong style={{ display: "inline", color: "#1f5139" }}>
-                                ₹{(product.price * quantity).toFixed(2)}
-                              </strong>
-                            </>
-                          )}
+                        <small style={{ color: "#3e6347", fontWeight: 700, fontSize: "0.72rem" }}>
+                          {quantity} {isHindi ? "मात्रा चुनी गई" : "unit(s) selected"}
                         </small>
                       </div>
 
@@ -403,126 +411,186 @@ export default function ShoppingCart({
                   ))}
                 </div>
 
-                {/* Subtotal & Summary */}
-                <div className="checkout-total">
+                {/* Items Total Summary (No Price List) */}
+                <div className="checkout-total" style={{ borderTop: "2px solid #e1e9df", background: "#f8fbf7", padding: "0.8rem 1rem", borderRadius: "8px" }}>
                   <div>
-                    <span style={{ display: "block" }}>
-                      {isHindi ? "कुल सामान" : "Total items"}: <strong>{itemCount} units</strong> ({lines.length} {isHindi ? "प्रकार" : "products"})
+                    <span style={{ display: "block", fontSize: "0.85rem", fontWeight: 800, color: "#19422a" }}>
+                      {isHindi ? "कुल चुनिंदा सामान" : "Total Selected Items"}
                     </span>
-                    {hasUnknownPrice && (
-                      <small style={{ color: "#8a6629", fontSize: "0.62rem" }}>
-                        {isHindi
-                          ? "* कुछ उत्पादों की अंतिम कीमत MRP पर तय होगी"
-                          : "* Some items have price confirmed on pack MRP"}
-                      </small>
-                    )}
+                    <small style={{ color: "#4d6b54", fontSize: "0.72rem" }}>
+                      {isHindi
+                        ? "ऑर्डर भेजने पर दुकान टीम द्वारा अंतिम बिल WhatsApp पर भेजा जाएगा।"
+                        : "Final bill amount will be confirmed directly on WhatsApp."}
+                    </small>
                   </div>
-                  <strong style={{ color: "#1f5139", fontSize: "1.2rem" }}>
-                    ₹{total.toFixed(2)}
+                  <strong style={{ color: "#1f5139", fontSize: "1.25rem", whiteSpace: "nowrap" }}>
+                    {itemCount} {isHindi ? "यूनिट" : "units"}
                   </strong>
                 </div>
 
-                {/* Customer Details Form (stored locally for quick reorders) */}
-                <div className="checkout-form" style={{ marginTop: "0.4rem", padding: "0.8rem", background: "#f8faf6", borderRadius: "8px", border: "1px solid #e5ede3" }}>
-                  <p style={{ margin: "0 0 0.5rem", fontSize: "0.68rem", fontWeight: 800, color: "#284432", textTransform: "uppercase", letterSpacing: "0.04em" }}>
-                    {isHindi ? "डिलीवरी व ग्राहक जानकारी" : "Customer & Delivery Info"}
+                {/* Customer Details & Fulfilment Form */}
+                <div className="checkout-form" style={{ marginTop: "0.6rem", padding: "0.9rem", background: "#f6faf4", borderRadius: "10px", border: "1px solid #dbe6d8" }}>
+                  <p style={{ margin: "0 0 0.6rem", fontSize: "0.72rem", fontWeight: 800, color: "#1b4d2e", textTransform: "uppercase", letterSpacing: "0.05em" }}>
+                    📋 {isHindi ? "ग्राहक व डिलीवरी विवरण" : "Customer & Delivery Details"}
                   </p>
 
-                  <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.5rem" }}>
-                    <label>
-                      <span>{isHindi ? "आपका नाम" : "Your Name"}</span>
+                  {validationError && (
+                    <div style={{ padding: "0.5rem 0.75rem", marginBottom: "0.6rem", background: "#fee2e2", border: "1px solid #f87171", borderRadius: "6px", color: "#991b1b", fontSize: "0.75rem", fontWeight: 700 }}>
+                      ⚠️ {validationError}
+                    </div>
+                  )}
+
+                  <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.6rem" }}>
+                    <label style={{ display: "flex", flexDirection: "column", gap: "0.25rem" }}>
+                      <span style={{ fontSize: "0.72rem", fontWeight: 700, color: "#294734" }}>
+                        {isHindi ? "आपका नाम *" : "Your Name *"}
+                      </span>
                       <input
                         type="text"
+                        required
                         value={customer.name}
                         onChange={(e) => updateCustomer("name", e.target.value)}
-                        placeholder={isHindi ? "नाम लिखें" : "Full Name"}
+                        placeholder={isHindi ? "पूरा नाम लिखें" : "Full Name"}
+                        style={{ padding: "0.5rem 0.65rem", borderRadius: "6px", border: "1px solid #ccd8c9", fontSize: "0.82rem" }}
                       />
                     </label>
 
-                    <label>
-                      <span>{isHindi ? "मोबाइल नंबर" : "Phone Number"}</span>
+                    <label style={{ display: "flex", flexDirection: "column", gap: "0.25rem" }}>
+                      <span style={{ fontSize: "0.72rem", fontWeight: 700, color: "#294734" }}>
+                        {isHindi ? "मोबाइल नंबर *" : "Phone Number *"}
+                      </span>
                       <input
                         type="tel"
+                        required
                         value={customer.phone}
                         onChange={(e) => updateCustomer("phone", e.target.value)}
-                        placeholder={isHindi ? "98xxxxxxxx" : "Phone / Mobile"}
+                        placeholder={isHindi ? "10 अंकों का नंबर" : "10-digit number"}
+                        style={{ padding: "0.5rem 0.65rem", borderRadius: "6px", border: "1px solid #ccd8c9", fontSize: "0.82rem" }}
                       />
                     </label>
                   </div>
 
-                  <fieldset style={{ marginTop: "0.4rem", padding: "0.45rem 0.6rem" }}>
-                    <legend>{isHindi ? "डिलीवरी का प्रकार" : "Fulfilment Option"}</legend>
-                    <label style={{ display: "inline-flex", cursor: "pointer" }}>
-                      <input
-                        type="radio"
-                        name="fulfilment"
-                        checked={customer.fulfilment === "delivery"}
-                        onChange={() => updateCustomer("fulfilment", "delivery")}
-                      />
-                      <span>{isHindi ? "🚚 होम डिलीवरी" : "🚚 Home Delivery"}</span>
-                    </label>
-                    <label style={{ display: "inline-flex", cursor: "pointer" }}>
-                      <input
-                        type="radio"
-                        name="fulfilment"
-                        checked={customer.fulfilment === "pickup"}
-                        onChange={() => updateCustomer("fulfilment", "pickup")}
-                      />
-                      <span>{isHindi ? "🏪 दुकान से पिकअप" : "🏪 Store Pickup"}</span>
-                    </label>
-                  </fieldset>
+                  {/* Delivery / Store Pickup Choice */}
+                  <div style={{ marginTop: "0.7rem" }}>
+                    <span style={{ display: "block", fontSize: "0.72rem", fontWeight: 700, color: "#294734", marginBottom: "0.35rem" }}>
+                      {isHindi ? "डिलीवरी का प्रकार चुनें *" : "Choose Fulfilment Method *"}
+                    </span>
+                    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.5rem" }}>
+                      <button
+                        type="button"
+                        onClick={() => updateCustomer("fulfilment", "delivery")}
+                        style={{
+                          padding: "0.6rem 0.5rem",
+                          borderRadius: "8px",
+                          border: customer.fulfilment === "delivery" ? "2px solid #1f5139" : "1px solid #d0dcd0",
+                          background: customer.fulfilment === "delivery" ? "#e9f5e7" : "#ffffff",
+                          color: customer.fulfilment === "delivery" ? "#143f26" : "#44594c",
+                          fontWeight: 700,
+                          fontSize: "0.74rem",
+                          cursor: "pointer",
+                          textAlign: "center",
+                        }}
+                      >
+                        🏠 {isHindi ? "होम डिलीवरी" : "Home Delivery"}
+                      </button>
 
-                  {customer.fulfilment === "delivery" && (
-                    <label style={{ marginTop: "0.3rem" }}>
-                      <span>{isHindi ? "डिलीवरी का पता (लाडवा)" : "Delivery Address (Ladwa)"}</span>
-                      <input
-                        type="text"
+                      <button
+                        type="button"
+                        onClick={() => updateCustomer("fulfilment", "pickup")}
+                        style={{
+                          padding: "0.6rem 0.5rem",
+                          borderRadius: "8px",
+                          border: customer.fulfilment === "pickup" ? "2px solid #1f5139" : "1px solid #d0dcd0",
+                          background: customer.fulfilment === "pickup" ? "#e9f5e7" : "#ffffff",
+                          color: customer.fulfilment === "pickup" ? "#143f26" : "#44594c",
+                          fontWeight: 700,
+                          fontSize: "0.74rem",
+                          cursor: "pointer",
+                          textAlign: "center",
+                        }}
+                      >
+                        🏪 {isHindi ? "दुकान से पिकअप" : "Take from store"}
+                      </button>
+                    </div>
+                  </div>
+
+                  {/* Address Input for Home Delivery */}
+                  {customer.fulfilment === "delivery" ? (
+                    <label style={{ display: "flex", flexDirection: "column", gap: "0.25rem", marginTop: "0.6rem" }}>
+                      <span style={{ fontSize: "0.72rem", fontWeight: 700, color: "#294734" }}>
+                        {isHindi ? "डिलीवरी का पूरा पता व लैंडमार्क (लाडवा) *" : "Delivery Address & Landmark (Ladwa) *"}
+                      </span>
+                      <textarea
+                        required
+                        rows={2}
                         value={customer.address}
                         onChange={(e) => updateCustomer("address", e.target.value)}
-                        placeholder={isHindi ? "मकान नं, गली, लैंडमार्क, लाडवा" : "House #, Ward/Street, Landmark, Ladwa"}
+                        placeholder={
+                          isHindi
+                            ? "मकान नंबर / दुकान, गली नंबर, पास का मंदिर या लैंडमार्क, लाडवा"
+                            : "House/Shop no., Street/Ward, Landmark, Ladwa"
+                        }
+                        style={{
+                          padding: "0.5rem 0.65rem",
+                          borderRadius: "6px",
+                          border: "1px solid #ccd8c9",
+                          fontSize: "0.78rem",
+                          resize: "none",
+                          fontFamily: "inherit",
+                        }}
                       />
                     </label>
+                  ) : (
+                    <div style={{ marginTop: "0.6rem", padding: "0.5rem 0.75rem", background: "#f0f7ee", borderRadius: "6px", border: "1px solid #d3e5cf", fontSize: "0.74rem", color: "#1f5139" }}>
+                      📍 <strong>{isHindi ? "पिकअप स्थान:" : "Pickup Location:"}</strong> Mini Super Store, Red Road, Ladwa. {isHindi ? "सामान पैक होते ही संदेश प्राप्त होगा।" : "Your pack will be ready for instant pickup."}
+                    </div>
                   )}
 
-                  <label style={{ marginTop: "0.3rem" }}>
-                    <span>{isHindi ? "अतिरिक्त नोट (वैकल्पिक)" : "Order Note (Optional)"}</span>
+                  <label style={{ display: "flex", flexDirection: "column", gap: "0.25rem", marginTop: "0.6rem" }}>
+                    <span style={{ fontSize: "0.72rem", fontWeight: 700, color: "#294734" }}>
+                      {isHindi ? "अतिरिक्त निर्देश (वैकल्पिक)" : "Order Notes / Instructions (Optional)"}
+                    </span>
                     <input
                       type="text"
                       value={customer.notes}
                       onChange={(e) => updateCustomer("notes", e.target.value)}
-                      placeholder={isHindi ? "उदा: शाम 5 बजे के बाद भेजें" : "e.g., Deliver after 5 PM / Pack in 2 bags"}
+                      placeholder={isHindi ? "उदा: शाम 5 बजे के बाद लाएं, कॉल करें" : "e.g., Deliver after 5 PM, Call upon arrival"}
+                      style={{ padding: "0.45rem 0.65rem", borderRadius: "6px", border: "1px solid #ccd8c9", fontSize: "0.78rem" }}
                     />
                   </label>
                 </div>
 
                 {/* Primary Actions: Send to WhatsApp */}
                 <div style={{ marginTop: "1rem", display: "grid", gap: "0.5rem" }}>
-                  {whatsappUrl && (
-                    <a
-                      className="whatsapp-order-btn"
-                      href={whatsappUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      style={{
-                        padding: "0.85rem",
-                        fontSize: "0.82rem",
-                        fontWeight: 900,
-                        borderRadius: "8px",
-                        textAlign: "center",
-                        background: "#25D366",
-                        color: "#ffffff",
-                        boxShadow: "0 4px 14px rgba(37, 211, 102, 0.35)",
-                      }}
-                    >
-                      <span style={{ fontSize: "1.1rem" }}>🟢</span>
-                      <span>
-                        {isHindi
-                          ? "WhatsApp पर पूरा ऑर्डर भेजें (1-क्लिक)"
-                          : "Send Full Order to WhatsApp (1-Click)"}
-                      </span>
-                      <span>↗</span>
-                    </a>
-                  )}
+                  <button
+                    type="button"
+                    onClick={handleSendWhatsApp}
+                    className="whatsapp-order-btn"
+                    style={{
+                      border: "none",
+                      width: "100%",
+                      padding: "0.9rem",
+                      fontSize: "0.86rem",
+                      fontWeight: 900,
+                      borderRadius: "8px",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      gap: "0.5rem",
+                      background: "#25D366",
+                      color: "#ffffff",
+                      cursor: "pointer",
+                      boxShadow: "0 4px 14px rgba(37, 211, 102, 0.35)",
+                    }}
+                  >
+                    <span style={{ fontSize: "1.2rem" }}>💬</span>
+                    <span>
+                      {isHindi
+                        ? "WhatsApp पर पूरा ऑर्डर भेजें (1-क्लिक)"
+                        : "Send Full Order to WhatsApp (1-Click)"}
+                    </span>
+                    <span aria-hidden="true">→</span>
+                  </button>
 
                   <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.5rem" }}>
                     <button
@@ -547,8 +615,8 @@ export default function ShoppingCart({
 
                 <p className="wholesale-help" style={{ marginTop: "0.8rem", textAlign: "center" }}>
                   {isHindi
-                    ? "बटन दबाने पर WhatsApp में आपके पूरे सामान की लिस्ट खुल जाएगी। दुकान से आपको पैकिंग और डिलीवरी की तुरंत पुष्टि मिलेगी।"
-                    : "Tapping the button opens WhatsApp with your full itemized list and details ready to send. The store team in Ladwa will confirm and prepare your order."}
+                    ? "बटन दबाने पर WhatsApp में आपके पूरे सामान की लिस्ट, आपका नाम, पता और डिलीवरी का प्रकार अपने आप भर जाएगा।"
+                    : "Clicking opens WhatsApp with your complete items list, name, phone, address, and delivery type filled in."}
                 </p>
               </>
             )}
@@ -558,3 +626,4 @@ export default function ShoppingCart({
     </>
   );
 }
+

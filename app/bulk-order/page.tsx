@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: "Wholesale Kiryana and bulk groceries for weddings, caterers, schools, and local shops in Ladwa, Kurukshetra.",
 };
 
-const STORE_WHATSAPP = "919896330279";
+const STORE_WHATSAPP = "918708297764";
 
 export default function BulkOrderPage() {
   const weddingWholesaleUrl = `https://wa.me/${STORE_WHATSAPP}?text=${encodeURIComponent(
@@ -45,8 +45,7 @@ export default function BulkOrderPage() {
         </Link>
         <nav className="desktop-nav">
           <Link href="/">Home</Link>
-          <Link href="/departments">Departments</Link>
-          <Link href="/products">All 580+ Products</Link>
+          <Link href="/order">Order Online</Link>
           <Link href="/bulk-order" style={{ color: "#1f5139", fontWeight: 800 }}>Bulk Order</Link>
           <Link href="/visit">Visit Us</Link>
         </nav>
@@ -132,7 +131,7 @@ export default function BulkOrderPage() {
           <Link className="footer-brand" href="/">MINI <em>SUPER</em> STORE</Link>
           <nav className="footer-portals">
             <Link href="/">Home</Link>
-            <Link href="/products">All Products</Link>
+            <Link href="/order">Order Online</Link>
             <Link href="/bulk-order">Bulk Order</Link>
             <Link href="/visit">Visit Us</Link>
           </nav>

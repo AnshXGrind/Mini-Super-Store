@@ -112,7 +112,7 @@ export default async function HomePage() {
           pack_size: product.unit ?? null,
           description: product.description ?? null,
           description_hi: product.description_hi ?? null,
-          price: product.price === null ? null : Number(product.price),
+          //price: product.price === null ? null : Number(product.price),
           mrp: product.mrp === null ? null : Number(product.mrp),
           stock_status: product.stock_status,
           image_url: product.image_url ?? null,
