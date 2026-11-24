@@ -9,6 +9,11 @@ test("login displays a friendly callback error", async ({ page }) => {
   await expect(page.getByRole("alert")).not.toContainText("auth_callback_failed");
 });
 
+test("product catalogue export is not public", async ({ request }) => {
+  const response = await request.get("/api/admin/products/export");
+  expect([403, 503]).toContain(response.status());
+});
+
 async function signInAs(page: Page, email: string, password: string, destination: string) {
   await page.goto("/login");
   await page.getByLabel("Email address").fill(email);

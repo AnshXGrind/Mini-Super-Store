@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { createClient } from "@/lib/supabase/client";
 import type { PublicProduct } from "@/app/page";
+import { shouldLoadProductImageDirectly } from "@/lib/product-image";
 
 type Language = "en" | "hi";
 
@@ -182,7 +183,7 @@ export default function ShoppingCart({
                   {lines.map(({ product, quantity }) => (
                     <div className="cart-line" key={product.id}>
                       {product.image_url ? (
-                        <Image src={product.image_url} alt="" width={116} height={116} sizes="58px" />
+                        <Image src={product.image_url} alt="" width={116} height={116} sizes="58px" unoptimized={shouldLoadProductImageDirectly(product.image_url)} />
                       ) : <span className="cart-line-placeholder" aria-hidden="true">M</span>}
                       <div>
                         <strong>{isHindi && product.name_hi ? product.name_hi : product.name}</strong>

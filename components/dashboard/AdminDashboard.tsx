@@ -5,6 +5,8 @@ import { useCallback, useEffect, useState, type FormEvent } from "react";
 import Image from "next/image";
 import { createClient } from "@/lib/supabase/client";
 import LogoutButton from "@/components/auth/LogoutButton";
+import ProductBulkImport from "@/components/dashboard/ProductBulkImport";
+import { shouldLoadProductImageDirectly } from "@/lib/product-image";
 
 type Category = {
   id: string;
@@ -84,6 +86,7 @@ function getOrderActionError(caught: unknown, fallback: string) {
 export default function AdminDashboard() {
   const [categories, setCategories] = useState<Category[]>([]);
   const [products, setProducts] = useState<Product[]>([]);
+  const [productCount, setProductCount] = useState(0);
   const [offers, setOffers] = useState<Offer[]>([]);
   const [orders, setOrders] = useState<AdminOrder[]>([]);
   const [staff, setStaff] = useState<StaffMember[]>([]);
@@ -107,7 +110,7 @@ export default function AdminDashboard() {
 
       const [categoriesResult, productsResult, offersResult, ordersResult, staffRolesResult] = await Promise.all([
         supabase.from("categories").select("id, name, name_hi").order("sort_order"),
-        supabase.from("products").select("id, category_id, sku, name, name_hi, description, description_hi, price, stock_status, image_url, is_published").order("sort_order"),
+        supabase.from("products").select("id, category_id, sku, name, name_hi, description, description_hi, price, stock_status, image_url, is_published", { count: "exact" }).order("sort_order"),
         supabase.from("offers").select("id, title, title_hi, description, description_hi, is_active").order("created_at", { ascending: false }),
         supabase.from("orders").select("id, status, customer_name, customer_phone, fulfilment_type, delivery_address, total_amount, created_at, assigned_staff_id, order_items(product_name_snapshot, quantity)").order("created_at", { ascending: false }),
         supabase.from("user_roles").select("user_id").eq("role", "staff"),
@@ -122,6 +125,7 @@ export default function AdminDashboard() {
         ...product,
         price: product.price === null ? null : Number(product.price),
       })) as Product[]);
+      setProductCount(productsResult.count ?? productsResult.data?.length ?? 0);
       if (offersResult.error && offersResult.error.code !== "42P01") throw offersResult.error;
       setOffers((offersResult.data ?? []) as Offer[]);
       setOrders((ordersResult.data ?? []).map((order) => ({
@@ -469,13 +473,14 @@ export default function AdminDashboard() {
             </form>
 
             <div className="admin-catalogue">
-              <h2>Products <span>{products.length}</span></h2>
+              <ProductBulkImport onImported={loadData} />
+              <h2>Products <span>{productCount}</span></h2>
               {products.length === 0 ? <p className="dashboard-empty-copy">No products have been added.</p> : (
                 <div className="admin-product-list">
                   {products.map((product) => (
                     <article key={product.id}>
                       {product.image_url ? (
-                        <Image src={product.image_url} alt="" width={108} height={108} sizes="54px" />
+                        <Image src={product.image_url} alt="" width={108} height={108} sizes="54px" unoptimized={shouldLoadProductImageDirectly(product.image_url)} />
                       ) : <span className="admin-product-placeholder">M</span>}
                       <div><strong>{product.name}</strong><small>{product.price === null ? "Ask for price" : `₹${product.price.toFixed(2)} · ${product.stock_status.replaceAll("_", " ")}`}</small></div>
                       <span className={product.is_published ? "admin-published" : "admin-draft"}>{product.is_published ? "Published" : "Draft"}</span>

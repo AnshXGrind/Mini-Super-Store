@@ -22,7 +22,8 @@ To create a staff account, register the person through the customer registration
 9. Apply `migrations/202611200004_security_workflow_hardening.sql` after the earlier migrations. It explicitly rejects missing/NULL roles in the order-status RPC.
 10. Apply `migrations/202611200005_fulfilment_status_alignment.sql` to make the order-status RPC enforce pickup vs delivery transitions, matching the staff dashboard.
 11. Apply `migrations/202611200006_order_integrity.sql` to add duplicate‑line protection, phone/length validation, the `cancel_own_order` RPC, and the DB‑level status‑transition trigger. Without this migration, customer order cancellation will fail and duplicate product lines can bypass the 100‑qty cap.
-12. Generate VAPID keys and set `NEXT_PUBLIC_VAPID_PUBLIC_KEY`. A server-side private key and a trusted notification worker are still required to send push messages.
-13. WhatsApp, SMS, email, monitoring and backups require provider credentials and an operational deployment policy; the application does not send fabricated success responses for these services.
+12. Apply `migrations/202611240001_product_bulk_import.sql` to add product catalogue fields and the admin-only, resumable bulk-import queue. Keep the Next.js app running while background batches are processed; unfinished queued jobs can be resumed from the admin dashboard.
+13. Generate VAPID keys and set `NEXT_PUBLIC_VAPID_PUBLIC_KEY`. A server-side private key and a trusted notification worker are still required to send push messages.
+14. WhatsApp, SMS, email, monitoring and backups require provider credentials and an operational deployment policy; the application does not send fabricated success responses for these services.
 
-The order RPC (`place_customer_order`) reads product prices and stock on the database side. Never accept a price or total supplied by the browser as authoritative.
+The order RPC (`place_customer_order`) reads product prices and stock on the database side. Never accept a price or total supplied by the browser as authoritative. Product imports use admin-checked database functions and preserve an existing image when the import image field is empty.

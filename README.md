@@ -10,6 +10,7 @@ super store in Ladwa, Haryana. Built with Next.js 16 (App Router), React 19 and 
 - Customer accounts with order history (`/account`).
 - Staff dashboard for assigned orders (`/staff`).
 - Admin dashboard for products, offers, staff assignment and order workflow (`/admin`).
+- Admin Excel/CSV product import with preview, row validation, resumable background batches and Excel catalogue export.
 - Supabase Auth, row-level security, a `product-images` storage bucket and optional
   device push subscriptions.
 
@@ -65,6 +66,11 @@ real customer, staff and admin sign-in, configure the corresponding `E2E_*_EMAIL
 and `E2E_*_PASSWORD` environment variables along with the Supabase URL and publishable
 key. GitHub Actions reads these from repository secrets; role-specific sign-in tests
 are skipped when the matching credentials are not configured.
+
+Bulk catalogue import accepts `.xlsx` and `.csv` files with Product ID or SKU,
+Product Name, Category, Subcategory, Brand, MRP, Selling Price, Quantity, Unit,
+Product Image URL, Barcode and Description columns. Apply the product bulk-import
+migration in [`supabase/README.md`](supabase/README.md) before using the feature.
 
 ## Structure
 

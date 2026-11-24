@@ -6,6 +6,7 @@ import BulkOrderWhatsAppCTA from "@/components/wholesale/BulkOrderWhatsAppCTA";
 import ShoppingCart from "@/components/store/ShoppingCart";
 import type { PublicCategory, PublicOffer, PublicProduct } from "@/app/page";
 import { parseStoreCart } from "@/lib/cart";
+import { shouldLoadProductImageDirectly } from "@/lib/product-image";
 
 type Language = "en" | "hi";
 type Group = "daily" | "home" | "style";
@@ -417,6 +418,7 @@ export default function Storefront({
                         width={600}
                         height={360}
                         sizes="(max-width: 680px) 50vw, (max-width: 900px) 33vw, 300px"
+                        unoptimized={shouldLoadProductImageDirectly(product.image_url)}
                       />
                     ) : (
                       <div className="product-image-placeholder" aria-hidden="true">MINI STORE</div>

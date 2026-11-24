@@ -354,6 +354,29 @@ button { cursor: pointer; }
 .admin-form-actions .admin-secondary { color: #526358; background: #edf1e9; }
 .admin-catalogue { padding: 1.1rem; }
 .admin-catalogue h2 span { display: inline-grid; min-width: 24px; height: 24px; place-items: center; border-radius: 50%; color: #fff; background: #d97848; font-size: .62rem; }
+.product-bulk-import { margin-bottom: 1.2rem; padding-bottom: 1.2rem; border-bottom: 1px solid #edf0ea; }
+.product-bulk-heading { display: flex; align-items: flex-start; justify-content: space-between; gap: .8rem; }
+.product-bulk-heading h2 { margin: 0; font-size: 1rem; }
+.product-bulk-heading p, .product-import-counts, .product-import-preview > p, .product-import-issues > p { margin: .35rem 0 0; color: #77847a; font-size: .65rem; line-height: 1.5; }
+.product-export-link { flex: 0 0 auto; padding: .55rem .7rem; border: 1px solid #dce5da; border-radius: 6px; color: #31583e; background: #fff; font-size: .64rem; font-weight: 800; text-decoration: none; }
+.product-import-controls { display: flex; align-items: end; flex-wrap: wrap; gap: .5rem; margin-top: .75rem; }
+.product-import-controls label { display: grid; flex: 1 1 260px; gap: .3rem; color: #516257; font-size: .64rem; font-weight: 800; }
+.product-import-controls input { max-width: 100%; font-size: .65rem; }
+.product-import-controls button, .product-import-job button { min-height: 36px; padding: .45rem .65rem; border: 1px solid #dce5da; border-radius: 6px; color: #31583e; background: #fff; font-size: .64rem; font-weight: 800; }
+.product-import-controls button:last-child { border-color: #1f5139; color: #fff; background: #1f5139; }
+.product-import-controls button:disabled, .product-import-job button:disabled { opacity: .55; cursor: wait; }
+.product-import-progress { margin: .7rem 0 0; color: #526358; font-size: .66rem; }
+.product-import-preview { overflow-x: auto; margin-top: .7rem; border: 1px solid #edf0ea; border-radius: 7px; }
+.product-import-preview table { width: 100%; min-width: 720px; border-collapse: collapse; font-size: .62rem; }
+.product-import-preview th, .product-import-preview td { max-width: 250px; padding: .48rem; border-bottom: 1px solid #edf0ea; text-align: left; vertical-align: top; overflow-wrap: anywhere; }
+.product-import-preview th { color: #526358; background: #f7f8f4; }
+.product-import-invalid { color: #8f2c25; }
+.product-import-warning { color: #8a6536; }
+.product-import-job { display: grid; gap: .4rem; margin-top: .75rem; padding: .7rem; border-radius: 7px; background: #f7f8f4; color: #526358; font-size: .65rem; }
+.product-import-job button { justify-self: start; }
+.product-import-issues { margin-top: .65rem; color: #8f2c25; font-size: .64rem; }
+.product-import-issues h3 { margin: 0; font-size: .7rem; }
+.product-import-issues ul { display: grid; gap: .3rem; max-height: 180px; overflow: auto; margin: .45rem 0 0; padding-left: 1.1rem; }
 .dashboard-empty-copy { color: #7b887f; font-size: .72rem; }
 .admin-product-list { display: grid; gap: .55rem; margin-top: .8rem; }
 .admin-product-list article { display: grid; grid-template-columns: 54px 1fr auto auto; align-items: center; gap: .65rem; padding: .55rem; border: 1px solid #edf0ea; border-radius: 8px; }
