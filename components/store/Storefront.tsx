@@ -37,6 +37,10 @@ import {
   groupWeightedProductVariants,
   type ProductVariantGroup,
 } from "@/lib/product-variants";
+import {
+  isBreadInRemovedDepartment,
+  isVisibleInStorefront,
+} from "@/lib/catalogue-visibility";
 
 type Language = "en" | "hi";
 
@@ -49,7 +53,7 @@ const categoryMetaMap: Record<string, CategoryMeta> = {
   "staples-grains": { icon: "🌾", tone: "mint" },
   "oil-ghee-spices-masala": { icon: "🌶️", tone: "yellow" },
   "snacks-biscuits-beverages": { icon: "☕", tone: "peach" },
-  "dairy-bakery-breakfast": { icon: "🥛", tone: "blue" },
+  "dairy-bakery-breakfast": { icon: "🍞", tone: "blue" },
   "household-personal-care": { icon: "🧼", tone: "lavender" },
 };
 
@@ -59,7 +63,7 @@ const INITIAL_PAGE_SIZE = 36;
 
 export default function Storefront({
   categories,
-  products,
+  products: catalogueProducts,
   offers,
   seasonalCollections = [],
   mode = "home",
@@ -72,6 +76,17 @@ export default function Storefront({
   mode?: "home" | "order";
   initialCategory?: string;
 }) {
+  const products = useMemo(
+    () =>
+      catalogueProducts
+        .filter(isVisibleInStorefront)
+        .map((product) =>
+          isBreadInRemovedDepartment(product)
+            ? { ...product, subcategory: "Breakfast & Instant Foods" }
+            : product,
+        ),
+    [catalogueProducts],
+  );
   const [language, setLanguage] = useState<Language>("en");
   const [activeCategory, setActiveCategory] = useState(initialCategory);
   const [activeSubcategory, setActiveSubcategory] = useState<string>("all");
@@ -179,16 +194,19 @@ export default function Storefront({
   const departments = useMemo(() => {
     return categories.map((category) => {
       const meta = categoryMetaMap[category.slug] ?? defaultMeta;
+      const isBreadCategory = category.slug === "dairy-bakery-breakfast";
 
       return {
         id: category.slug,
         categoryId: category.id,
         slug: category.slug,
         icon: meta.icon,
-        title: category.name,
-        hindiTitle: category.name_hi || category.name,
-        description: category.description || "",
-        hindiDescription: category.description_hi || category.description || "",
+        title: isBreadCategory ? "Bread & Breakfast" : category.name,
+        hindiTitle: isBreadCategory ? "ब्रेड और नाश्ता" : category.name_hi || category.name,
+        description: isBreadCategory ? "Bread and breakfast essentials" : category.description || "",
+        hindiDescription: isBreadCategory
+          ? "ब्रेड और नाश्ते का सामान"
+          : category.description_hi || category.description || "",
         tone: meta.tone,
       };
     });
