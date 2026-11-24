@@ -3,6 +3,7 @@
 import { useState, type FormEvent } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import StoreLogo from "@/components/store/StoreLogo";
 import { createClient } from "@/lib/supabase/client";
 
 type AuthFormProps = { mode: "login" | "register"; next?: string; authError?: string };
@@ -74,7 +75,10 @@ export default function AuthForm({ mode, next = "/dashboard", authError }: AuthF
   return (
     <main className="auth-page">
       <section className="auth-card" aria-labelledby="auth-title">
-        <Link className="auth-brand" href="/">MINI <span>SUPER</span> STORE</Link>
+        <Link className="auth-brand" href="/">
+          <StoreLogo size={36} />
+          <span className="auth-brand-wordmark">MINI <span>SUPER</span> STORE</span>
+        </Link>
         <p className="auth-eyebrow">{isRegister ? "CUSTOMER ACCOUNT" : "WELCOME BACK"}</p>
         <h1 id="auth-title">{isRegister ? "Create your account" : "Sign in to your account"}</h1>
         <p className="auth-description">

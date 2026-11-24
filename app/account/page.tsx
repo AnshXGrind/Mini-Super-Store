@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import CancelOrderButton from "@/components/account/CancelOrderButton";
 import LogoutButton from "@/components/auth/LogoutButton";
+import StoreLogo from "@/components/store/StoreLogo";
 import { requireStoreRole } from "@/lib/auth";
 import { createClient } from "@/lib/supabase/server";
 import NotificationSettings from "@/components/account/NotificationSettings";
@@ -42,7 +43,10 @@ export default async function AccountPage() {
   return (
     <main className="account-page">
       <header className="account-header">
-        <Link className="auth-brand" href="/">MINI <span>SUPER</span> STORE</Link>
+        <Link className="auth-brand" href="/">
+          <StoreLogo size={36} />
+          <span className="auth-brand-wordmark">MINI <span>SUPER</span> STORE</span>
+        </Link>
         <div>
           <Link href="/">Back to store</Link>
           <LogoutButton />

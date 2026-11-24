@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import StoreLogo from "@/components/store/StoreLogo";
 
 export default function AppInstallPrompt() {
   const [prompt, setPrompt] = useState<BeforeInstallPromptEvent | null>(null);
@@ -40,7 +41,8 @@ export default function AppInstallPrompt() {
         setPrompt(null);
       }}
     >
-      Install store app
+      <StoreLogo size={24} />
+      Install Mini Super Store
     </button>
   );
 }

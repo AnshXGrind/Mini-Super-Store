@@ -1,24 +1,29 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import AnnouncementBar from "@/components/store/AnnouncementBar";
+import MobileStoreNav from "@/components/store/MobileStoreNav";
+import StoreFooter from "@/components/store/StoreFooter";
 import StoreLogo from "@/components/store/StoreLogo";
 import {
-  getStorePhoneDisplay,
+  getStorePhoneInternationalDisplay,
   getStorePhoneLink,
   getStoreWhatsAppNumber,
+  STORE_ADDRESS,
+  STORE_CURBSIDE_PICKUP_AVAILABLE,
+  STORE_HOME_DELIVERY_AREA,
   STORE_MAP_URL,
+  STORE_NAME,
+  STORE_OPENING_HOURS,
+  STORE_REGION,
 } from "@/lib/store-contact";
 
 export const metadata: Metadata = {
-  title: "Visit Our Store | Mini Super Store",
-  description: "Mini Super Store location, timings, contact number and map directions on Red Road, Ladwa, Kurukshetra, Haryana.",
+  title: "Visit Mini Super Store | Ladwa",
+  description:
+    "Find Mini Super Store on Red Road, Ladwa. View store hours, contact details, and directions.",
 };
 
 export default function VisitPage() {
-  const storePhone = getStorePhoneDisplay();
-  const storePhoneLink = getStorePhoneLink();
-  const storeWhatsApp = getStoreWhatsAppNumber();
-
   return (
     <main className="storefront">
       <AnnouncementBar />
@@ -27,103 +32,73 @@ export default function VisitPage() {
         <Link className="brand" href="/" aria-label="Mini Super Store home">
           <StoreLogo />
           <span className="brand-copy">
-            <strong>
-              MINI <em>SUPER</em> STORE
-            </strong>
-            <small>Red Road, Ladwa, Haryana</small>
+            <strong>MINI <em>SUPER</em> STORE</strong>
+            <small>Red Road, Ladwa</small>
           </span>
         </Link>
-        <nav className="desktop-nav">
+        <nav className="desktop-nav" aria-label="Main navigation">
           <Link href="/">Home</Link>
           <Link href="/order">Order Online</Link>
           <Link href="/bulk-order">Bulk Order</Link>
-          <Link href="/visit" style={{ color: "#1f5139", fontWeight: 800 }}>Visit Us</Link>
+          <Link href="/visit" aria-current="page">Visit Us</Link>
         </nav>
       </header>
 
-      <section className="section-wrap" style={{ paddingTop: "2.5rem", paddingBottom: "3rem" }}>
-        <div style={{ maxWidth: "720px", margin: "0 auto", textAlign: "center" }}>
-          <p className="section-eyebrow">Local Kiryana & Supermarket</p>
-          <h1 style={{ fontSize: "2.4rem", margin: "0.4rem 0 1rem", letterSpacing: "-0.03em" }}>
-            Visit Us on Red Road, Ladwa
-          </h1>
-          <p style={{ color: "#54685a", fontSize: "0.95rem", lineHeight: 1.6, marginBottom: "2.5rem" }}>
-            We look forward to welcoming you at our store. Walk in to pick your groceries in person, or send your list over WhatsApp for convenient curbside pickup and home delivery.
-          </p>
-        </div>
+      <section className="section-wrap customer-page-content">
+        <p className="section-eyebrow">Store location</p>
+        <h1>Visit {STORE_NAME}</h1>
 
-        <div style={{ maxWidth: "860px", margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "1.5rem" }}>
-          <div style={{ padding: "1.8rem", background: "#ffffff", borderRadius: "12px", border: "1px solid #e1e7de" }}>
-            <span style={{ fontSize: "2rem" }}>📍</span>
-            <h3 style={{ margin: "0.6rem 0 0.3rem" }}>Store Address</h3>
-            <p style={{ color: "#4f6356", fontSize: "0.85rem", lineHeight: 1.6 }}>
-              <strong>Mini Super Store</strong><br />
-              <a href={STORE_MAP_URL} target="_blank" rel="noopener noreferrer">
-                Red Road, Ladwa (Kurukshetra)
-              </a><br />
-              District Kurukshetra, Haryana — 136132<br />
-              Landmark: Near Main Red Road Market
-            </p>
+        <div className="visit-page-grid">
+          <section className="visit-page-card" aria-labelledby="visit-address-title">
+            <h2 id="visit-address-title">Address and directions</h2>
+            <p><strong>{STORE_NAME}</strong></p>
+            <p>{STORE_ADDRESS}<br />{STORE_REGION}</p>
+            <a href={STORE_MAP_URL} target="_blank" rel="noopener noreferrer" className="button button-primary">
+              Open Google Maps ↗
+            </a>
+          </section>
 
-            <div style={{ marginTop: "1.5rem", borderTop: "1px solid #edf2ec", paddingTop: "1rem" }}>
-              <span style={{ fontSize: "0.7rem", fontWeight: 800, color: "#1f5139", textTransform: "uppercase" }}>
-                🕒 Store Opening Hours
-              </span>
-              <p style={{ color: "#4f6356", fontSize: "0.8rem", margin: "0.4rem 0 0" }}>
-                <strong>Monday to Saturday:</strong> 9:30 AM – 8:00 PM<br />
-                <strong>Sunday:</strong> 10:00 AM – 1:00 PM<br />
-                Open daily.
-              </p>
-            </div>
-          </div>
+          <section className="visit-page-card" aria-labelledby="visit-hours-title">
+            <h2 id="visit-hours-title">Opening hours</h2>
+            <dl className="visit-hours-list">
+              <div>
+                <dt>{STORE_OPENING_HOURS.weekdays}</dt>
+                <dd>{STORE_OPENING_HOURS.weekdayOpen}–{STORE_OPENING_HOURS.weekdayClose}</dd>
+              </div>
+              <div>
+                <dt>{STORE_OPENING_HOURS.sunday}</dt>
+                <dd>{STORE_OPENING_HOURS.sundayOpen}–{STORE_OPENING_HOURS.sundayClose}</dd>
+              </div>
+            </dl>
+          </section>
 
-          <div style={{ padding: "1.8rem", background: "#ffffff", borderRadius: "12px", border: "1px solid #e1e7de" }}>
-            <span style={{ fontSize: "2rem" }}>📞</span>
-            <h3 style={{ margin: "0.6rem 0 0.3rem" }}>Contact & Orders</h3>
-            <p style={{ color: "#4f6356", fontSize: "0.85rem", lineHeight: 1.6 }}>
-              <strong>WhatsApp & Phone:</strong> {storePhone}<br />
-              <strong>Home Delivery:</strong> Available across Ladwa town.
-            </p>
+          <section className="visit-page-card" aria-labelledby="visit-contact-title">
+            <h2 id="visit-contact-title">Contact and orders</h2>
+            <a className="visit-phone-link" href={`tel:${getStorePhoneLink()}`}>
+              {getStorePhoneInternationalDisplay()}
+            </a>
+            <a
+              href={`https://wa.me/${getStoreWhatsAppNumber()}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="button button-primary"
+            >
+              Message on WhatsApp ↗
+            </a>
+          </section>
 
-            <div style={{ display: "grid", gap: "0.6rem", marginTop: "1.5rem" }}>
-              <a
-                href={`https://wa.me/${storeWhatsApp}?text=${encodeURIComponent("Hi Mini Super Store! I need home delivery in Ladwa.")}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="whatsapp-order-btn"
-                style={{ textAlign: "center", padding: "0.75rem" }}
-              >
-                💬 Chat & Order on WhatsApp ↗
-              </a>
-              <a
-                href={`tel:${storePhoneLink}`}
-                className="button button-quiet"
-                style={{ textAlign: "center", borderRadius: "6px" }}
-              >
-                📞 Call Store Directly
-              </a>
-            </div>
-          </div>
+          <section className="visit-page-card" aria-labelledby="visit-services-title">
+            <h2 id="visit-services-title">Services</h2>
+            <ul>
+              <li>Home delivery in {STORE_HOME_DELIVERY_AREA}</li>
+              {STORE_CURBSIDE_PICKUP_AVAILABLE && <li>Curbside pickup available</li>}
+            </ul>
+          </section>
         </div>
       </section>
 
-      <footer className="site-footer">
-        <div className="footer-inner">
-          <Link className="footer-brand" href="/">MINI <em>SUPER</em> STORE</Link>
-          <nav className="footer-portals">
-            <Link href="/">Home</Link>
-            <Link href="/order">Order Online</Link>
-            <Link href="/bulk-order">Bulk Order</Link>
-            <Link href="/visit">Visit Us</Link>
-          </nav>
-          <p>
-            © {new Date().getFullYear()} Mini Super Store ·{" "}
-            <a href={STORE_MAP_URL} target="_blank" rel="noopener noreferrer">
-              Red Road, Ladwa (Kurukshetra)
-            </a>
-          </p>
-        </div>
-      </footer>
+      <StoreFooter />
+      <MobileStoreNav />
     </main>
   );
 }

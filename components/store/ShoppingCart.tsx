@@ -273,8 +273,8 @@ export default function ShoppingCart({
                 <h3>{isHindi ? "आपकी कार्ट खाली है" : "Your cart is empty"}</h3>
                 <p>
                   {isHindi
-                    ? "कैटलॉग से अपनी पसंद का सामान जोड़ें और एक क्लिक में WhatsApp पर भेजें।"
-                    : "Browse our 580+ items, tap 'Add to Cart', and send your entire order list to WhatsApp with one click."}
+                    ? "कैटलॉग से सामान जोड़ें, फिर नाम, फ़ोन और पिकअप या डिलीवरी की जानकारी भरकर WhatsApp पर भेजें।"
+                    : "Add products from the catalogue, enter your contact and pickup or delivery details, then send the request on WhatsApp."}
                 </p>
                 <button
                   type="button"

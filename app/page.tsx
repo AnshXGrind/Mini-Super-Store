@@ -45,6 +45,15 @@ export type PublicOffer = {
   description_hi: string | null;
 };
 
+export type PublicSeasonalCollection = {
+  id: string;
+  title: string;
+  title_hi: string | null;
+  description: string | null;
+  description_hi: string | null;
+  product_ids: string[];
+};
+
 function StoreStructuredData() {
   const data = {
     "@context": "https://schema.org",
@@ -70,6 +79,7 @@ export default async function HomePage() {
   let categories: PublicCategory[] = [];
   let products: PublicProduct[] = [];
   let offers: PublicOffer[] = [];
+  let seasonalCollections: PublicSeasonalCollection[] = [];
 
   const supabase = createPublicClient();
   let supabaseError: string | null = null;
@@ -123,8 +133,37 @@ export default async function HomePage() {
 
       offers = (offerResult.data ?? []) as PublicOffer[];
     } catch (err) {
-      // Log to server output without flashing raw errors to customers.
-      console.warn("[catalogue] Using verified offline catalogue fallback:", err);
+      console.warn("[catalogue] Database catalogue could not be loaded; using local catalogue fallback:", err);
+    }
+
+    try {
+      const [collectionResult, productLinksResult] = await Promise.all([
+        supabase
+          .from("seasonal_collections")
+          .select("id, title, title_hi, description, description_hi")
+          .eq("is_active", true)
+          .order("sort_order", { ascending: true }),
+        supabase
+          .from("seasonal_collection_products")
+          .select("collection_id, product_id"),
+      ]);
+      if (collectionResult.error) throw collectionResult.error;
+      if (productLinksResult.error) throw productLinksResult.error;
+
+      const productIdsByCollection = new Map<string, string[]>();
+      for (const link of productLinksResult.data ?? []) {
+        const productIds = productIdsByCollection.get(link.collection_id) ?? [];
+        productIds.push(link.product_id);
+        productIdsByCollection.set(link.collection_id, productIds);
+      }
+      seasonalCollections = (collectionResult.data ?? [])
+        .map((collection) => ({
+          ...collection,
+          product_ids: productIdsByCollection.get(collection.id) ?? [],
+        }))
+        .filter((collection) => collection.product_ids.length > 0) as PublicSeasonalCollection[];
+    } catch (err) {
+      console.warn("[seasonal] Active collections could not be loaded:", err);
     }
   }
 
@@ -143,6 +182,7 @@ export default async function HomePage() {
         categories={categories}
         products={products}
         offers={offers}
+        seasonalCollections={seasonalCollections}
       />
       <StoreStructuredData />
     </>

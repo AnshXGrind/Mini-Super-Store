@@ -67,7 +67,7 @@ export default async function OrderPage({
         };
       }) as PublicProduct[];
     } catch (error) {
-      console.warn("[order] Using verified offline catalogue fallback:", error);
+      console.warn("[order] Using bundled offline catalogue fallback:", error);
     }
   }
 

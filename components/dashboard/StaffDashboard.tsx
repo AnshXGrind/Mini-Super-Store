@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
 import { createClient } from "@/lib/supabase/client";
 import LogoutButton from "@/components/auth/LogoutButton";
+import StoreLogo from "@/components/store/StoreLogo";
 import { getStaffNextStatuses } from "@/lib/order-status";
 
 type OrderStatus =
@@ -122,7 +123,10 @@ export default function StaffDashboard() {
   return (
     <main className="dashboard-page">
       <header className="dashboard-header">
-        <Link className="auth-brand" href="/">MINI <span>SUPER</span> STORE</Link>
+        <Link className="auth-brand" href="/">
+          <StoreLogo size={36} />
+          <span className="auth-brand-wordmark">MINI <span>SUPER</span> STORE</span>
+        </Link>
         <div><Link href="/">View store</Link><LogoutButton /></div>
       </header>
       <section className="dashboard-content">
