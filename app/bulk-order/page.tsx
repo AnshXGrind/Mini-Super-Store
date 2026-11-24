@@ -1,41 +1,32 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import AnnouncementBar from "@/components/store/AnnouncementBar";
+import StoreLogo from "@/components/store/StoreLogo";
 import BulkOrderWhatsAppCTA from "@/components/wholesale/BulkOrderWhatsAppCTA";
+import { getStoreWhatsAppNumber, STORE_MAP_URL } from "@/lib/store-contact";
 
 export const metadata: Metadata = {
   title: "Bulk Order & Wholesale Enquiry | Mini Super Store",
   description: "Wholesale Kiryana and bulk groceries for weddings, caterers, schools, and local shops in Ladwa, Kurukshetra.",
 };
 
-const STORE_WHATSAPP = "918708297764";
-
 export default function BulkOrderPage() {
-  const weddingWholesaleUrl = `https://wa.me/${STORE_WHATSAPP}?text=${encodeURIComponent(
+  const storeWhatsApp = getStoreWhatsAppNumber();
+  const weddingWholesaleUrl = `https://wa.me/${storeWhatsApp}?text=${encodeURIComponent(
     "Hello Mini Super Store! I am looking for wedding/event wholesale grocery supplies. Please share bulk price quotes."
   )}`;
 
-  const canteenWholesaleUrl = `https://wa.me/${STORE_WHATSAPP}?text=${encodeURIComponent(
+  const canteenWholesaleUrl = `https://wa.me/${storeWhatsApp}?text=${encodeURIComponent(
     "Hello Mini Super Store! I need recurring wholesale grocery supplies for our institution/canteen in Ladwa."
   )}`;
 
   return (
     <main className="storefront">
-      <div className="topline">
-        <div className="topline-inner">
-          <span>📍 Red Road, Ladwa (Kurukshetra)</span>
-          <span className="topline-message">· Wholesale & Bulk Supplies</span>
-          <Link href="/" style={{ color: "#d2f5db", fontSize: "0.68rem", fontWeight: 700, marginLeft: "auto" }}>
-            ← Back to Store
-          </Link>
-        </div>
-      </div>
+      <AnnouncementBar />
 
       <header className="site-header">
         <Link className="brand" href="/" aria-label="Mini Super Store home">
-          <div className="brand-logo-badge" aria-hidden="true">
-            <span className="logo-bag">🛍️</span>
-            <span className="logo-spark">✨</span>
-          </div>
+          <StoreLogo />
           <span className="brand-copy">
             <strong>
               MINI <em>SUPER</em> STORE
@@ -110,7 +101,7 @@ export default function BulkOrderPage() {
               </p>
             </div>
             <a
-              href={`https://wa.me/${STORE_WHATSAPP}?text=${encodeURIComponent("Hi Mini Super Store! I need bulk gift hampers and snack boxes.")}`}
+              href={`https://wa.me/${storeWhatsApp}?text=${encodeURIComponent("Hi Mini Super Store! I need bulk gift hampers and snack boxes.")}`}
               target="_blank"
               rel="noopener noreferrer"
               className="whatsapp-order-btn"
@@ -135,7 +126,12 @@ export default function BulkOrderPage() {
             <Link href="/bulk-order">Bulk Order</Link>
             <Link href="/visit">Visit Us</Link>
           </nav>
-          <p>© {new Date().getFullYear()} Mini Super Store · Red Road, Ladwa.</p>
+          <p>
+            © {new Date().getFullYear()} Mini Super Store ·{" "}
+            <a href={STORE_MAP_URL} target="_blank" rel="noopener noreferrer">
+              Red Road, Ladwa (Kurukshetra)
+            </a>
+          </p>
         </div>
       </footer>
     </main>

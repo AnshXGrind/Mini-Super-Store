@@ -3,8 +3,11 @@
 import { useEffect, useMemo, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import AnnouncementBar from "@/components/store/AnnouncementBar";
 import BulkOrderWhatsAppCTA from "@/components/wholesale/BulkOrderWhatsAppCTA";
 import ShoppingCart from "@/components/store/ShoppingCart";
+import StoreLogo from "@/components/store/StoreLogo";
+import { STORE_MAP_URL } from "@/lib/store-contact";
 import type { PublicCategory, PublicOffer, PublicProduct } from "@/app/page";
 import { parseStoreCart } from "@/lib/cart";
 import {
@@ -85,7 +88,6 @@ const POPULAR_BRANDS = [
 ];
 
 const INITIAL_PAGE_SIZE = 36;
-const STORE_WHATSAPP_NUMBER = "918708297764";
 
 export default function Storefront({
   categories,
@@ -333,53 +335,15 @@ export default function Storefront({
         </div>
       )}
 
-      {/* Clean Topline for Customers */}
-      <div className="topline">
-        <div className="topline-inner">
-          <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
-            <span>📍 {isHindi ? "रेड रोड, लाडवा (कुरुक्षेत्र)" : "Red Road, Ladwa (Kurukshetra)"}</span>
-            <span className="topline-message">
-              · {isHindi ? "दुकान समय: सुबह 8 से रात 9 बजे" : "Open 8:00 AM – 9:00 PM"}
-            </span>
-          </div>
-
-          <div style={{ display: "flex", alignItems: "center", gap: "0.8rem", marginLeft: "auto" }}>
-            <a
-              href={`https://wa.me/${STORE_WHATSAPP_NUMBER}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ color: "#d2f5db", fontSize: "0.68rem", fontWeight: 700, textDecoration: "none" }}
-            >
-              💬 WhatsApp: +91 87082 97764
-            </a>
-            <div className="language-switch" aria-label="Choose language">
-              <button
-                type="button"
-                onClick={() => setLanguage("en")}
-                aria-pressed={!isHindi}
-              >
-                EN
-              </button>
-              <span aria-hidden="true">/</span>
-              <button
-                type="button"
-                onClick={() => setLanguage("hi")}
-                aria-pressed={isHindi}
-              >
-                हिंदी
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
+      <AnnouncementBar
+        language={language}
+        onLanguageChange={setLanguage}
+      />
 
       {/* Main Header with Logo & Dedicated Page Navigation */}
       <header className="site-header">
         <Link className="brand" href="/" aria-label="Mini Super Store home">
-          <div className="brand-logo-badge" aria-hidden="true">
-            <span className="logo-bag">🛍️</span>
-            <span className="logo-spark">✨</span>
-          </div>
+          <StoreLogo />
           <span className="brand-copy">
             <strong>
               MINI <em>SUPER</em> STORE
@@ -1157,9 +1121,17 @@ export default function Storefront({
           </div>
           <p className="visit-note">
             {isHindi
-              ? "दुकान प्रतिदिन सुबह 8:00 बजे से रात 9:00 बजे तक खुली रहती है।"
-              : "Store open Monday through Sunday, 8:00 AM to 9:00 PM."}
+              ? "सोमवार–शनिवार: सुबह 9:30 – रात 8:00 बजे। रविवार: सुबह 10:00 – दोपहर 1:00 बजे।"
+              : "Monday–Saturday: 9:30 AM – 8:00 PM. Sunday: 10:00 AM – 1:00 PM."}
           </p>
+          <a
+            href={STORE_MAP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="visit-map-link"
+          >
+            Red Road, Ladwa (Kurukshetra) ↗
+          </a>
           <Link href="/visit" style={{ color: "#1f5139", fontWeight: 800, fontSize: "0.75rem", textDecoration: "underline" }}>
             {isHindi ? "दुकान का पूरा पता व संपर्क देखें ↗" : "View Full Store Location & Contact ↗"}
           </Link>
@@ -1182,7 +1154,9 @@ export default function Storefront({
           </nav>
           <p>
             © {new Date().getFullYear()} Mini Super Store.{" "}
-            {isHindi ? "रेड रोड, लाडवा का अपना किराना स्टोर।" : "Red Road, Ladwa, Haryana."}
+            <a href={STORE_MAP_URL} target="_blank" rel="noopener noreferrer">
+              Red Road, Ladwa (Kurukshetra)
+            </a>
           </p>
           <a href="#home">{isHindi ? "ऊपर जाएँ ↑" : "Back to top ↑"}</a>
         </div>

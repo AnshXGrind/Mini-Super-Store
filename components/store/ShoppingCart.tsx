@@ -10,6 +10,7 @@ import {
   shouldLoadProductImageDirectly,
 } from "@/lib/product-image";
 import { buildWhatsAppOrderMessage } from "@/lib/whatsapp-order-message";
+import { getStoreWhatsAppNumber } from "@/lib/store-contact";
 
 type Language = "en" | "hi";
 
@@ -22,8 +23,6 @@ type CustomerInfo = {
   address: string;
   notes: string;
 };
-
-const DEFAULT_STORE_PHONE = "918708297764"; // Red Road, Ladwa Store WhatsApp
 
 export default function ShoppingCart({
   language,
@@ -95,13 +94,7 @@ export default function ShoppingCart({
 
   const itemCount = lines.reduce((total, line) => total + line.quantity, 0);
 
-  const configuredPhone = (
-    process.env.NEXT_PUBLIC_WHOLESALE_WHATSAPP_NUMBER ?? ""
-  ).replace(/\D/g, "");
-
-  const storePhone = /^\d{10,15}$/.test(configuredPhone)
-    ? configuredPhone
-    : DEFAULT_STORE_PHONE;
+  const storePhone = getStoreWhatsAppNumber();
 
   function changeQuantity(productId: string, quantity: number) {
     const next = { ...cart };

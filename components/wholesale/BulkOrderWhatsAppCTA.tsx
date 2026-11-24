@@ -1,4 +1,6 @@
-﻿type Language = "en" | "hi";
+﻿import { getStoreWhatsAppNumber } from "@/lib/store-contact";
+
+type Language = "en" | "hi";
 
 const WHATSAPP_MESSAGES: Record<Language, string> = {
   en: "Hello Mini Super Store! I am interested in bulk order purchases. Please share your product catalogue, available products, bulk pricing and order details. Thank you.",
@@ -7,11 +9,8 @@ const WHATSAPP_MESSAGES: Record<Language, string> = {
 
 export default function BulkOrderWhatsAppCTA({ language }: { language: Language }) {
   const isHindi = language === "hi";
-  const phone = (process.env.NEXT_PUBLIC_WHOLESALE_WHATSAPP_NUMBER ?? "").replace(/\D/g, "");
-  const configured = /^\d{10,15}$/.test(phone);
-  const whatsappUrl = configured
-    ? `https://wa.me/${phone}?text=${encodeURIComponent(WHATSAPP_MESSAGES[language])}`
-    : null;
+  const phone = getStoreWhatsAppNumber();
+  const whatsappUrl = `https://wa.me/${phone}?text=${encodeURIComponent(WHATSAPP_MESSAGES[language])}`;
 
   return (
     <div className="wholesale-card">
@@ -20,13 +19,9 @@ export default function BulkOrderWhatsAppCTA({ language }: { language: Language 
         <h2 id="bulk-order-title">{isHindi ? "हमारी टीम से बात करें" : "Talk to our store team"}</h2>
         <p>{isHindi ? "बड़ी मात्रा, उत्पादों की उपलब्धता और थोक कीमतों के बारे में पूछें।" : "Ask us about larger quantities, product availability and bulk pricing."}</p>
       </div>
-      {whatsappUrl ? (
-        <a className="wholesale-cta" href={whatsappUrl} target="_blank" rel="noopener noreferrer">
-          {isHindi ? "WhatsApp खोलें" : "Open WhatsApp"} <span aria-hidden="true">↗</span>
-        </a>
-      ) : (
-        <p className="wholesale-help">{isHindi ? "थोक संपर्क उपलब्ध नहीं है। कृपया NEXT_PUBLIC_WHOLESALE_WHATSAPP_NUMBER सेट करें।" : "Bulk order contact is not available yet. Please configure NEXT_PUBLIC_WHOLESALE_WHATSAPP_NUMBER."}</p>
-      )}
+      <a className="wholesale-cta" href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+        {isHindi ? "WhatsApp खोलें" : "Open WhatsApp"} <span aria-hidden="true">↗</span>
+      </a>
       <p className="wholesale-help">{isHindi ? "WhatsApp में संदेश खुलेगा। आप उसे देखकर खुद भेज सकते हैं।" : "WhatsApp opens with a prepared message. You can review and send it yourself."}</p>
     </div>
   );
