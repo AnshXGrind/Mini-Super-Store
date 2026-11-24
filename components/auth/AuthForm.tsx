@@ -5,9 +5,9 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
 
-type AuthFormProps = { mode: "login" | "register"; next?: string };
+type AuthFormProps = { mode: "login" | "register"; next?: string; authError?: string };
 
-export default function AuthForm({ mode, next = "/dashboard" }: AuthFormProps) {
+export default function AuthForm({ mode, next = "/dashboard", authError }: AuthFormProps) {
   const isRegister = mode === "register";
   const router = useRouter();
   const [fullName, setFullName] = useState("");
@@ -17,6 +17,11 @@ export default function AuthForm({ mode, next = "/dashboard" }: AuthFormProps) {
   const [busy, setBusy] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
+
+  // Pre-fill from callback error (e.g. ?error=auth_callback_failed)
+  if (!errorMessage && authError) {
+    setErrorMessage(authError);
+  }
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();

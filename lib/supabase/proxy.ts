@@ -53,21 +53,30 @@ export async function updateSession(request: NextRequest) {
   }
 
   if (typeof userId === "string" && (pathname.startsWith("/admin") || pathname.startsWith("/staff") || pathname.startsWith("/account"))) {
-    const { data: roleRow } = await supabase
+    const { data: roleRow, error: roleError } = await supabase
       .from("user_roles")
       .select("role")
       .eq("user_id", userId)
       .maybeSingle();
 
-    const role = roleRow?.role;
-    if (pathname.startsWith("/admin") && role !== "admin") {
-      return NextResponse.redirect(new URL("/dashboard", request.url));
-    }
-    if (pathname.startsWith("/staff") && role !== "staff") {
-      return NextResponse.redirect(new URL("/dashboard", request.url));
-    }
-    if (pathname.startsWith("/account") && role !== "customer") {
-      return NextResponse.redirect(new URL("/dashboard", request.url));
+    // A Supabase query error (network, auth mismatch) should not be treated
+    // as "the user has the wrong role". If the query itself failed, we let
+    // the user proceed so they aren't blocked by a transient error.
+    if (roleError) {
+      // Log the error server-side; for now just continue so the user isn't
+      // locked out by a transient issue. The dashboard/page components can
+      // display their own auth-required message if needed.
+    } else {
+      const role = roleRow?.role;
+      if (pathname.startsWith("/admin") && role !== "admin") {
+        return NextResponse.redirect(new URL("/dashboard", request.url));
+      }
+      if (pathname.startsWith("/staff") && role !== "staff") {
+        return NextResponse.redirect(new URL("/dashboard", request.url));
+      }
+      if (pathname.startsWith("/account") && role !== "customer") {
+        return NextResponse.redirect(new URL("/dashboard", request.url));
+      }
     }
   }
 

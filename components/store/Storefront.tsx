@@ -103,15 +103,20 @@ export default function Storefront({
   categories,
   products,
   offers,
+  supabaseError,
 }: {
   categories: PublicCategory[];
   products: PublicProduct[];
   offers: PublicOffer[];
+  supabaseError?: string;
 }) {
   const [language, setLanguage] = useState<Language>("en");
   const [activeFilter, setActiveFilter] = useState<(typeof filters)[number]["id"]>("all");
   const [search, setSearch] = useState("");
   const [cart, setCart] = useState<Record<string, number>>({});
+
+  // Supabase error shown at the top of the storefront if the catalogue failed to load.
+  const [catalogError, setCatalogError] = useState<string | null>(supabaseError ?? null);
   const [cartHydrated, setCartHydrated] = useState(false);
   const [offline, setOffline] = useState(false);
   const isHindi = language === "hi";
@@ -215,6 +220,7 @@ export default function Storefront({
 
   return (
     <main className="storefront">
+      {catalogError && <p className="supabase-error" role="alert">{isHindi ? ` catalogue errors: ${catalogError}` : `Catalogue error: ${catalogError}`}</p>}
       {offline && (
         <div className="network-banner" role="status">
           {isHindi ? "आप ऑफ़लाइन हैं। पुरानी जानकारी दिखाई दे सकती है।" : "You are offline. Saved cart items may remain available."}

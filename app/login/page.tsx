@@ -10,9 +10,11 @@ export const metadata: Metadata = {
 export default async function LoginPage({
   searchParams,
 }: {
-  searchParams: Promise<{ next?: string | string[] }>;
+  searchParams: Promise<{ next?: string | string[]; error?: string }>;
 }) {
-  const { next } = await searchParams;
+  const resolved = await searchParams;
+  const { next } = resolved;
   const requestedNext = typeof next === "string" ? next : null;
-  return <AuthForm mode="login" next={getSafeAuthRedirect(requestedNext)} />;
+  const authError = typeof resolved.error === "string" ? resolved.error : undefined;
+  return <AuthForm mode="login" next={getSafeAuthRedirect(requestedNext)} authError={authError} />;
 }

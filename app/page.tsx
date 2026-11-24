@@ -64,6 +64,8 @@ export default async function HomePage() {
   let offers: PublicOffer[] = [];
 
   const supabase = createPublicClient();
+  let supabaseError: string | null = null;
+
   if (supabase) {
     try {
       const [categoryResult, productResult, offerResult] = await Promise.all([
@@ -94,17 +96,30 @@ export default async function HomePage() {
       // policy applies starts_at / ends_at using PostgreSQL now(), avoiding impure
       // render-time clock reads and client/server clock differences.
       offers = (offerResult.data ?? []) as PublicOffer[];
-    } catch {
-      // Keep the storefront available with empty data if Supabase is not reachable.
+    } catch (err) {
+      // Distinguish "not configured" from a real Supabase error.
+      const msg = err instanceof Error ? err.message : "Unknown error";
+      if (msg.includes("Supabase is not configured")) {
+        supabaseError = null; // let the page render empty; login/orders will also warn
+      } else {
+        supabaseError = msg;
+      }
       categories = [];
       products = [];
       offers = [];
     }
+  } else {
+    supabaseError = "Supabase is not configured. Copy .env.example to .env.local and add your Supabase Project URL and Publishable key.";
   }
 
   return (
     <>
-      <Storefront categories={categories} products={products} offers={offers} />
+      <Storefront
+        categories={categories}
+        products={products}
+        offers={offers}
+        supabaseError={supabaseError as string}
+      />
       <StoreStructuredData />
     </>
   );
