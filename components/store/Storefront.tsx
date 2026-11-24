@@ -143,6 +143,18 @@ export default function Storefront({
     }));
   }
 
+  function updateQuantity(productId: string, quantity: number) {
+    setCart((current) => {
+      const next = { ...current };
+      if (quantity <= 0) {
+        delete next[productId];
+      } else {
+        next[productId] = Math.min(100, quantity);
+      }
+      return next;
+    });
+  }
+
   // Derive department cards from active categories
   const departments = useMemo(() => {
     return categories.map((category) => {
@@ -271,27 +283,42 @@ export default function Storefront({
       )}
 
       <div className="topline">
-        <div className="topline-inner">
-          <span>{isHindi ? "लाडवा · रेड रोड" : "Ladwa · Red Road"}</span>
-          <span className="topline-message">
-            {isHindi ? "आपके अपने मोहल्ले का सुपर स्टोर" : "Your neighbourhood super store"}
-          </span>
-          <div className="language-switch" aria-label="Choose language">
-            <button
-              type="button"
-              onClick={() => setLanguage("en")}
-              aria-pressed={!isHindi}
-            >
-              EN
-            </button>
-            <span aria-hidden="true">/</span>
-            <button
-              type="button"
-              onClick={() => setLanguage("hi")}
-              aria-pressed={isHindi}
-            >
-              हिंदी
-            </button>
+        <div className="topline-inner" style={{ flexWrap: "wrap", gap: "0.5rem" }}>
+          <div className="workspace-switcher-bar">
+            <span className="workspace-label">{isHindi ? "वर्कस्पेस:" : "Workspaces:"}</span>
+            <a href="#catalogue" className="workspace-pill active" title="Customer Store & Catalogue">
+              🛍️ {isHindi ? "ग्राहक स्टोर" : "Storefront"}
+            </a>
+            <a href="/staff" className="workspace-pill" title="Staff Order Packing & Fulfillment">
+              📦 {isHindi ? "स्टाफ वर्कस्पेस" : "Staff Orders"}
+            </a>
+            <a href="/admin" className="workspace-pill" title="Admin Catalog, Prices & Bulk Import">
+              ⚙️ {isHindi ? "एडमिन वर्कस्पेस" : "Admin Panel"}
+            </a>
+            <a href="/dashboard" className="workspace-pill" title="Customer Account">
+              👤 {isHindi ? "खाता" : "Account"}
+            </a>
+          </div>
+
+          <div style={{ display: "flex", alignItems: "center", gap: "0.8rem", marginLeft: "auto" }}>
+            <span>{isHindi ? "लाडवा · रेड रोड" : "Ladwa · Red Road"}</span>
+            <div className="language-switch" aria-label="Choose language">
+              <button
+                type="button"
+                onClick={() => setLanguage("en")}
+                aria-pressed={!isHindi}
+              >
+                EN
+              </button>
+              <span aria-hidden="true">/</span>
+              <button
+                type="button"
+                onClick={() => setLanguage("hi")}
+                aria-pressed={isHindi}
+              >
+                हिंदी
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -697,28 +724,34 @@ export default function Storefront({
                             </strong>
                           </div>
 
-                          {product.price !== null ? (
+                          {inCart > 0 ? (
+                            <div className="product-card-stepper" aria-label="Cart quantity">
+                              <button
+                                type="button"
+                                onClick={() => updateQuantity(product.id, inCart - 1)}
+                                aria-label="Decrease quantity"
+                              >
+                                −
+                              </button>
+                              <span>{inCart}</span>
+                              <button
+                                type="button"
+                                disabled={inCart >= 100}
+                                onClick={() => updateQuantity(product.id, inCart + 1)}
+                                aria-label="Increase quantity"
+                              >
+                                +
+                              </button>
+                            </div>
+                          ) : (
                             <button
                               type="button"
                               disabled={unavailable}
                               onClick={() => addToCart(product.id)}
+                              style={{ cursor: unavailable ? "not-allowed" : "pointer" }}
                             >
-                              {inCart > 0
-                                ? `${isHindi ? "जोड़ें" : "Add"} (${inCart})`
-                                : isHindi
-                                  ? "कार्ट में जोड़ें"
-                                  : "Add to cart"}
+                              {isHindi ? "कार्ट में जोड़ें" : "Add to cart"}
                             </button>
-                          ) : (
-                            <a
-                              href={whatsappUrl}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="whatsapp-order-btn"
-                              aria-label={`Order ${product.name} on WhatsApp`}
-                            >
-                              <span>WhatsApp</span> ↗
-                            </a>
                           )}
                         </div>
                       </div>

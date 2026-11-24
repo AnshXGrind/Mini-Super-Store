@@ -55,8 +55,16 @@ export default function StaffDashboard() {
     setError("");
     try {
       const supabase = createClient();
-      const { data: claimsData, error: claimsError } = await supabase.auth.getClaims();
-      if (claimsError || !claimsData?.claims) throw new Error("Your session has expired.");
+      let hasSession = false;
+      try {
+        const { data: claimsData } = await supabase.auth.getClaims();
+        if (claimsData?.claims) hasSession = true;
+      } catch {}
+      if (!hasSession) {
+        const { data: userData } = await supabase.auth.getUser();
+        if (userData?.user) hasSession = true;
+      }
+      if (!hasSession) throw new Error("Your session has expired.");
 
       const { data, error: ordersError } = await supabase
         .from("orders")
