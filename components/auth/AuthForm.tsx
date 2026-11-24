@@ -5,9 +5,9 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
 
-type AuthFormProps = { mode: "login" | "register" };
+type AuthFormProps = { mode: "login" | "register"; next?: string };
 
-export default function AuthForm({ mode }: AuthFormProps) {
+export default function AuthForm({ mode, next = "/dashboard" }: AuthFormProps) {
   const isRegister = mode === "register";
   const router = useRouter();
   const [fullName, setFullName] = useState("");
@@ -32,12 +32,12 @@ export default function AuthForm({ mode }: AuthFormProps) {
           password,
           options: {
             data: { full_name: fullName.trim(), phone: phone.trim(), preferred_language: "en" },
-            emailRedirectTo: `${window.location.origin}/auth/callback?next=/dashboard`,
+            emailRedirectTo: `${window.location.origin}/auth/callback?next=${encodeURIComponent(next)}`,
           },
         });
         if (error) throw error;
         if (data.session) {
-          router.replace("/dashboard");
+          router.replace(next);
           router.refresh();
         } else {
           setSuccessMessage("Account created. Check your email for the confirmation link, then sign in.");
@@ -48,7 +48,7 @@ export default function AuthForm({ mode }: AuthFormProps) {
           password,
         });
         if (error) throw error;
-        router.replace("/dashboard");
+        router.replace(next);
         router.refresh();
       }
     } catch (error) {

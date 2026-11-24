@@ -2,13 +2,27 @@
 import AppInstallPrompt from "@/components/pwa/AppInstallPrompt";
 import "./globals.css";
 
+const fallbackSiteUrl = "https://minisuperstore.example";
+
+function getMetadataBase() {
+  const configured = process.env.NEXT_PUBLIC_SITE_URL;
+  if (configured) {
+    try {
+      return new URL(configured);
+    } catch {
+      // Ignore malformed configuration and fall back to the placeholder origin.
+    }
+  }
+  return new URL(fallbackSiteUrl);
+}
+
 export const metadata: Metadata = {
   title: "Mini Super Store | Everyday Essentials in Ladwa",
   description:
     "Explore groceries, household essentials, crockery, hosiery and festive picks at Mini Super Store, Ladwa.",
   applicationName: "Mini Super Store",
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://minisuperstore.example"),
-  alternates: { canonical: "/" },
+  metadataBase: getMetadataBase(),
+  icons: { icon: "/icon.svg", apple: "/icon.svg" },
   openGraph: {
     type: "website",
     locale: "en_IN",

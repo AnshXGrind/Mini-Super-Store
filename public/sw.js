@@ -3,7 +3,11 @@ const APP_SHELL = ["/", "/offline.html", "/icon.svg"];
 
 self.addEventListener("install", (event) => {
   event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => cache.addAll(APP_SHELL)),
+    caches.open(CACHE_NAME).then((cache) =>
+      // Cache each shell asset independently so one failed request cannot abort
+      // the whole service-worker installation.
+      Promise.all(APP_SHELL.map((url) => cache.add(url).catch(() => undefined))),
+    ),
   );
   self.skipWaiting();
 });

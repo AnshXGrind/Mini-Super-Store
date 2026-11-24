@@ -8,6 +8,29 @@ import type { PublicProduct } from "@/app/page";
 
 type Language = "en" | "hi";
 
+const orderErrorMessages: Record<string, { en: string; hi: string }> = {
+  AUTH_REQUIRED: { en: "Please sign in again before placing an order.", hi: "ऑर्डर देने से पहले फिर से साइन इन करें।" },
+  CUSTOMER_NAME_REQUIRED: { en: "Enter the customer name.", hi: "ग्राहक का नाम दर्ज करें।" },
+  CUSTOMER_PHONE_REQUIRED: { en: "Enter a phone number.", hi: "फोन नंबर दर्ज करें।" },
+  DELIVERY_ADDRESS_REQUIRED: { en: "A delivery address is required.", hi: "डिलीवरी पता आवश्यक है।" },
+  ITEMS_MUST_BE_AN_ARRAY: { en: "Your cart could not be read. Please refresh and try again.", hi: "कार्ट पढ़ी नहीं जा सकी। कृपया रीफ़्रेश करके फिर कोशिश करें।" },
+  INVALID_ITEM_COUNT: { en: "Your cart has too many items. Please remove some and try again.", hi: "कार्ट में बहुत ज़्यादा उत्पाद हैं। कुछ हटाकर फिर कोशिश करें।" },
+  INVALID_ITEM_QUANTITY: { en: "Each item quantity must be between 1 and 100.", hi: "हर उत्पाद की मात्रा 1 से 100 के बीच होनी चाहिए।" },
+  PRODUCT_NOT_AVAILABLE: { en: "One of the products is no longer available. Remove it and try again.", hi: "एक उत्पाद अब उपलब्ध नहीं है। उसे हटाकर फिर कोशिश करें।" },
+  PRODUCT_OUT_OF_STOCK: { en: "One of the products is out of stock. Remove it and try again.", hi: "एक उत्पाद स्टॉक में नहीं है। उसे हटाकर फिर कोशिश करें।" },
+  PRODUCT_PRICE_NOT_SET: { en: "One of the products does not have a confirmed price yet.", hi: "एक उत्पाद की कीमत अभी तय नहीं है।" },
+  INVALID_ORDER_ITEM: { en: "Your cart contains an invalid product. Please refresh and try again.", hi: "कार्ट में अमान्य उत्पाद है। कृपया रीफ़्रेश करके फिर कोशिश करें।" },
+  INVALID_FULFILMENT_TYPE: { en: "Choose pickup or delivery.", hi: "पिकअप या डिलीवरी चुनें।" },
+};
+
+function getFriendlyOrderError(message: string, isHindi: boolean) {
+  const code = Object.keys(orderErrorMessages).find((key) => message.includes(key));
+  if (code) return orderErrorMessages[code][isHindi ? "hi" : "en"];
+  return isHindi
+    ? "ऑर्डर पूरा नहीं हो सका। कृपया फिर कोशिश करें या दुकान से संपर्क करें।"
+    : "The order could not be placed. Please try again or contact the store.";
+}
+
 export default function ShoppingCart({
   language,
   products,
@@ -70,12 +93,12 @@ export default function ShoppingCart({
     setSuccessOrderId("");
 
     if (hasUnknownPrice) {
-      setError(isHindi ? "à¤•à¥à¤› à¤‰à¤¤à¥à¤ªà¤¾à¤¦à¥‹à¤‚ à¤•à¥€ à¤•à¥€à¤®à¤¤ à¤¤à¤¯ à¤¨à¤¹à¥€à¤‚ à¤¹à¥ˆà¥¤ à¤•à¥ƒà¤ªà¤¯à¤¾ à¤‰à¤¨à¥à¤¹à¥‡à¤‚ à¤¹à¤Ÿà¤¾à¤à¤ à¤¯à¤¾ à¤¦à¥à¤•à¤¾à¤¨ à¤¸à¥‡ à¤•à¥€à¤®à¤¤ à¤•à¥€ à¤ªà¥à¤·à¥à¤Ÿà¤¿ à¤•à¤°à¥‡à¤‚à¥¤" : "Some products do not have confirmed prices. Remove them or contact the store before ordering.");
+      setError(isHindi ? "कुछ उत्पादों की कीमत तय नहीं है। कृपया उन्हें हटाएँ या दुकान से कीमत की पुष्टि करें।" : "Some products do not have confirmed prices. Remove them or contact the store before ordering.");
       setBusy(false);
       return;
     }
     if (hasUnavailableProduct) {
-      setError(isHindi ? "à¤†à¤ªà¤•à¥€ à¤•à¤¾à¤°à¥à¤Ÿ à¤®à¥‡à¤‚ à¤…à¤¨à¥à¤ªà¤²à¤¬à¥à¤§ à¤‰à¤¤à¥à¤ªà¤¾à¤¦ à¤¹à¥ˆà¤‚à¥¤ à¤•à¥ƒà¤ªà¤¯à¤¾ à¤‰à¤¨à¥à¤¹à¥‡à¤‚ à¤¹à¤Ÿà¤¾à¤à¤à¥¤" : "Your cart contains out-of-stock products. Remove them before ordering.");
+      setError(isHindi ? "आपकी कार्ट में अनुपलब्ध उत्पाद हैं। कृपया उन्हें हटाएँ।" : "Your cart contains out-of-stock products. Remove them before ordering.");
       setBusy(false);
       return;
     }
@@ -104,9 +127,7 @@ export default function ShoppingCart({
       setCart({});
       window.localStorage.removeItem("mini-super-store-cart");
     } catch (caught) {
-      setError(caught instanceof Error ? caught.message : (isHindi
-        ? "ऑर्डर पूरा नहीं हो सका।"
-        : "The order could not be placed."));
+      setError(getFriendlyOrderError(caught instanceof Error ? caught.message : "", isHindi));
     } finally {
       setBusy(false);
     }
@@ -164,9 +185,9 @@ export default function ShoppingCart({
                         <small>{product.price === null ? (isHindi ? "कीमत पूछें" : "Ask for price") : `₹${product.price.toFixed(2)}`}</small>
                       </div>
                       <div className="quantity-control" aria-label={isHindi ? "मात्रा" : "Quantity"}>
-                        <button type="button" onClick={() => changeQuantity(product.id, quantity - 1)}>−</button>
+                        <button type="button" aria-label={isHindi ? "मात्रा घटाएँ" : "Decrease quantity"} onClick={() => changeQuantity(product.id, quantity - 1)}>−</button>
                         <span>{quantity}</span>
-                        <button type="button" onClick={() => changeQuantity(product.id, quantity + 1)}>+</button>
+                        <button type="button" aria-label={isHindi ? "मात्रा बढ़ाएँ" : "Increase quantity"} onClick={() => changeQuantity(product.id, quantity + 1)} disabled={quantity >= 100}>+</button>
                       </div>
                     </div>
                   ))}
@@ -194,8 +215,8 @@ export default function ShoppingCart({
                       <label>{isHindi ? "डिलीवरी पता" : "Delivery address"}<textarea value={deliveryAddress} onChange={(event) => setDeliveryAddress(event.target.value)} required maxLength={500} /></label>
                     )}
                     <label>{isHindi ? "ऑर्डर नोट (वैकल्पिक)" : "Order note (optional)"}<textarea value={customerNote} onChange={(event) => setCustomerNote(event.target.value)} maxLength={500} /></label>
-                    {hasUnknownPrice && <p className="cart-error" role="alert">{isHindi ? "à¤•à¥€à¤®à¤¤ à¤•à¥€ à¤ªà¥à¤·à¥à¤Ÿà¤¿ à¤¹à¥‹à¤¨à¥‡ à¤¤à¤• à¤‘à¤°à¥à¤¡à¤° à¤¨à¤¹à¥€à¤‚ à¤¦à¤¿à¤¯à¤¾ à¤œà¤¾ à¤¸à¤•à¤¤à¤¾à¥¤" : "Checkout is unavailable until every item has a confirmed price."}</p>}
-                    {hasUnavailableProduct && <p className="cart-error" role="alert">{isHindi ? "à¤…à¤¨à¥à¤ªà¤²à¤¬à¥à¤§ à¤‰à¤¤à¥à¤ªà¤¾à¤¦ à¤¹à¤Ÿà¤¾à¤à¤à¥¤" : "Remove out-of-stock items before checkout."}</p>}
+                    {hasUnknownPrice && <p className="cart-error" role="alert">{isHindi ? "कीमत की पुष्टि होने तक ऑर्डर नहीं दिया जा सकता।" : "Checkout is unavailable until every item has a confirmed price."}</p>}
+                    {hasUnavailableProduct && <p className="cart-error" role="alert">{isHindi ? "अनुपलब्ध उत्पाद हटाएँ।" : "Remove out-of-stock items before checkout."}</p>}
                     {error && <p className="cart-error" role="alert">{error}</p>}
                     <button className="place-order" type="submit" disabled={busy || hasUnknownPrice || hasUnavailableProduct}>
                       {busy ? (isHindi ? "ऑर्डर भेजा जा रहा है…" : "Placing order…") : (isHindi ? "ऑर्डर दें" : "Place order")}

@@ -144,7 +144,7 @@ export default function StaffDashboard() {
               return (
                 <article className="staff-order-card" key={order.id}>
                   <header>
-                    <div><small>{order.id.slice(0, 8).toUpperCase()}</small><strong>{new Intl.DateTimeFormat("en-IN", { dateStyle: "medium", timeStyle: "short" }).format(new Date(order.created_at))}</strong></div>
+                    <div><small>{order.id.slice(0, 8).toUpperCase()}</small><strong>{new Intl.DateTimeFormat("en-IN", { dateStyle: "medium", timeStyle: "short", timeZone: "Asia/Kolkata" }).format(new Date(order.created_at))}</strong></div>
                     <span className={`order-status status-${order.status}`}>{statusLabels[order.status]}</span>
                   </header>
                   <div className="staff-order-body">

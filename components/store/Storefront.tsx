@@ -166,10 +166,11 @@ export default function Storefront({
   }, []);
 
   function addToCart(productId: string) {
-    setCart((current) => ({ ...current, [productId]: (current[productId] ?? 0) + 1 }));
+    setCart((current) => ({
+      ...current,
+      [productId]: Math.min(100, (current[productId] ?? 0) + 1),
+    }));
   }
-
-  const cartCount = Object.values(cart).reduce((total, quantity) => total + quantity, 0);
 
   const visibleDepartments = useMemo(() => {
     const term = search.trim().toLocaleLowerCase();
@@ -244,6 +245,7 @@ export default function Storefront({
           <a href="#why-us">{isHindi ? "हमारे बारे में" : "Why shop with us"}</a>
           <a href="#bulk-enquiry">{isHindi ? "थोक पूछताछ" : "Bulk enquiry"}</a>
           <a href="#visit">{isHindi ? "दुकान पर आएँ" : "Visit us"}</a>
+          <a href="/dashboard">{isHindi ? "मेरा खाता" : "My account"}</a>
         </nav>
         <div className="header-actions">
           <ShoppingCart
@@ -305,15 +307,15 @@ export default function Storefront({
         <section className="offers-section section-wrap" aria-labelledby="offers-title">
           <div className="offers-heading">
             <div>
-              <p className="section-eyebrow">{isHindi ? "à¤¦à¥à¤•à¤¾à¤¨ à¤•à¥‡ à¤–à¤¾à¤¸ à¤‘à¤«à¤¼à¤°" : "From our store"}</p>
-              <h2 id="offers-title">{isHindi ? "à¤®à¥Œà¤œà¥‚à¤¦à¤¾ à¤‘à¤«à¤¼à¤°" : "Current offers"}</h2>
+              <p className="section-eyebrow">{isHindi ? "दुकान के खास ऑफ़र" : "From our store"}</p>
+              <h2 id="offers-title">{isHindi ? "मौजूदा ऑफ़र" : "Current offers"}</h2>
             </div>
-            <span>{isHindi ? "à¤¸à¥€à¤®à¤¿à¤¤ à¤¸à¤®à¤¯ à¤•à¥‡ à¤²à¤¿à¤" : "Selected store offers"}</span>
+            <span>{isHindi ? "सीमित समय के लिए" : "Selected store offers"}</span>
           </div>
           <div className="offers-grid">
             {offers.map((offer) => (
               <article className="offer-card" key={offer.id}>
-                <span aria-hidden="true">âœ³</span>
+                <span aria-hidden="true">✳</span>
                 <div>
                   <h3>{isHindi && offer.title_hi ? offer.title_hi : offer.title}</h3>
                   {(offer.description || offer.description_hi) && (
@@ -488,9 +490,9 @@ export default function Storefront({
         <div className="footer-inner">
           <a className="footer-brand" href="#home">MINI <em>SUPER</em> STORE</a>
           <nav className="footer-portals" aria-label="Portal login links">
-            <a href="/login">Customer login</a>
-            <a href="/login">Staff login</a>
-            <a href="/login">Admin login</a>
+            <a href="/dashboard">{isHindi ? "मेरा खाता" : "My account"}</a>
+            <a href="/login">{isHindi ? "स्टाफ लॉगिन" : "Staff login"}</a>
+            <a href="/login">{isHindi ? "एडमिन लॉगिन" : "Admin login"}</a>
           </nav>
           <p>© {new Date().getFullYear()} Mini Super Store. {isHindi ? "सर्वाधिकार सुरक्षित।" : "Everyday, made easier."}</p>
           <a href="#home">{isHindi ? "ऊपर जाएँ ↑" : "Back to top ↑"}</a>
@@ -502,6 +504,7 @@ export default function Storefront({
         <a href="#departments"><span>▦</span>{isHindi ? "विभाग" : "Shop"}</a>
         <a href="#bulk-enquiry"><span>☏</span>{isHindi ? "पूछताछ" : "Enquire"}</a>
         <a href="#visit"><span>⌖</span>{isHindi ? "दुकान" : "Visit"}</a>
+        <a href="/dashboard"><span>☺</span>{isHindi ? "खाता" : "Account"}</a>
       </nav>
     </main>
   );

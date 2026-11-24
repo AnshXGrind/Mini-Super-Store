@@ -16,14 +16,21 @@ export async function getCurrentStoreUser(): Promise<CurrentStoreUser | null> {
   } catch {
     return null;
   }
-  const { data, error } = await supabase.auth.getClaims();
-  if (error) return null;
 
-  const claims = data?.claims;
-  if (!claims || typeof claims.sub !== "string") return null;
+  let userId: string | null = null;
+  let email: string | null = null;
+  try {
+    const { data, error } = await supabase.auth.getClaims();
+    if (error) return null;
+    const claims = data?.claims;
+    if (!claims || typeof claims.sub !== "string") return null;
+    userId = claims.sub;
+    email = typeof claims.email === "string" ? claims.email : null;
+  } catch {
+    return null;
+  }
 
-  const userId = claims.sub;
-  if (typeof userId !== "string") return null;
+  if (!userId) return null;
 
   const { data: roleRow, error: roleError } = await supabase
     .from("user_roles")
@@ -35,11 +42,7 @@ export async function getCurrentStoreUser(): Promise<CurrentStoreUser | null> {
   const role = roleRow.role as StoreRole;
   if (!["customer", "staff", "admin"].includes(role)) return null;
 
-  return {
-    id: userId,
-    email: typeof claims.email === "string" ? claims.email : null,
-    role,
-  };
+  return { id: userId, email, role };
 }
 
 export async function requireStoreRole(allowedRoles: StoreRole[]) {

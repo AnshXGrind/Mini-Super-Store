@@ -1,8 +1,14 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import LogoutButton from "@/components/auth/LogoutButton";
 import { requireStoreRole } from "@/lib/auth";
 import { createClient } from "@/lib/supabase/server";
 import NotificationSettings from "@/components/account/NotificationSettings";
+
+export const metadata: Metadata = {
+  title: "My account | Mini Super Store",
+  robots: { index: false, follow: false },
+};
 
 export default async function AccountPage() {
   const user = await requireStoreRole(["customer"]);
@@ -78,6 +84,7 @@ export default async function AccountPage() {
                       <strong>{new Intl.DateTimeFormat("en-IN", {
                         dateStyle: "medium",
                         timeStyle: "short",
+                        timeZone: "Asia/Kolkata",
                       }).format(new Date(order.created_at))}</strong>
                     </div>
                     <span className={`order-status status-${order.status}`}>

@@ -34,11 +34,21 @@ export async function updateSession(request: NextRequest) {
     },
   });
 
-  // Validates claims and refreshes expired cookie-backed sessions.
-  const { data, error } = await supabase.auth.getClaims();
-  const userId = data?.claims?.sub;
+  // Validates claims and refreshes expired cookie-backed sessions. A transient
+  // Supabase/network failure is treated as unauthenticated instead of crashing
+  // every route through the proxy.
+  let userId: string | null = null;
+  let claimsFailed = false;
+  try {
+    const { data, error } = await supabase.auth.getClaims();
+    const subject = data?.claims?.sub;
+    if (error) claimsFailed = true;
+    if (typeof subject === "string") userId = subject;
+  } catch {
+    claimsFailed = true;
+  }
 
-  if (isProtectedRoute && (error || typeof userId !== "string")) {
+  if (isProtectedRoute && (claimsFailed || !userId)) {
     return NextResponse.redirect(new URL("/login", request.url));
   }
 

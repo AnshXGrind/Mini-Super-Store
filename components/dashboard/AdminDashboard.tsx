@@ -31,6 +31,7 @@ type Offer = {
   title: string;
   title_hi: string | null;
   description: string | null;
+  description_hi: string | null;
   is_active: boolean;
 };
 
@@ -64,6 +65,8 @@ const blankProduct = {
   is_published: true,
 };
 
+const activeOrderStatuses = new Set(["confirmed", "preparing", "ready_for_pickup", "out_for_delivery"]);
+
 export default function AdminDashboard() {
   const [categories, setCategories] = useState<Category[]>([]);
   const [products, setProducts] = useState<Product[]>([]);
@@ -73,7 +76,7 @@ export default function AdminDashboard() {
   const [staffSelections, setStaffSelections] = useState<Record<string, string>>({});
   const [editingId, setEditingId] = useState("");
   const [form, setForm] = useState(blankProduct);
-  const [offerForm, setOfferForm] = useState({ title: "", title_hi: "", description: "", is_active: true });
+  const [offerForm, setOfferForm] = useState({ title: "", title_hi: "", description: "", description_hi: "", is_active: true });
   const [loading, setLoading] = useState(true);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
@@ -91,7 +94,7 @@ export default function AdminDashboard() {
       const [categoriesResult, productsResult, offersResult, ordersResult, staffRolesResult] = await Promise.all([
         supabase.from("categories").select("id, name, name_hi").order("sort_order"),
         supabase.from("products").select("id, category_id, sku, name, name_hi, description, description_hi, price, stock_status, image_url, is_published").order("sort_order"),
-        supabase.from("offers").select("id, title, title_hi, description, is_active").order("created_at", { ascending: false }),
+        supabase.from("offers").select("id, title, title_hi, description, description_hi, is_active").order("created_at", { ascending: false }),
         supabase.from("orders").select("id, status, customer_name, customer_phone, fulfilment_type, delivery_address, total_amount, created_at, assigned_staff_id, order_items(product_name_snapshot, quantity)").order("created_at", { ascending: false }),
         supabase.from("user_roles").select("user_id").eq("role", "staff"),
       ]);
@@ -175,7 +178,17 @@ export default function AdminDashboard() {
       .upload(path, imageFile, { cacheControl: "3600", upsert: false, contentType: imageFile.type });
     if (uploadError) throw uploadError;
     const { data } = supabase.storage.from("product-images").getPublicUrl(path);
-    return data.publicUrl;
+    return { url: data.publicUrl, path };
+  }
+
+  async function removeStoredImage(supabase: ReturnType<typeof createClient>, publicUrl: string) {
+    const marker = "/product-images/";
+    const index = publicUrl.indexOf(marker);
+    if (index === -1) return;
+    const path = decodeURIComponent(publicUrl.slice(index + marker.length).split("?")[0]);
+    if (!path) return;
+    // Best effort: a failed cleanup must not block saving the product.
+    await supabase.storage.from("product-images").remove([path]);
   }
 
   async function saveProduct(event: FormEvent<HTMLFormElement>) {
@@ -184,30 +197,44 @@ export default function AdminDashboard() {
     setError("");
     setSuccess("");
     try {
+      const name = form.name.trim();
+      if (!name) throw new Error("Product name is required.");
+
       const supabase = createClient();
       const price = form.price.trim() === "" ? null : Number(form.price);
       if (price !== null && (!Number.isFinite(price) || price < 0)) throw new Error("Enter a valid non-negative price.");
 
       const productId = editingId || crypto.randomUUID();
-      const imageUrl = await uploadProductImage(supabase, productId);
+      const upload = await uploadProductImage(supabase, productId);
       const payload = {
         category_id: form.category_id || null,
         sku: form.sku.trim() || null,
-        name: form.name.trim(),
+        name,
         name_hi: form.name_hi.trim() || null,
         description: form.description.trim() || null,
         description_hi: form.description_hi.trim() || null,
         price,
         stock_status: form.stock_status,
         is_published: form.is_published,
-        ...(imageUrl ? { image_url: imageUrl } : {}),
+        ...(upload ? { image_url: upload.url } : {}),
       };
 
-      if (!payload.name) throw new Error("Product name is required.");
-      const result = editingId
-        ? await supabase.from("products").update(payload).eq("id", editingId)
-        : await supabase.from("products").insert({ id: productId, ...payload });
-      if (result.error) throw result.error;
+      let committed = false;
+      try {
+        const result = editingId
+          ? await supabase.from("products").update(payload).eq("id", editingId)
+          : await supabase.from("products").insert({ id: productId, ...payload });
+        if (result.error) throw result.error;
+        committed = true;
+      } finally {
+        if (!committed && upload) await removeStoredImage(supabase, upload.url);
+      }
+
+      if (editingId && upload) {
+        const previousUrl = products.find((product) => product.id === editingId)?.image_url;
+        if (previousUrl) await removeStoredImage(supabase, previousUrl);
+      }
+
       setSuccess(editingId ? "Product updated." : "Product created.");
       resetProductForm();
       await loadData();
@@ -247,10 +274,11 @@ export default function AdminDashboard() {
         title: offerForm.title.trim(),
         title_hi: offerForm.title_hi.trim() || null,
         description: offerForm.description.trim() || null,
+        description_hi: offerForm.description_hi.trim() || null,
         is_active: offerForm.is_active,
       });
       if (insertError) throw insertError;
-      setOfferForm({ title: "", title_hi: "", description: "", is_active: true });
+      setOfferForm({ title: "", title_hi: "", description: "", description_hi: "", is_active: true });
       setSuccess("Offer created.");
       await loadData();
     } catch (caught) {
@@ -323,6 +351,56 @@ export default function AdminDashboard() {
         .maybeSingle();
       if (updateError) throw updateError;
       if (!data) throw new Error("This order is no longer pending. Refresh the order list.");
+      setSuccess("Order cancelled.");
+      await loadData();
+    } catch (caught) {
+      setError(caught instanceof Error ? caught.message : "Order could not be cancelled.");
+    } finally {
+      setBusy(false);
+    }
+  }
+
+  async function reassignOrder(order: AdminOrder) {
+    const staffId = staffSelections[order.id] ?? order.assigned_staff_id ?? "";
+    if (!staffId) {
+      setError("Choose a staff member before reassigning this order.");
+      return;
+    }
+    setBusy(true);
+    setError("");
+    setSuccess("");
+    try {
+      const supabase = createClient();
+      const { data, error: updateError } = await supabase
+        .from("orders")
+        .update({ assigned_staff_id: staffId })
+        .eq("id", order.id)
+        .select("id")
+        .maybeSingle();
+      if (updateError) throw updateError;
+      if (!data) throw new Error("This order could not be reassigned. Refresh the order list.");
+      setSuccess("Order reassigned.");
+      await loadData();
+    } catch (caught) {
+      setError(caught instanceof Error ? caught.message : "Order could not be reassigned.");
+    } finally {
+      setBusy(false);
+    }
+  }
+
+  async function cancelActiveOrder(order: AdminOrder) {
+    if (!window.confirm(`Cancel order ${order.id.slice(0, 8).toUpperCase()}?`)) return;
+    setBusy(true);
+    setError("");
+    setSuccess("");
+    try {
+      const supabase = createClient();
+      const { error: rpcError } = await supabase.rpc("update_store_order_status", {
+        p_order_id: order.id,
+        p_status: "cancelled",
+        p_staff_note: null,
+      });
+      if (rpcError) throw rpcError;
       setSuccess("Order cancelled.");
       await loadData();
     } catch (caught) {
@@ -412,7 +490,7 @@ export default function AdminDashboard() {
                           <header>
                             <div>
                               <strong>Order {order.id.slice(0, 8).toUpperCase()}</strong>
-                              <small>{new Intl.DateTimeFormat("en-IN", { dateStyle: "medium", timeStyle: "short" }).format(new Date(order.created_at))}</small>
+                              <small>{new Intl.DateTimeFormat("en-IN", { dateStyle: "medium", timeStyle: "short", timeZone: "Asia/Kolkata" }).format(new Date(order.created_at))}</small>
                             </div>
                             <span className={`order-status status-${order.status}`}>{order.status.replaceAll("_", " ")}</span>
                           </header>
@@ -420,14 +498,14 @@ export default function AdminDashboard() {
                             <div>
                               <strong>{order.customer_name}</strong>
                               <a href={`tel:${order.customer_phone}`}>{order.customer_phone}</a>
-                              <small>{order.fulfilment_type === "delivery" ? "Delivery" : "Store pickup"}{order.delivery_address ? ` Â· ${order.delivery_address}` : ""}</small>
+                              <small>{order.fulfilment_type === "delivery" ? "Delivery" : "Store pickup"}{order.delivery_address ? ` · ${order.delivery_address}` : ""}</small>
                             </div>
                             <div className="admin-order-items">
                               {order.order_items.map((item, index) => (
-                                <span key={`${order.id}-${index}`}>{item.quantity} Ã— {item.product_name_snapshot}</span>
+                                <span key={`${order.id}-${index}`}>{item.quantity} × {item.product_name_snapshot}</span>
                               ))}
                             </div>
-                            <strong>â‚¹{order.total_amount.toFixed(2)}</strong>
+                            <strong>₹{order.total_amount.toFixed(2)}</strong>
                           </div>
                           {order.status === "pending" && (
                             <div className="admin-order-actions">
@@ -453,6 +531,29 @@ export default function AdminDashboard() {
                               {staff.length === 0 && <small className="admin-no-staff">Create a staff account and assign its staff role before confirming orders.</small>}
                             </div>
                           )}
+                          {activeOrderStatuses.has(order.status) && (
+                            <div className="admin-order-actions">
+                              <label>
+                                Reassign staff
+                                <select
+                                  value={staffSelections[order.id] ?? order.assigned_staff_id ?? ""}
+                                  onChange={(event) => setStaffSelections((current) => ({ ...current, [order.id]: event.target.value }))}
+                                  disabled={busy || staff.length === 0}
+                                >
+                                  <option value="">Choose staff member</option>
+                                  {staff.map((member) => (
+                                    <option value={member.id} key={member.id}>{member.full_name || `Staff ${member.id.slice(0, 8)}`}</option>
+                                  ))}
+                                </select>
+                              </label>
+                              <button type="button" onClick={() => void reassignOrder(order)} disabled={busy || staff.length === 0}>
+                                Reassign
+                              </button>
+                              <button type="button" className="admin-cancel-order" onClick={() => void cancelActiveOrder(order)} disabled={busy}>
+                                Cancel order
+                              </button>
+                            </div>
+                          )}
                           {order.assigned_staff_id && (
                             <p className="admin-assignee">Assigned to: {assignedStaff?.full_name || "Staff member"}</p>
                           )}
@@ -468,6 +569,7 @@ export default function AdminDashboard() {
                 <label>Title<input value={offerForm.title} onChange={(event) => setOfferForm((current) => ({ ...current, title: event.target.value }))} required maxLength={160} /></label>
                 <label>Hindi title<input value={offerForm.title_hi} onChange={(event) => setOfferForm((current) => ({ ...current, title_hi: event.target.value }))} maxLength={160} /></label>
                 <label>Description<textarea value={offerForm.description} onChange={(event) => setOfferForm((current) => ({ ...current, description: event.target.value }))} maxLength={500} /></label>
+                <label>Hindi description<textarea value={offerForm.description_hi} onChange={(event) => setOfferForm((current) => ({ ...current, description_hi: event.target.value }))} maxLength={500} /></label>
                 <label className="admin-checkbox"><input type="checkbox" checked={offerForm.is_active} onChange={(event) => setOfferForm((current) => ({ ...current, is_active: event.target.checked }))} /> Active</label>
                 <button type="submit" disabled={busy}>Create offer</button>
               </form>

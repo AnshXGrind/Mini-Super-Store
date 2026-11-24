@@ -1,7 +1,12 @@
+import type { Metadata } from "next";
 import Storefront from "@/components/store/Storefront";
-import { createClient } from "@/lib/supabase/server";
+import { createPublicClient } from "@/lib/supabase/public";
 
 export const revalidate = 60;
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
 
 export type PublicCategory = {
   id: string;
@@ -54,15 +59,13 @@ function StoreStructuredData() {
 }
 
 export default async function HomePage() {
-  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
-  const key = process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY;
   let categories: PublicCategory[] = [];
   let products: PublicProduct[] = [];
   let offers: PublicOffer[] = [];
 
-  if (url && key) {
+  const supabase = createPublicClient();
+  if (supabase) {
     try {
-      const supabase = await createClient();
       const [categoryResult, productResult, offerResult] = await Promise.all([
         supabase
           .from("categories")

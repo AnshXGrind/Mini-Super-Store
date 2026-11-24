@@ -226,6 +226,7 @@ button { cursor: pointer; }
 .cart-line small { margin-top: .25rem; color: #7d8a80; font-size: .66rem; }
 .quantity-control { display: grid; grid-template-columns: 28px 30px 28px; align-items: center; border: 1px solid #dde4da; border-radius: 5px; text-align: center; }
 .quantity-control button { height: 30px; border: 0; background: #fff; }
+.quantity-control button:disabled { color: #a8b3a8; background: #f4f6f2; cursor: not-allowed; }
 .quantity-control span { font-size: .72rem; font-weight: 800; }
 .checkout-auth { display: grid; gap: .7rem; padding: 1rem; border-radius: 8px; background: #f2f5ef; }
 .checkout-auth p { margin: 0; color: #66756b; font-size: .72rem; }
@@ -535,7 +536,7 @@ button { cursor: pointer; }
   .footer-inner { width: calc(100% - 38px); min-height: 105px; flex-wrap: wrap; justify-content: space-between; padding: 1.1rem 0 4.8rem; }
   .footer-portals { order: 2; width: 100%; justify-content: flex-start; }
   .footer-inner p { order: 3; width: 100%; margin: 0; }
-  .mobile-nav { position: fixed; z-index: 20; right: 10px; bottom: max(10px, env(safe-area-inset-bottom)); left: 10px; min-height: 61px; display: grid; grid-template-columns: repeat(4, 1fr); align-items: center; padding: .35rem .25rem; border: 1px solid #e6e9e2; border-radius: 12px; background: #fffffff2; box-shadow: 0 8px 28px #1b39211f; backdrop-filter: blur(14px); }
+  .mobile-nav { position: fixed; z-index: 20; right: 10px; bottom: max(10px, env(safe-area-inset-bottom)); left: 10px; min-height: 61px; display: grid; grid-template-columns: repeat(5, 1fr); align-items: center; padding: .35rem .25rem; border: 1px solid #e6e9e2; border-radius: 12px; background: #fffffff2; box-shadow: 0 8px 28px #1b39211f; backdrop-filter: blur(14px); }
   .mobile-nav a { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: .15rem; color: #64756a; font-size: .58rem; font-weight: 700; text-decoration: none; }
   .mobile-nav a span { color: #416a4d; font-size: 1.1rem; line-height: 1.2; }
 }
@@ -582,3 +583,25 @@ button { cursor: pointer; }
 .role-actions { display: flex; align-items: center; justify-content: space-between; gap: .75rem; margin-top: 1.2rem; }
 .role-link { color: #23633d; font-size: .75rem; font-weight: 800; text-decoration: none; }
 .auth-logout { min-height: 39px; padding: .55rem .8rem; font-size: .7rem; }
+
+/* PWA install prompt */
+.install-prompt {
+  position: fixed;
+  z-index: 30;
+  right: 14px;
+  bottom: calc(84px + env(safe-area-inset-bottom));
+  min-height: 44px;
+  padding: 0 16px;
+  border: 0;
+  border-radius: 999px;
+  color: #fff;
+  background: var(--green);
+  font-size: .72rem;
+  font-weight: 800;
+  box-shadow: 0 10px 24px #163c2b33;
+}
+.install-prompt:hover { background: var(--green-dark); }
+
+@media (min-width: 681px) {
+  .install-prompt { bottom: 18px; }
+}
