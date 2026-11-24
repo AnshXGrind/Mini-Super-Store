@@ -378,7 +378,7 @@ export default function Storefront({
               <>
                 Fresh groceries &amp; household staples,
                 <br />
-                <span>580+ items ready for quick delivery.</span>
+                <span>900+ items ready for quick delivery.</span>
               </>
             )}
           </h1>
