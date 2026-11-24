@@ -1,10 +1,12 @@
 import type { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = (process.env.NEXT_PUBLIC_SITE_URL || "https://minisuperstore.example").replace(/\/+$/, "");
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/+$/, "");
+  if (!siteUrl) return [];
+
   return [
-    { url: baseUrl, changeFrequency: "daily", priority: 1 },
-    { url: `${baseUrl}/login`, changeFrequency: "monthly", priority: 0.4 },
-    { url: `${baseUrl}/register`, changeFrequency: "monthly", priority: 0.4 },
+    { url: siteUrl, changeFrequency: "daily", priority: 1 },
+    { url: `${siteUrl}/login`, changeFrequency: "monthly", priority: 0.4 },
+    { url: `${siteUrl}/register`, changeFrequency: "monthly", priority: 0.4 },
   ];
 }

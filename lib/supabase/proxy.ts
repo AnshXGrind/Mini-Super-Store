@@ -1,5 +1,20 @@
 import { createServerClient } from "@supabase/ssr";
 import { NextResponse, type NextRequest } from "next/server";
+import { isTemporaryAuthFailure } from "@/lib/auth-error";
+
+function redirectWithCookies(url: URL, response?: NextResponse) {
+  const redirectResponse = NextResponse.redirect(url);
+  response?.cookies.getAll().forEach((cookie) => redirectResponse.cookies.set(cookie));
+  return redirectResponse;
+}
+
+function loginRedirect(request: NextRequest, error: string, response?: NextResponse) {
+  const next = `${request.nextUrl.pathname}${request.nextUrl.search}`;
+  const url = new URL("/login", request.url);
+  url.searchParams.set("error", error);
+  url.searchParams.set("next", next);
+  return redirectWithCookies(url, response);
+}
 
 export async function updateSession(request: NextRequest) {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
@@ -13,7 +28,7 @@ export async function updateSession(request: NextRequest) {
 
   if (!url || !key) {
     if (isProtectedRoute) {
-      return NextResponse.redirect(new URL("/login", request.url));
+      return loginRedirect(request, "service_unavailable");
     }
     return NextResponse.next({ request });
   }
@@ -34,49 +49,58 @@ export async function updateSession(request: NextRequest) {
     },
   });
 
-  // Validates claims and refreshes expired cookie-backed sessions. A transient
-  // Supabase/network failure is treated as unauthenticated instead of crashing
-  // every route through the proxy.
+  // Validate claims and keep transient service failures distinct from invalid sessions.
   let userId: string | null = null;
-  let claimsFailed = false;
+  let claimsError: unknown = null;
   try {
     const { data, error } = await supabase.auth.getClaims();
     const subject = data?.claims?.sub;
-    if (error) claimsFailed = true;
-    if (typeof subject === "string") userId = subject;
-  } catch {
-    claimsFailed = true;
+    if (error) {
+      claimsError = error;
+    } else if (typeof subject === "string") {
+      userId = subject;
+    }
+  } catch (error) {
+    claimsError = error;
   }
 
-  if (isProtectedRoute && (claimsFailed || !userId)) {
-    return NextResponse.redirect(new URL("/login", request.url));
+  if (isProtectedRoute && claimsError) {
+    return loginRedirect(
+      request,
+      isTemporaryAuthFailure(claimsError) ? "service_unavailable" : "session_expired",
+      response,
+    );
+  }
+  if (isProtectedRoute && !userId) {
+    return loginRedirect(request, "session_expired", response);
   }
 
   if (typeof userId === "string" && (pathname.startsWith("/admin") || pathname.startsWith("/staff") || pathname.startsWith("/account"))) {
-    const { data: roleRow, error: roleError } = await supabase
-      .from("user_roles")
-      .select("role")
-      .eq("user_id", userId)
-      .maybeSingle();
+    let roleRow;
+    try {
+      const { data, error } = await supabase
+        .from("user_roles")
+        .select("role")
+        .eq("user_id", userId)
+        .maybeSingle();
+      if (error) return loginRedirect(request, "service_unavailable", response);
+      roleRow = data;
+    } catch {
+      return loginRedirect(request, "service_unavailable", response);
+    }
 
-    // A Supabase query error (network, auth mismatch) should not be treated
-    // as "the user has the wrong role". If the query itself failed, we let
-    // the user proceed so they aren't blocked by a transient error.
-    if (roleError) {
-      // Log the error server-side; for now just continue so the user isn't
-      // locked out by a transient issue. The dashboard/page components can
-      // display their own auth-required message if needed.
-    } else {
-      const role = roleRow?.role;
-      if (pathname.startsWith("/admin") && role !== "admin") {
-        return NextResponse.redirect(new URL("/dashboard", request.url));
-      }
-      if (pathname.startsWith("/staff") && role !== "staff") {
-        return NextResponse.redirect(new URL("/dashboard", request.url));
-      }
-      if (pathname.startsWith("/account") && role !== "customer") {
-        return NextResponse.redirect(new URL("/dashboard", request.url));
-      }
+    const role = roleRow?.role;
+    if (!["customer", "staff", "admin"].includes(role)) {
+      return redirectWithCookies(new URL("/dashboard", request.url), response);
+    }
+    if (pathname.startsWith("/admin") && role !== "admin") {
+      return redirectWithCookies(new URL("/dashboard", request.url), response);
+    }
+    if (pathname.startsWith("/staff") && role !== "staff") {
+      return redirectWithCookies(new URL("/dashboard", request.url), response);
+    }
+    if (pathname.startsWith("/account") && role !== "customer") {
+      return redirectWithCookies(new URL("/dashboard", request.url), response);
     }
   }
 

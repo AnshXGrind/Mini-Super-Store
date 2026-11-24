@@ -7,6 +7,15 @@ import { createClient } from "@/lib/supabase/client";
 
 type AuthFormProps = { mode: "login" | "register"; next?: string; authError?: string };
 
+const authErrorMessages: Record<string, string> = {
+  auth_callback_failed:
+    "We couldn't complete sign-in from your email link. It may have expired; please sign in again or create a new account.",
+  session_expired:
+    "Your sign-in session has expired or is invalid. Please sign in again.",
+  service_unavailable:
+    "We couldn't verify your account because the authentication service is temporarily unavailable. Please try again shortly.",
+};
+
 export default function AuthForm({ mode, next = "/dashboard", authError }: AuthFormProps) {
   const isRegister = mode === "register";
   const router = useRouter();
@@ -15,13 +24,12 @@ export default function AuthForm({ mode, next = "/dashboard", authError }: AuthF
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [busy, setBusy] = useState(false);
-  const [errorMessage, setErrorMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState(() =>
+    authError
+      ? authErrorMessages[authError] ?? "We couldn't complete sign-in. Please try again."
+      : "",
+  );
   const [successMessage, setSuccessMessage] = useState("");
-
-  // Pre-fill from callback error (e.g. ?error=auth_callback_failed)
-  if (!errorMessage && authError) {
-    setErrorMessage(authError);
-  }
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();

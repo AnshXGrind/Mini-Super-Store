@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { redirect } from "next/navigation";
-import { getCurrentStoreUser } from "@/lib/auth";
+import Link from "next/link";
+import { getCurrentStoreUserResult } from "@/lib/auth";
 
 export const metadata: Metadata = {
   title: "Dashboard | Mini Super Store",
@@ -8,16 +9,32 @@ export const metadata: Metadata = {
 };
 
 export default async function DashboardRedirectPage() {
-  const user = await getCurrentStoreUser();
+  const result = await getCurrentStoreUserResult();
 
-  if (!user) {
-    // No session — the login page will add ?next= if needed; return null so
-    // the middleware can send the user to /login if required.
-    return null;
+  if (result.status === "unauthenticated") {
+    redirect("/login?error=session_expired&next=%2Fdashboard");
+  }
+  if (result.status === "unavailable") {
+    return (
+      <div className="account-error" role="alert">
+        <p>We could not verify your account because the authentication service is temporarily unavailable.</p>
+        <Link href="/dashboard">Try again</Link>
+      </div>
+    );
+  }
+  if (result.status === "invalid-role") {
+    return (
+      <div className="account-error" role="alert">
+        <p>
+          This account does not have a valid role assigned. Please contact the
+          store administrator to restore access.
+        </p>
+      </div>
+    );
   }
 
-  // Route based on role — this prevents the blank-page issue caused by
-  // the previous "return null" that ignored the user's role entirely.
+  const { user } = result;
+
   if (user.role === "admin") {
     redirect("/admin");
   }
@@ -28,16 +45,9 @@ export default async function DashboardRedirectPage() {
     redirect("/account");
   }
 
-  // No valid role in the database — show a useful error instead of
-  // redirecting endlessly to /login. The middleware still protects the
-  // route, but we render a clear message so the user (or operator) knows
-  // their account hasn't been assigned a role yet.
   return (
     <div className="account-error" role="alert">
-      <p>
-        This account does not have a valid role assigned. Please contact the
-        store administrator or sign up as a new customer.
-      </p>
+      <p>This account role is not supported. Please contact the store administrator.</p>
     </div>
   );
 }

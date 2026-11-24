@@ -35,12 +35,14 @@ super store in Ladwa, Haryana. Built with Next.js 16 (App Router), React 19 and 
    | --- | --- |
    | `NEXT_PUBLIC_SUPABASE_URL` | Supabase project URL |
    | `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` | Browser-safe publishable key (RLS still applies) |
-   | `NEXT_PUBLIC_SITE_URL` | Canonical origin used for metadata, sitemap and robots |
+   | `NEXT_PUBLIC_SITE_URL` | Canonical origin used for metadata, sitemap and robots; set to the deployed HTTPS origin for production |
    | `NEXT_PUBLIC_VAPID_PUBLIC_KEY` | Web-push public key (optional) |
    | `NEXT_PUBLIC_WHOLESALE_WHATSAPP_NUMBER` | WhatsApp click-to-chat number, digits only |
 
    `NEXT_PUBLIC_*` values are inlined at build time. Set them in the build environment
-   (for example Vercel Project Settings), not only at runtime.
+   (for example Vercel Project Settings), not only at runtime. Set
+   `NEXT_PUBLIC_SITE_URL` to the real deployed HTTPS origin before production builds;
+   canonical metadata and sitemap entries are omitted when it is unset.
 
 4. Run the development server:
 
@@ -54,8 +56,15 @@ super store in Ladwa, Haryana. Built with Next.js 16 (App Router), React 19 and 
 npm run typecheck   # TypeScript
 npm run lint        # ESLint (flat config)
 npm test            # Vitest
+npm run test:e2e    # Playwright browser tests (Chromium)
 npm run build       # Production build
 ```
+
+The browser suite always checks the login and callback-error experience. To exercise
+real customer, staff and admin sign-in, configure the corresponding `E2E_*_EMAIL`
+and `E2E_*_PASSWORD` environment variables along with the Supabase URL and publishable
+key. GitHub Actions reads these from repository secrets; role-specific sign-in tests
+are skipped when the matching credentials are not configured.
 
 ## Structure
 

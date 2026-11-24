@@ -2,18 +2,14 @@
 import AppInstallPrompt from "@/components/pwa/AppInstallPrompt";
 import "./globals.css";
 
-const fallbackSiteUrl = "https://minisuperstore.example";
-
-function getMetadataBase() {
+function getMetadataBase(): URL | undefined {
   const configured = process.env.NEXT_PUBLIC_SITE_URL;
-  if (configured) {
-    try {
-      return new URL(configured);
-    } catch {
-      // Ignore malformed configuration and fall back to the placeholder origin.
-    }
+  if (!configured) return undefined;
+  try {
+    return new URL(configured);
+  } catch {
+    return undefined;
   }
-  return new URL(fallbackSiteUrl);
 }
 
 export const metadata: Metadata = {

@@ -9,7 +9,6 @@
 # Local secrets and environment files
 .env*
 !.env.example
-!.env.local
 
 # Hosting and tooling
 /.vercel/

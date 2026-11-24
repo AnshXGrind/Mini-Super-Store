@@ -23,6 +23,6 @@ To create a staff account, register the person through the customer registration
 10. Apply `migrations/202611200005_fulfilment_status_alignment.sql` to make the order-status RPC enforce pickup vs delivery transitions, matching the staff dashboard.
 11. Apply `migrations/202611200006_order_integrity.sql` to add duplicate‑line protection, phone/length validation, the `cancel_own_order` RPC, and the DB‑level status‑transition trigger. Without this migration, customer order cancellation will fail and duplicate product lines can bypass the 100‑qty cap.
 12. Generate VAPID keys and set `NEXT_PUBLIC_VAPID_PUBLIC_KEY`. A server-side private key and a trusted notification worker are still required to send push messages.
-12. WhatsApp, SMS, email, monitoring and backups require provider credentials and an operational deployment policy; the application does not send fabricated success responses for these services.
+13. WhatsApp, SMS, email, monitoring and backups require provider credentials and an operational deployment policy; the application does not send fabricated success responses for these services.
 
 The order RPC (`place_customer_order`) reads product prices and stock on the database side. Never accept a price or total supplied by the browser as authoritative.

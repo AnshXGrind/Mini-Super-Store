@@ -1,31 +1,27 @@
-/** @type {import('@playwright/test').testOptions} */
-const playwrighConfig = {
+import { defineConfig } from "@playwright/test";
+
+const baseURL = process.env.PLAYWRIGHT_BASE_URL ?? "http://127.0.0.1:3000";
+
+export default defineConfig({
   testDir: "./e2e",
   fullyParallel: true,
   workers: process.env.CI ? 1 : undefined,
   reporter: [["list"], ["html", { open: "never" }]],
-
-  // Shared test timeout
   timeout: 30_000,
-
   use: {
-    // baseUrl: "http://127.0.0.1:3000",
-    headless: process.env.CI === "true",
+    baseURL,
+    headless: true,
     viewport: { width: 1280, height: 720 },
     ignoreHTTPSErrors: true,
-    trace: "retry-with-page",
+    trace: "retain-on-failure",
   },
-
   expect: {
     timeout: 5_000,
   },
-
-  // projects: [
-  //   { name: "Chromium", use: { ...testOptions.use, browser: "chromium" } },
-  //   { name: "Firefox", use: { ...testOptions.use, browser: "firefox" } },
-  //   { name: "WebKit", use: { ...testOptions.use, browser: "webkit" } },
-  // ],
-};
-
-/** @type {import('next').NextConfig} */
-export default playwrighConfig;
+  webServer: {
+    command: "npm run dev",
+    url: baseURL,
+    reuseExistingServer: !process.env.CI,
+    timeout: 120_000,
+  },
+});

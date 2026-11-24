@@ -85,6 +85,8 @@ export default async function HomePage() {
           .eq("is_active", true)
           .order("sort_order", { ascending: true }),
       ]);
+      if (categoryResult.error) throw categoryResult.error;
+      if (productResult.error) throw productResult.error;
       categories = (categoryResult.data ?? []) as PublicCategory[];
       products = (productResult.data ?? []).map((product) => ({
         ...product,
