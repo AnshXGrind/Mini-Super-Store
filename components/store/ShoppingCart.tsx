@@ -21,6 +21,10 @@ const orderErrorMessages: Record<string, { en: string; hi: string }> = {
   PRODUCT_PRICE_NOT_SET: { en: "One of the products does not have a confirmed price yet.", hi: "एक उत्पाद की कीमत अभी तय नहीं है।" },
   INVALID_ORDER_ITEM: { en: "Your cart contains an invalid product. Please refresh and try again.", hi: "कार्ट में अमान्य उत्पाद है। कृपया रीफ़्रेश करके फिर कोशिश करें।" },
   INVALID_FULFILMENT_TYPE: { en: "Choose pickup or delivery.", hi: "पिकअप या डिलीवरी चुनें।" },
+  CUSTOMER_NAME_TOO_LONG: { en: "The customer name is too long.", hi: "ग्राहक का नाम बहुत लंबा है।" },
+  INVALID_CUSTOMER_PHONE: { en: "Enter a valid phone number with 7 to 15 digits.", hi: "7 से 15 अंकों का सही फोन नंबर दर्ज करें।" },
+  CUSTOMER_NOTE_TOO_LONG: { en: "The order note is too long. Please shorten it.", hi: "ऑर्डर नोट बहुत लंबा है। कृपया छोटा करें।" },
+  DELIVERY_ADDRESS_TOO_LONG: { en: "The delivery address is too long. Please shorten it.", hi: "डिलीवरी पता बहुत लंबा है। कृपया छोटा करें।" },
 };
 
 function getFriendlyOrderError(message: string, isHindi: boolean) {

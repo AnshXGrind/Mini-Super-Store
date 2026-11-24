@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import CancelOrderButton from "@/components/account/CancelOrderButton";
 import LogoutButton from "@/components/auth/LogoutButton";
 import { requireStoreRole } from "@/lib/auth";
 import { createClient } from "@/lib/supabase/server";
@@ -104,6 +105,9 @@ export default async function AccountPage() {
                       <small>{order.fulfilment_type === "delivery" ? "Delivery" : "Store pickup"}</small>
                       <strong>₹{Number(order.total_amount).toFixed(2)}</strong>
                       {order.delivery_address && <p>{order.delivery_address}</p>}
+                      {(order.status === "pending" || order.status === "confirmed") && (
+                        <CancelOrderButton orderId={order.id} />
+                      )}
                     </aside>
                   </div>
                 </article>

@@ -296,6 +296,12 @@ button { cursor: pointer; }
 .order-card-body aside strong { color: #294936; font-size: 1rem; }
 .order-card-body aside p { margin: .25rem 0 0; color: #748178; font-size: .65rem; }
 
+.order-cancel { justify-self: end; margin-top: .5rem; }
+.order-cancel button { min-height: 34px; padding: .4rem .7rem; border: 1px solid #f0d2cc; border-radius: 6px; color: #8f3932; background: #fff7f5; font-size: .63rem; font-weight: 800; }
+.order-cancel button:hover { background: #ffece7; }
+.order-cancel button:disabled { opacity: .6; cursor: wait; }
+.order-cancel small { display: block; max-width: 220px; margin-top: .35rem; color: #8f2c25; font-size: .6rem; line-height: 1.4; }
+
 /* Staff and owner dashboards */
 .dashboard-page { min-height: 100vh; background: #f5f6f1; }
 .dashboard-header { min-height: 78px; display: flex; align-items: center; justify-content: space-between; width: min(1180px, calc(100% - 48px)); margin: 0 auto; }
@@ -516,6 +522,7 @@ button { cursor: pointer; }
   .account-orders-heading h2 { font-size: 1.4rem; }
   .order-card-body { grid-template-columns: 1fr; }
   .order-card-body aside { text-align: left; }
+  .order-cancel { justify-self: start; }
   .catalogue-disclaimer { font-size: .58rem; line-height: 1.5; text-align: left; }
   .why-section { padding: 66px 0 59px; }
   .why-inner { grid-template-columns: 1fr; gap: 2rem; }

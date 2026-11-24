@@ -67,6 +67,20 @@ const blankProduct = {
 
 const activeOrderStatuses = new Set(["confirmed", "preparing", "ready_for_pickup", "out_for_delivery"]);
 
+const orderActionErrors: Record<string, string> = {
+  ORDER_ALREADY_FINAL: "This order is already closed and cannot be changed.",
+  INVALID_ADMIN_STATUS_TRANSITION: "That status change is not allowed for this order.",
+  INVALID_STAFF_STATUS_TRANSITION: "That status change is not allowed for this order.",
+  ORDER_NOT_FOUND: "This order no longer exists. Refresh the order list.",
+  STAFF_OR_ADMIN_REQUIRED: "Your account no longer has permission to change orders.",
+};
+
+function getOrderActionError(caught: unknown, fallback: string) {
+  const message = caught instanceof Error ? caught.message : "";
+  const code = Object.keys(orderActionErrors).find((key) => message.includes(key));
+  return code ? orderActionErrors[code] : (message || fallback);
+}
+
 export default function AdminDashboard() {
   const [categories, setCategories] = useState<Category[]>([]);
   const [products, setProducts] = useState<Product[]>([]);
@@ -329,7 +343,7 @@ export default function AdminDashboard() {
       setSuccess("Order confirmed and assigned to staff.");
       await loadData();
     } catch (caught) {
-      setError(caught instanceof Error ? caught.message : "Order could not be confirmed.");
+      setError(getOrderActionError(caught, "Order could not be confirmed."));
     } finally {
       setBusy(false);
     }
@@ -354,7 +368,7 @@ export default function AdminDashboard() {
       setSuccess("Order cancelled.");
       await loadData();
     } catch (caught) {
-      setError(caught instanceof Error ? caught.message : "Order could not be cancelled.");
+      setError(getOrderActionError(caught, "Order could not be cancelled."));
     } finally {
       setBusy(false);
     }
@@ -382,7 +396,7 @@ export default function AdminDashboard() {
       setSuccess("Order reassigned.");
       await loadData();
     } catch (caught) {
-      setError(caught instanceof Error ? caught.message : "Order could not be reassigned.");
+      setError(getOrderActionError(caught, "Order could not be reassigned."));
     } finally {
       setBusy(false);
     }
@@ -404,7 +418,7 @@ export default function AdminDashboard() {
       setSuccess("Order cancelled.");
       await loadData();
     } catch (caught) {
-      setError(caught instanceof Error ? caught.message : "Order could not be cancelled.");
+      setError(getOrderActionError(caught, "Order could not be cancelled."));
     } finally {
       setBusy(false);
     }
